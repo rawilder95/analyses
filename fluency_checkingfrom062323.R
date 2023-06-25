@@ -28,11 +28,20 @@ dat <- dat[!(age == "WRONG AGE"),]
 nperseveration= nrow(with_perseveration) - nrow(dat) #202
 dat[, .N, by= .(prolific_id, items, listnum,itemnum)][, max(N)] #max should be 1
 # nrow 7800
-a <- ggplot(plotdat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")
-b <- ggplot(plotdat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Immediate")
-grid.arrange(a,b)
+# Get rid of people who only did one trial; Including Immediate
+one_trialers= dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
+dat= dat[!prolific_id %in%one_trialers,]
+dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
+a <- ggplot(plotdat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+b <- ggplot(plotdat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Immediate")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+plot_grid(a,b)
 ### CHECK ROWS END HERE ###
+# Repetitions
+toplot <- dat[, .N, by= .(items, prolific_id, age, condition)][, sum(N>1)/length(N), by= .(age, condition)]
 
+
+ggplot(data= toplot)+ geom_bar(aes(x= age ,y= V1, fill= condition), stat= "identity", position= "dodge")+ labs(x= "Age Group", y= "N Items Repeated", fill= "Task Condition")
+ggsave("nrepeated_bar.png", device= 'png', dpi= 300)
 
 
 
