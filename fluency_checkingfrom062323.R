@@ -38,13 +38,20 @@ plot_grid(a,b)
 ### CHECK ROWS END HERE ###
 # Repetitions
 toplot <- dat[, .N, by= .(items, prolific_id, age, condition)][, sum(N>1)/length(N), by= .(age, condition)]
-
-
 ggplot(data= toplot)+ geom_bar(aes(x= age ,y= V1, fill= condition), stat= "identity", position= "dodge")+ labs(x= "Age Group", y= "N Items Repeated", fill= "Task Condition")
 ggsave("nrepeated_bar.png", device= 'png', dpi= 300)
 
 
 
+# repeat repeat trnaitions 
+dat[, N:= .N, by= .(items, prolific_id, age, condition)]
+dat[, repeated:= as.numeric(N>1)] #get indices for repeated vals
+rr_idx= which(dat[, diff(repeated)]==-1) #index all of the rows that are a repeat repeat transition, i.e. 1-1 should == 0
+
+rr_trials= dat[rr_idx,]
+p_rrtrials= rr_trials[, .N/nrow(rr_trials), by= .(condition, age)]
+ggplot(p_rrtrials, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(x= "Age Group", y= "Proportion of Trials", title= "Repeat-Repeat Transitions", fill= "Trial Condition")
+ggsave("prepeatedrepeat_bar.png", device= 'png', dpi= 300)
 
 dat[, listnum := factor(listnum)]
 dat[, age := factor(age)]
