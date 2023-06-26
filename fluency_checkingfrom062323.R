@@ -32,10 +32,15 @@ dat[, .N, by= .(prolific_id, items, listnum,itemnum)][, max(N)] #max should be 1
 # Get rid of people who only did one trial; Including Immediate
 one_trialers= dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
 dat= dat[!prolific_id %in%one_trialers,]
-dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
-a <- ggplot(dat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
-b <- ggplot(dat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Immediate")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+plot_dat <- dat[, .N, by= .(prolific_id, listnum, age, condition)]
+a <- ggplot(plot_dat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill= as.character(listnum))) + geom_bar(stat="identity",position="dodge") + ylim(0,75) + ggtitle("Delayed")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+b <- ggplot(plot_dat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=as.character(listnum))) + geom_bar(stat="identity",position="dodge") + ylim(0,75) + ggtitle("Immediate")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")+ ggtitle("Number of Items Listed")
 plot_grid(a,b)
+
+
+
+
+
 ### CHECK ROWS END HERE ###
 # Repetitions
 toplot <- dat[, .N, by= .(items, prolific_id, age, condition)][, sum(N>1)/length(N), by= .(age, condition)]
