@@ -33,11 +33,11 @@ dat[ageText<60 & ageText> 25, age:= "WRONG AGE"]
 dat[ageText<= 25, age:= "young"]
 dat[ageText>=60, age:= "old"]
 
-# @Rebecca these participants did not start naming animals for >30s, grounds for exclusion?
-dat<-dat[!(prolific_id=="5b33a01fa8327d0001003821" | prolific_id=="5b33a01fa8327d0001003821")]
-
 # get rid of participants that violated age requirements
 dat <- dat[!(age == "WRONG AGE"),]
+
+# @Rebecca these participants did not start naming animals for >30s, grounds for exclusion?
+dat<-dat[!(prolific_id=="5b33a01fa8327d0001003821" | prolific_id=="5b33a01fa8327d0001003821")]
 
 # @Rebecca in calculating the one_trialers (below), i noticed all of the participants who are removed have List 2 but *not* List 1, which doesn't make sense.
 # I checked the starttime and noticed that the list numbers are reversed for all participants in the Delayed condition
