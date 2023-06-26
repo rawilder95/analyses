@@ -1,3 +1,4 @@
+rm(list= ls())
 library(data.table)
 library(ggplot2)
 library(gridExtra)
@@ -32,8 +33,8 @@ dat[, .N, by= .(prolific_id, items, listnum,itemnum)][, max(N)] #max should be 1
 one_trialers= dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
 dat= dat[!prolific_id %in%one_trialers,]
 dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
-a <- ggplot(plotdat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
-b <- ggplot(plotdat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Immediate")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+a <- ggplot(dat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
+b <- ggplot(dat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Immediate")+ labs(x= "Age Group", y= "N Items Listed", fill= "Trial")
 plot_grid(a,b)
 ### CHECK ROWS END HERE ###
 # Repetitions
@@ -64,7 +65,7 @@ dat <- dat[!(prolific_id %in% bad_ids)]
 dat <- unique(dat)
 dat[, N:=.N, by=.(prolific_id, listnum, items)][N>1,items:= NaN, by= .(prolific_id, listnum, items)]
 dat[N>1 & !(itemnum== min(itemnum)), items:= "PERSEVERATION", by= .(prolific_id, listnum,items)]
-datdat_n <- dat[,.N,by=.(prolific_id,age,listnum,condition)]
+dat_n <- dat[,.N,by=.(prolific_id,age,listnum,condition)]
 plotdat <- dat_n[,.(N=mean(N)),by=.(age,condition,listnum)]
 
 a <- ggplot(plotdat[condition=="Delayed"], aes(y=N, x=age, group=listnum, fill=listnum)) + geom_bar(stat="identity",position="dodge") + ylim(0,30) + ggtitle("Delayed")
