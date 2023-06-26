@@ -42,9 +42,9 @@ dat<-dat[!(prolific_id=="5b33a01fa8327d0001003821" | prolific_id=="5b33a01fa8327
 # @Rebecca in calculating the one_trialers (below), i noticed all of the participants who are removed have List 2 but *not* List 1, which doesn't make sense.
 # I checked the starttime and noticed that the list numbers are reversed for all participants in the Delayed condition
 # Please fix in the original data file and then delete the three lines below
-dat[listnum == 2, listnum := 3]  # these three lines swap listnums for participants in the delayed condition
-dat[listnum == 1, listnum := 2]
-dat[listnum == 3, listnum := 1]
+dat[condition=="Delayed" & listnum == 2, listnum := 3]  # these three lines swap listnums for participants in the delayed condition
+dat[condition=="Delayed" & listnum == 1, listnum := 2]
+dat[condition=="Delayed" & listnum == 3, listnum := 1]
 
 # Get rid of people who only did one trial; Including Immediate
 one_trialers= dat[, unique(listnum), by= prolific_id][, sum(V1), by= prolific_id][V1<3,prolific_id]
