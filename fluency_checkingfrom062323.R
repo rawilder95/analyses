@@ -3,6 +3,8 @@ library(data.table)
 library(ggplot2)
 library(gridExtra)
 library(ez)
+library(cowplot)
+setwd('~/Downloads/jatos_mac_java/analyses')
 # load data
 ### CHECK ROWS FOR DUPLICATES
 d1 <- fread('cleanfluency.csv')
@@ -78,3 +80,9 @@ b <- ggplot(plotdat[condition=="Immediate"], aes(y=N, x=age, group=listnum, fill
 grid.arrange(a,b)
 
 ezANOVA(dat_n, within=listnum, between=c("age","condition"), dv=N, wid=prolific_id)
+
+
+
+dat= dat[prolific_id %in% dat[, .N, by= .(prolific_id, listnum)][, .N, by= prolific_id][N==2,prolific_id],]
+fwrite(dat, 'fluency_data_07152023.csv')
+
