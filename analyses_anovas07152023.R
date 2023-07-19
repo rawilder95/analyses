@@ -20,10 +20,10 @@ d1[, condition:= factor(condition)]
 ezANOVA(d1, within=listnum, between=c("age","condition"), dv=N, wid=prolific_id)
 
 # Repeated words from l1 to l2
-repeated_words= dat[, .N, .(prolific_id,items)][N>2,items]
+repeated_words= dat[, .N, .(prolific_id,items)][N>2,items] # @Rebecca these are words that are perseverations for at least one participant
 dat[, repeated:= 0]
 # Make sure it's just for list 2
-dat[listnum==2 & items %in% repeated_words, repeated:= 1]
+dat[listnum==2 & items %in% repeated_words, repeated:= 1] # @Rebecca this does not mean a word is 'repeated' for a specific individual. bar graph below is not meaningful.
 # bar graph for N repeated words
 bar_fig1= dat[repeated==1, .N, by= .(prolific_id, age, condition)][, mean(N), by= .(age, condition)]
 # plot bar for repeated words 
@@ -35,8 +35,8 @@ list1= dat[listnum==1, .N, by= .(prolific_id, condition, age)]
 list2= dat[listnum==2, .N, by= .(prolific_id, condition, age)]
 
 deltachange= list1
-deltachange[, N2:= list2$N]
-deltachange[, d:= N-N2]
+deltachange[, N2:= list2$N] # @Rebecca This does not work because the two data tables are not ordered the same. It will work if you first order both by prolific_id, but it's much safer to do a merge. Plot below is not meaningful.
+deltachange[, d:= N-N2] 
 meandelta= deltachange[, mean(d), by= .(condition, age)]
 
 ggplot(data= meandelta)+ geom_bar(aes(x= age, y= V1, fill= condition), position= 'dodge', stat= 'identity')
