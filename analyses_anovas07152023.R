@@ -29,6 +29,11 @@ bar_fig1= dat[repeated==1, .N, by= .(prolific_id, age, condition)][, mean(N), by
 # plot bar for repeated words 
 ggplot(data= bar_fig1)+ geom_bar(aes(x= age, y= V1, fill= condition),position= "dodge", stat= "identity")+ labs(x= "Age", y= "N Repeated Words", fill= "Delay")
 ggsave('bar_repeatedwords.png', device= 'png', dpi= 300)
+d1= dat[repeated==1, .N, by= .(prolific_id, age, condition)]
+d1[, age:= factor(age)]
+d1[, condition:= factor(condition)]
+d1[, prolific_id:= factor(prolific_id)]
+ezANOVA(d1, between=c("age","condition"), dv=N, wid=prolific_id)
 
 # change in response length from t1- t2
 list1= dat[listnum==1, .N, by= .(prolific_id, condition, age)]
@@ -41,4 +46,19 @@ meandelta= deltachange[, mean(d), by= .(condition, age)]
 
 ggplot(data= meandelta)+ geom_bar(aes(x= age, y= V1, fill= condition), position= 'dodge', stat= 'identity')
 ggsave('bar_deltachange.png', device= 'png', dpi= 300)
+
+witherrors= fread("perseverative_data.csv")
+witherrors[, meanerror:= mean(perseveration), by= .(prolific_id, age, listnum, condition)]
+
+ggplot(data= witherrors) + geom_bar(aes(x= age, y= meanerror, fill= condition), position= 'dodge', stat= 'identity')+ labs(x= 'Age', y= 'Proportion of Errors', fill= "Delay")
+ggsave('proportionoferrors.png', device= 'png', dpi= 300)
+# immediate= fread('immediatefluency_merged.csv')
+# delayed= fread('delayedfluency_merged.csv')
+# 
+# immediate[, items:= tolower(items)]
+# delayed[, items:= tolower(items)]
+# uncleaned= rbind(immediate,delayed)
+# bad_ids= uncleaned[items %in% c("lion tiger  cat dog  deer wolf", , prolific_id]
+# 
+# uncleaned[, .N, by= .(prolific_id, items, ageText, condition, gamenum)][max(N)]
 
