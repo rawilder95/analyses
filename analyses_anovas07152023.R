@@ -4,8 +4,7 @@ library(ggplot2)
 library(gridExtra)
 library(ez)
 library(cowplot)
-setwd('~/Downloads/jatos_mac_java/analyses')
-
+setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
 
 dat= fread('fluency_data_07152023.csv')
 # N words listed trial by delay by age
