@@ -11,10 +11,7 @@ dat= fread('fluency_data_07152023.csv')
 # participants that didn't start naming animals for 30 seconds
 # N words listed trial by delay by age
 # fix the code in the data file 
-d1= fread('cleanfluency.csv')
 
-d1[gamenum==2, listnum:= 1]
-d1[gamenum==1, listnum:= 2]
 
 d1= dat[ ,.N, by= .(prolific_id, age, condition, listnum)]
 d1[, prolific_id:= factor(prolific_id)]
@@ -27,7 +24,7 @@ d1[, condition:= factor(condition)]
 ezANOVA(d1, within=listnum, between=c("age","condition"), dv=N, wid=prolific_id)
 
 # Repeated words from l1 to l2
-repeated_words= dat[, .N, .(prolific_id,items)][N>2,items] # @Rebecca these are words that are perseverations for at least one participant
+repeated_words= dat[, .N, .(prolific_id,items)][N==2,items] # @Rebecca these are words that are perseverations for at least one participant
 dat[, repeated:= 0]
 # Make sure it's just for list 2
 dat[listnum==2 & items %in% repeated_words, repeated:= 1] # @Rebecca this does not mean a word is 'repeated' for a specific individual. bar graph below is not meaningful.
