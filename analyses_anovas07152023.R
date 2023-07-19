@@ -4,10 +4,18 @@ library(ggplot2)
 library(gridExtra)
 library(ez)
 library(cowplot)
-setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
+# setwd('~/Downloads/jatos_mac_java/analyses')
 
 dat= fread('fluency_data_07152023.csv')
+# spellcheck again 
+# participants that didn't start naming animals for 30 seconds
 # N words listed trial by delay by age
+# fix the code in the data file 
+d1= fread('cleanfluency.csv')
+
+d1[gamenum==2, listnum:= 1]
+d1[gamenum==1, listnum:= 2]
+
 d1= dat[ ,.N, by= .(prolific_id, age, condition, listnum)]
 d1[, prolific_id:= factor(prolific_id)]
 d1[, age:= factor(age)]
