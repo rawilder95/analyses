@@ -2,11 +2,17 @@ rm(list= ls())
 library(data.table)
 library(ggplot2)
 library(gridExtra)
-library(ez)
+# library(ezANOVA)
 library(cowplot)
+<<<<<<< Updated upstream
 source('bbar.r')
 setwd('~/Downloads/jatos_mac_java/analyses')
 
+=======
+setwd('~/Downloads/jatos_mac_java/analyses')
+# source('bbar.r')
+# d38afbc4ffb1314100d63cda757d9dbfd023f925
+>>>>>>> Stashed changes
 # load data
 d1 <- fread('cleanfluency.csv')
 d1[, listnum:= gamenum]
@@ -67,6 +73,8 @@ dat[,minitemnum := NULL]
 dat[,N := NULL]
 
 with_perseveration= dat # keep data with perseverations for later analysis
+# fwrite(with_perseveration, "perseverative_data.csv")
+
 dat= dat[perseveration==0,] # remove perseverations in dat; note: itemnum will no longer be sequential for most participants
 
 # how many perseveartive errors in total?
