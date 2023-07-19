@@ -22,7 +22,23 @@ ezANOVA(d1, within=listnum, between=c("age","condition"), dv=N, wid=prolific_id)
 # Repeated words from l1 to l2
 repeated_words= dat[, .N, .(prolific_id,items)][N>2,items]
 dat[, repeated:= 0]
+# Make sure it's just for list 2
 dat[listnum==2 & items %in% repeated_words, repeated:= 1]
-geom_bar()
+# bar graph for N repeated words
+bar_fig1= dat[repeated==1, .N, by= .(prolific_id, age, condition)][, mean(N), by= .(age, condition)]
+# plot bar for repeated words 
+ggplot(data= bar_fig1)+ geom_bar(aes(x= age, y= V1, fill= condition),position= "dodge", stat= "identity")+ labs(x= "Age", y= "N Repeated Words", fill= "Delay")
+ggsave('bar_repeatedwords.png', device= 'png', dpi= 300)
 
+# change in response length from t1- t2
+list1= dat[listnum==1, .N, by= .(prolific_id, condition, age)]
+list2= dat[listnum==2, .N, by= .(prolific_id, condition, age)]
+
+deltachange= list1
+deltachange[, N2:= list2$N]
+deltachange[, d:= N-N2]
+meandelta= deltachange[, mean(d), by= .(condition, age)]
+
+ggplot(data= meandelta)+ geom_bar(aes(x= age, y= V1, fill= condition), position= 'dodge', stat= 'identity')
+ggsave('bar_deltachange.png', device= 'png', dpi= 300)
 
