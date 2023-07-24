@@ -4,13 +4,34 @@ library(ggplot2)
 library(gridExtra)
 library(ez)
 library(cowplot)
-# setwd('~/Downloads/jatos_mac_java/analyses')
+setwd('~/Downloads/jatos_mac_java/analyses')
 
 dat= fread('fluency_data_07152023.csv')
 # spellcheck again 
 # participants that didn't start naming animals for 30 seconds
 # N words listed trial by delay by age
 # fix the code in the data file 
+spellcheck = fread('updatedsnafuspelling.csv')
+### SPELLCHECK ###
+scheme = fread('updatedsnafuscheme.csv')
+dat[! items %in% scheme$word, items]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +100,6 @@ ggsave('celebrity_personality.png', device= 'png', dpi= 300)
 
 
 
-
 # Semantic fluency analysis tool
 sem_analysis= subset(dat, select= c(prolific_id, items))
 colnames(sem_analysis) <- c('subject_id', 'words')
@@ -88,9 +108,15 @@ write.table(sem_analysis, file = 'sem_analysis.txt', sep = '\t', row.names= FALS
 
 # read-in online results 
 cluster_switch= subset(fread('sem_analysis_model_none_switch_all_switch_results.csv'), select= -c(V1))
-
+cluster_switch[, itemnum:= 1:nrow(cluster_switch)]
+cluster_switch[, prolific_id:= Subject]
+cluster_switch= subset(cluster_switch, select= -c(Subject))
 # get clusters >1
-cluster_switch[Switch_Value>0]
+clusters= cluster_switch[Switch_Value>0]
+# Merge with original data
+# ncluster= merge(cluster_switch, dat, by= "prolific_id")
+
+dat[prolific_id %in% cluster_switch$prolific_id]$prolific_id
 
 
 
