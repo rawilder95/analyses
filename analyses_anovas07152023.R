@@ -116,17 +116,7 @@ clusters= cluster_switch[Switch_Value>0]
 # Merge with original data
 # ncluster= merge(cluster_switch, dat, by= "prolific_id")
 
+# take output and calculate avg cluster size
+
 dat[prolific_id %in% cluster_switch$prolific_id]$prolific_id
-
-
-
-
-# ggplot()+ geom_boxplot(aes(x= c("openness"),y= c(randu[1:4]$x)))
-
-# immediate[, items:= tolower(items)]
-# delayed[, items:= tolower(items)]
-# uncleaned= rbind(immediate,delayed)
-# bad_ids= uncleaned[items %in% c("lion tiger  cat dog  deer wolf", , prolific_id]
-# 
-# uncleaned[, .N, by= .(prolific_id, items, ageText, condition, gamenum)][max(N)]
 
