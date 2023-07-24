@@ -82,14 +82,6 @@ ggsave('proportionoferrors.png', device= 'png', dpi= 300)
 
 #
 
-psy205= data.table(openness= sample(100, replace= TRUE)/100, conscientiousness= sample(100, replace= TRUE)/100, extraversion= sample(100, replace= TRUE)/100, agreeableness= sample(100, replace= TRUE)/100, neuroticism= sample(100, replace= TRUE)/100)
-psy205[, openness:= openness/0.9][openness>1, openness:= 1]
-psy205[, extraversion:= extraversion/0.8][extraversion>1, extraversion:= 1]
-psy205[, agreeableness:= agreeableness*0.6]
-psy205[, neuroticism:= neuroticism*0.9]
-psy205[, conscientiousness:= conscientiousness*0.4]
-toplot= data.table(labels= c(rep("1Openness", 100), rep("2Conscientiousness", 100), rep("3Extraversion", 100), rep("4Agreeableness", 100), rep("5Neuroticism", 100)), scores= c(psy205$openness, psy205$conscientiousness, psy205$extraversion, psy205$agreeableness, psy205$neuroticism))
-ggplot(data= psy205)+ geom_boxplot(aes(x= "1 Openness", y= openness))+ geom_boxplot(aes(x= "2  Extraversion", y= extraversion))+ geom_boxplot(aes(x= "3 Conscientiousness", y= conscientiousness))+ geom_boxplot(aes(x= "4 Agreeableness", y= agreeableness))+ geom_boxplot(aes(x= "5 Neuroticism", y= neuroticism))+ labs(x= "Personality Trait", y= "Standardized Score Estimation") + geom_point(aes(x= "1 Openness", y= openness), alpha= 0.1)+ geom_point(aes(x= "2  Extraversion", y= extraversion), alpha= 0.1)+ geom_point(aes(x= "3 Conscientiousness", y= conscientiousness), alpha= 0.1)+ geom_point(aes(x= "4 Agreeableness", y= agreeableness), alpha= 0.1)+ geom_point(aes(x= "5 Neuroticism", y= neuroticism), alpha= 0.1)
 
 
 ggplot(data= witherrors) + geom_bar(aes(x= age, y= meanerror, fill= condition), position= 'dodge', stat= 'identity')+ labs(x= 'Age', y= 'Proportion of Errors', fill= "Delay")
