@@ -8,8 +8,11 @@ source('bbar.r')
 # setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
 # Clean everything up and take out old code that doesn't do anything
 
-# We know this data works
-### Perseverations ###
+
+
+
+
+
 dat= fread('fluency_data_07152023.csv')
 perseverations= fread("perseverative_data.csv")
 # mean perseverations = 0.013
