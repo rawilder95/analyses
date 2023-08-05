@@ -8142,4 +8142,7 @@ jatos_id,prolific_id,gamenum,itemnum,items,times,firsttime,category,starttime,sh
 451,60bac4eb11e08e852fd030ab,2,15,skunk,1684426212492,1684426209384,Animals,1684426130309,0,Delayed,3.497
 451,60bac4eb11e08e852fd030ab,2,16,porcupine,1684426215974,1684426212837,Animals,1684426130309,0,Delayed,3.482
 451,60bac4eb11e08e852fd030ab,2,17,human,1684426217824,1684426216333,Animals,1684426130309,0,Delayed,1.85
+<<<<<<< HEAD
+>>>>>>> parent of 55f845a (cluster switches)
+=======
 >>>>>>> parent of 55f845a (cluster switches)

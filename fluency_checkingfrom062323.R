@@ -7,6 +7,7 @@ library(cowplot)
 <<<<<<< Updated upstream
 source('bbar.r')
 <<<<<<< HEAD
+<<<<<<< HEAD
 # setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
 # Clean everything up and take out old code that doesn't do anything
 
@@ -23,6 +24,10 @@ ggsave('perseverations', device= 'png', dpi= 300)
 =======
 setwd('~/Downloads/jatos_mac_java/analyses')
 
+=======
+setwd('~/Downloads/jatos_mac_java/analyses')
+
+>>>>>>> parent of 55f845a (cluster switches)
 =======
 setwd('~/Downloads/jatos_mac_java/analyses')
 # source('bbar.r')
