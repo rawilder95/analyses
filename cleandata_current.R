@@ -87,3 +87,13 @@ dat[items %in% spellfile$incorrect,items]
 dat[!items %in% schemefile$word,items]
 # Should show two NaNs and nothing else
 # From here on use combined fluency, this is the cleaned code that excludes spelling errors and corrects pluralities, whitespace, but not perseverative errors. 
+
+#add age 
+dat[, age:= "Young"]
+dat[ageText>= 60, age:= "Old"]
+dat[, mean(ageText), by= age]
+
+# I forgot to add back in the age text earlier, so I'm writing it in here.  It's now in the datafile so this line can stay uncommented.  I'm trying to rewrite the file as few times as possible to avoid some of the issues we've been seeing with the datafile.
+# fwrite(dat, 'combinedfluency.csv')
+# fread('combinedfluency.csv')
+

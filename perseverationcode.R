@@ -6,6 +6,89 @@ library(ez)
 library(cowplot)
 # source('bbar.r')
 # setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
+# Read in clean working data
+dat= fread('combinedfluency.csv')
+### Uncomment to double-check that file has no spelling errors ###
+# schemefile= fread('updatedsnafuscheme.csv')
+# dat[!items %in% schemefile$word, items]
+# get counts for all of the words that were listed for each trial
+word_counts= dat[, .N, by= .(prolific_id, condition, listnum, items)]
+# which items were said more than once on any particular trial
+perseverations= merge(dat,word_counts)
+perseverations[, perseveration:=0]
+# We set all words that were repeated more than once to 1 *initially* (before going back and setting the smallest itemnum to 0)
+perseverations[N>1, perseveration:= 1]
+# reset the smallest itemnum (first instance) to 0 because it is not a perseveration
+perseverations[perseveration== 1 & itemnum== min(itemnum), perseveration:=0, by= .(prolific_id,items)]
+# get perseveration averages per participant, trial, and condition
+perseverations[, mean(perseveration), by= .(prolific_id, listnum, condition)]
+
+
+# stop here
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # read in clean csv file
 ### @Jeff would you mind seeing if this version of the csv is working on your end? I'm not sure if it's something going on with my version of R or a problem with the data.  Opening it, it looks fine. 
 dat= fread('fluency_data_07152023.csv')
