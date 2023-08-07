@@ -83,17 +83,12 @@ for(i in misspelled){
   j= j+1
   if (nrow(dat[items %in% i])>0){
     dat[ items %in% i, items:= spellfile[incorrect %in% i, min(correct)]]
-    if(any(is.na(dat[items %in% i, items]))){
-      print(i)
-    }
-  } else{
-    print('none')
-  }
 }
 # exclude participants that listed musical instruments or clearly did not follow directions
 # get id
 if(nrow(dat[items=="trombone"])>0){
   dat=dat[!prolific_id== dat[items== "trombone", prolific_id],]
+  }
 }
 # find participants that were not hitting return after each mov
 bad_ids2 <- dat[items %in% stillerror[nchar(stillerror)>13], prolific_id]
@@ -102,8 +97,6 @@ dat= dat[!prolific_id %in% bad_ids2]
 # dat[!(prolific_id %in% bad_ids2),]
 # Write out code and then leave this commented out, unless you're looking to change something in base clean code.
 # fwrite(dat, 'combinedfluency.csv')
-
-
 # Get rid of all of the known spelling errors
 for(i in misspelled){
  dat[items == i, items:= spellfile[incorrect == i, min(correct)]]
@@ -124,7 +117,8 @@ j= dat[condition== "Delayed" & listnum== 1, unique(prolific_id)]
 k= dat[condition== "Delayed" & listnum== 2, unique(prolific_id)]
 # Get rid of that participant
 dat= dat[!prolific_id %in% j[!j %in% k],]
+dat[!prolific_id== "5c17a9fbfeaf2c0001c4b19a"]
 fwrite(dat, 'combinedfluency.csv')
-# fread('combinedfluency.csv')
+# person with NaN input mask out (Jeff instructions from lab meeting)
 # dat[, unique(condition), by= .(prolific_id)]
 
