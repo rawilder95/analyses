@@ -12,7 +12,14 @@ dat= fread('combinedfluency.csv')
 # schemefile= fread('updatedsnafuscheme.csv')
 # dat[!items %in% schemefile$word, items]
 # get counts for all of the words that were listed for each trial
-word_counts= dat[, .N, by= .(prolific_id, condition, listnum, items)]
+# dat[, word_counts:=.N, by= .(prolific_id, condition, listnum, items)]
+
+# make a perseverations col
+dat[, perseveration:= 0]
+dat[word_counts>1, perseveration:=1]
+# do bar graph
+toplot1= dat[listnum==1, mean(perseveration), by= .(listnum,condition, age)]
+ggplot(data= toplot1, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate')
 # which items were said more than once on any particular trial
 perseverations= merge(dat,word_counts)
 perseverations[, perseveration:=0]
@@ -20,13 +27,17 @@ perseverations[, perseveration:=0]
 perseverations[N>1, perseveration:= 1]
 # reset the smallest itemnum (first instance) to 0 because it is not a perseveration
 perseverations[perseveration== 1 & itemnum== min(itemnum), perseveration:=0, by= .(prolific_id,items)]
-# get perseveration averages per participant, trial, and condition
-perseverations[, mean(perseveration), by= .(prolific_id, listnum, condition)]
-
+# Repeat the perseveration process in main data table so that you can later exclude the values
+dat[, perseveration:= 0]
+# Match the items in the persev and dat by participant and listnum (word i was said x times by participant z on trial y)
+dat[, .N, by= .(prolific_id, listnum, items)][N>1]
+dat[, unique(condition), by= prolific_id][, .N, by= prolific_id]
+for(i in unique(dat$prolific_id)){
+  print(dat[prolific_id== i, unique(condition)])
+}
 
 # stop here
 
- 
 
 
 
@@ -159,7 +170,6 @@ dat= subset(dat, select= -c(gamenum))
 dat= merge(fluency_data,demo_data)
 # change the name so that you can keep the dt and replicate the function for delayed
 immediate_dt= dat
-
 # spellcheck
 spellfile= fread('updatedsnafuspelling.csv')
 schemefile= fread('updatedsnafuscheme.csv')
@@ -216,4 +226,8 @@ dat[, sum(perseverations)]
 dat[, sum(perseverations), by= .(prolific_id, condition, age, listnum)]
 
 dat[prolific_id %in% p_idx[i]$prolific_id & items %in% p_idx[i]$items]
+
+# Code in case you need to check on 
+# k= dat[condition== "Delayed", times, by= .(prolific_id, listnum)]
+# k[listnum==2, mean(times),by= prolific_id]$V1- k[listnum==1,mean(times),by= prolific_id]$V1
 
