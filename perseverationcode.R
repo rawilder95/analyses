@@ -33,11 +33,8 @@ ggsave('perseverationsbargraph.png', device= 'png', dpi= 300)
 # *perseveration* = col identifier in dat data.table
 # perseverations= dat
 fwrite(perseverations, 'with_perseverations.csv')
-
-
 # Check that the issue with rows shifting hasn't happened again
   # print(dat[, unique(condition), prolific_id])
-
 # ezANOVA code here
 # stop here
   
