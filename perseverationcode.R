@@ -25,7 +25,7 @@ toplot2= dat[listnum==2, mean(perseveration), by= .(listnum,condition, age)]
 p1= ggplot(data= toplot1, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 1")+ theme_classic()
 p2= ggplot(data= toplot2, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 2")+theme_classic()
 cowplot::plot_grid(p1,p2)
-ggsave('perseverationsbargraph.png', device= 'png', dpi= 300)
+ggsave('figures/perseverationsbargraph.png', device= 'png', dpi= 300)
 # Write data file with perseverations
 # create a variable for perseverations to keep everything compartmentalized
 # which items were said more than once on any particular trial?

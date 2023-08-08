@@ -51,7 +51,7 @@ p1= ggplot(data= toplot1, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),sta
 toplot2= rl_anova[listnum==2, mean(N), by= .(condition, age)]
 p2= ggplot(data= toplot2, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 2", subtitle= "F(1,176)= 41.66, p<0.001***, F(1,176)= 4.17786802, p= 0.042*")
 cowplot::plot_grid(p1,p2)
-ggsave('responselengthbargraph.png', device= 'png', dpi= 300)
+ggsave('figures/responselengthbargraph.png', device= 'png', dpi= 300)
 ### Repetitions ###
 # Use indexing method for perseverations but don't collapse across listnum (trial number).  Perseverations should all be masked out (i.e. check by nrow(dat[perseveration== 1])>0).
 # Index counts for all items by participant.  Include listnum here to make it indexable
@@ -70,6 +70,6 @@ r_anova_results =ezANOVA(r_anova, between=c("age","condition"), dv=V1, wid=proli
 # plot bargraph
 toplot= dat[listnum==2, mean(repeated), by= .(age, condition)]
 ggplot(data= toplot, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= "Age", y= "Proportion Repeated Words", fill= "Condition", title= "Proportion of Trial 2 Responses Repeated")+ theme_classic()
-
+ggsave('figures/repetitionsbargraph.png', device= 'png', dpi= 300)
 
 
