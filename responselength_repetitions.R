@@ -42,15 +42,34 @@ rl_anova[, length(unique(condition)), by= .(prolific_id, condition, age)][!V1==1
 # how many observations per condition
 # Plot results as a bargraph
 # create a new data table for the plot
-
 # Use these values to write the input for the labels manually
 rl_anova_results$ANOVA$p[rl_anova_results$ANOVA$p<0.05]
 rl_anova_results$ANOVA$F[rl_anova_results$ANOVA$p<0.05]
 rl_anova_results$ANOVA$Effect[rl_anova_results$ANOVA$p<0.05]
-
 toplot1= rl_anova[listnum==1, mean(N), by= .(condition, age)]
-p1= ggplot(data= toplot1, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 1")
+p1= ggplot(data= toplot1, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 1", subtitle= "Significant effects: Age ***, Age-Condition Interaction *")
 toplot2= rl_anova[listnum==2, mean(N), by= .(condition, age)]
-p2= ggplot(data= toplot2, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 2") + geom_text(label= "Significant Effects:", size=2, family= "Arial", aes(x= 1.5, y= 30))+ geom_text(label= "                   -Age", size=2, family= "Arial", aes(x= 1.5, y= 27))+ geom_text(label= "                   -Age by Delay Interaction", size=2, family= "Arial", aes(x= 1.5, y= 27))
+p2= ggplot(data= toplot2, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 2", subtitle= "F(1,176)= 41.66, p<0.001***, F(1,176)= 4.17786802, p= 0.042*")
 cowplot::plot_grid(p1,p2)
+ggsave('responselengthbargraph.png', device= 'png', dpi= 300)
+### Repetitions ###
+# Use indexing method for perseverations but don't collapse across listnum (trial number).  Perseverations should all be masked out (i.e. check by nrow(dat[perseveration== 1])>0).
+# Index counts for all items by participant.  Include listnum here to make it indexable
+dat[, word_counts:=.N, by= .(prolific_id,items)]
+dat[, repeated:=0]
+
+# Only count trial 2 for repetitions
+dat[word_counts>1 & listnum==2, repeated:=1]
+# Input significant values from r_anova_results$ANOVA$[col identifier]
+r_anova= dat[, mean(repeated), by= .(prolific_id, condition, age)]
+# To avoid warnings, set these columns to be factors
+r_anova[, prolific_id:= as.factor(prolific_id)]
+r_anova[, condition:= as.factor(condition)]
+r_anova[, age:= as.factor(age)]
+r_anova_results =ezANOVA(r_anova, between=c("age","condition"), dv=V1, wid=prolific_id)
+# plot bargraph
+toplot= dat[listnum==2, mean(repeated), by= .(age, condition)]
+ggplot(data= toplot, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= "Age", y= "Proportion Repeated Words", fill= "Condition", title= "Proportion of Trial 2 Responses Repeated")+ theme_classic()
+
+
 
