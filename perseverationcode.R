@@ -29,12 +29,15 @@ ggsave('perseverationsbargraph.png', device= 'png', dpi= 300)
 # Write data file with perseverations
 # create a variable for perseverations to keep everything compartmentalized
 # which items were said more than once on any particular trial?
-# *perseverations* = data.table
 # *perseveration* = col identifier in dat data.table
-# perseverations= dat
-fwrite(perseverations, 'with_perseverations.csv')
+fwrite(dat, 'with_perseverations.csv')
+
+# Create data table without perseverations to write out for subsequent analyses. Itemnum preserves ordinal position
+fluency_noerror= dat[perseveration==0]
+# fwrite(fluency_noerror, 'fluency_noerror.csv')
+
 # Check that the issue with rows shifting hasn't happened again
-  # print(dat[, unique(condition), prolific_id])
+# print(dat[, unique(condition), prolific_id])
 # ezANOVA code here
 # stop here
   
