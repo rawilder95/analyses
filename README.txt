@@ -12,7 +12,8 @@ Brief description of what the project does.
 - [Acknowledgments](#acknowledgments)
 - [Contact](#contact)
 
-
+## Note: If you are running this script for the first time or changes have been made to the datafile, 
+## run/re-run all of the scripts in order to ensure that each file being used is updated as well.
 ## Instructions
 - Delayed Condition raw data: results_immediate.txt
 # cleaned using clean_delayedcondition.R
