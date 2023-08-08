@@ -36,12 +36,9 @@ dat[condition== "Delayed" & listnum==2, listnum:= 3]
 dat[condition== "Delayed" & listnum==1, listnum:= 2]
 dat[condition== "Delayed" & listnum==3, listnum:= 1]
 dat[, unique(condition), by= .(prolific_id)]
-
-
 ###IMPORTANT: THIS LINE OF CODE CHECKS FOR THE MERGE ROW SHIFT ISSUE ###
 #Rows can sometimes be duplicated for certain col identifiers with various dt functions
 # dat[, unique(condition), by= prolific_id]
-
 # fluency_data[prolific_id, (times-starttime)/1000]
 ### READ IN SNAFU ###
 schemefile= fread('updatedsnafuscheme.csv')
@@ -52,18 +49,15 @@ spellfile= fread('updatedsnafuspelling.csv')
 # set all words to be lowercase
 # combine and write out table. Comment out, but now you have something reproducible.
 # get rid of plural words 
-
 # Uncomment to singularize- but this takes a long time
 # for(i in 1:nrow(dat)){
 #   dat[i, items:= singularize(items)]
 # }
 # dat[, unique(condition), by= .(prolific_id)]
-
 # Index errors that are in spellfile
 # find participants that were not hitting return after each response
 # 391 errors pre spellfile
 # replace misspelled items with correct spelling
-
 # this might have been the error.  There was a line that overwrote dat.
 # dat= fread('combinedfluency.csv')
 # (stillerror= dat[!(items %in% schemefile$word) & !(items %in% spellfile$incorrect), items])
@@ -108,17 +102,33 @@ dat[!items %in% schemefile$word,items]
 # Should show two NaNs and nothing else
 # From here on use combined fluency, this is the cleaned code that excludes spelling errors and corrects pluralities, whitespace, but not perseverative errors. 
 #add age 
-dat[, age:= "Young"]
+dat[ageText<=25, age:= "Young"]
 dat[ageText>= 60, age:= "Old"]
 dat[, mean(ageText), by= age]
+# Her age text was mistakenly entered as 52 instead of 62 for trial 1 and 62 on trial 2
+# Two other participants with age typos
+dat[prolific_id== "640cf44e8bf4e101d82a76a1", ageText:= 62]
+dat[prolific_id== "640cf44e8bf4e101d82a76a1", age:= "Old"]
+bad_ids_age= dat[, is.na(unique(age)), by= .(prolific_id, condition)][V1== "TRUE"]$prolific_id
+dat[prolific_id %in% bad_ids_age & ageText== 28, age:= "Young"]
+dat[prolific_id %in% bad_ids_age & ageText== 59, age:= "Old"]
+# recalculate bad_ids_age to isolate last person who is 36 and not close enough to either age group
+(bad_ids_age= dat[, is.na(unique(age)), by= .(prolific_id, condition)][V1== "TRUE"]$prolific_id)
+# exclude participant from data.table
+dat[!prolific_id %in% bad_ids_age]
+
 # I forgot to add back in the age text earlier, so I'm writing it in here.  It's now in the datafile so this line can stay uncommented.  I'm trying to rewrite the file as few times as possible to avoid some of the issues we've been seeing with the datafile.
 # get all delayed condition participants that only did one trial
 j= dat[condition== "Delayed" & listnum== 1, unique(prolific_id)]
 k= dat[condition== "Delayed" & listnum== 2, unique(prolific_id)]
 # Get rid of that participant
 dat= dat[!prolific_id %in% j[!j %in% k],]
-dat[!prolific_id== "5c17a9fbfeaf2c0001c4b19a"]
+dat= dat[!prolific_id== "5c17a9fbfeaf2c0001c4b19a"]
 fwrite(dat, 'combinedfluency.csv')
 # person with NaN input mask out (Jeff instructions from lab meeting)
 # dat[, unique(condition), by= .(prolific_id)]
+dat=fread('combinedfluency.csv')
+# This works now 
+# But you need to run perseverationcode.R now to update the datafile that script generates
+dat[prolific_id== "640cf44e8bf4e101d82a76a1"]
 

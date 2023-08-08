@@ -32,21 +32,18 @@ ggsave('perseverationsbargraph.png', device= 'png', dpi= 300)
 # *perseveration* = col identifier in dat data.table
 # Create data table without perseverations to write out for subsequent analyses. Itemnum preserves ordinal position
 fluency_noerror= dat[perseveration==0]
-# fwrite(fluency_noerror, 'fluency_noerror.csv')
-
+fwrite(fluency_noerror, 'fluency_noerror.csv')
 # Check that the issue with rows shifting hasn't happened again
 # print(dat[, unique(condition), prolific_id])
 # ezANOVA code here
 # stop here
-  
-
-
-
-
-
-
-
-
+# Back up in case perseveration data gets messed up 
+# withperseverations= fread('with_perseverations.csv')
+# dat= withperseverations
+# rewrite file for perseveration data.table
+# fwrite(dat, 'combinedfluency.csv')
+# Everything with this problematic subject dat[prolific_id== "640cf44e8bf4e101d82a76a1"] looks fine here
+# For some reason at some point some line of code causes the age identifiers to say "Young" because they had the typo of writing 52 for age
 
 
 
