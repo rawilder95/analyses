@@ -12,11 +12,6 @@ dat= fread('fluency_noerror.csv')
 # Preallocate data table for response length anova
 # factor along id, condition, age, and trial number
 
-
-
-
-
-
 rl_anova= dat[, .N, by= .(prolific_id, condition, age, listnum)]
 # To avoid warnings, set these columns to be factors
 rl_anova[, prolific_id:= as.factor(prolific_id)]
@@ -53,9 +48,9 @@ rl_anova_results$ANOVA$p[rl_anova_results$ANOVA$p<0.05]
 rl_anova_results$ANOVA$F[rl_anova_results$ANOVA$p<0.05]
 rl_anova_results$ANOVA$Effect[rl_anova_results$ANOVA$p<0.05]
 toplot1= rl_anova[listnum==1, mean(N), by= .(condition, age)]
-p1= ggplot(data= toplot1, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 1", subtitle= "Significant effects: Age ***, Age-Condition Interaction *")
+p1= ggplot(data= toplot1, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 1", subtitle= "Significant effects: Age ***, Age-Condition Interaction *")+ ylim(0,40)
 toplot2= rl_anova[listnum==2, mean(N), by= .(condition, age)]
-p2= ggplot(data= toplot2, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 2", subtitle= "F(1,176)= 41.66, p<0.001***, F(1,176)= 4.17786802, p= 0.042*")
+p2= ggplot(data= toplot2, aes(x= age, y= V1))+ geom_bar(aes(fill= condition),stat= 'identity', position= 'dodge')+ theme_classic() + labs(x= "Age", y= "Response Length", fill= "Condition", title= "Mean Response Length: Trial 2", subtitle= "F(1,176)= 41.66, p<0.001***, F(1,176)= 4.17786802, p= 0.042*")+ ylim(0,40)
 cowplot::plot_grid(p1,p2)
 ggsave('figures/responselengthbargraph.png', device= 'png', dpi= 300)
 ### Repetitions ###
@@ -75,7 +70,7 @@ r_anova[, age:= as.factor(age)]
 r_anova_results =ezANOVA(r_anova, between=c("age","condition"), dv=V1, wid=prolific_id)
 # plot bargraph
 toplot= dat[listnum==2, mean(repeated), by= .(age, condition)]
-ggplot(data= toplot, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= "Age", y= "Proportion Repeated Words", fill= "Condition", title= "Proportion of Trial 2 Responses Repeated")+ theme_classic()
+ggplot(data= toplot, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= "Age", y= "Proportion Repeated Words", fill= "Condition", title= "Proportion of Responses Repeated", subtitle= "Trial 2 Only")+ theme_classic()
 ggsave('figures/repetitionsbargraph.png', device= 'png', dpi= 300)
 
 
