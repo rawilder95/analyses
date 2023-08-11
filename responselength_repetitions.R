@@ -11,6 +11,12 @@ dat= fread('fluency_noerror.csv')
 ### Response Length ###
 # Preallocate data table for response length anova
 # factor along id, condition, age, and trial number
+
+
+
+
+
+
 rl_anova= dat[, .N, by= .(prolific_id, condition, age, listnum)]
 # To avoid warnings, set these columns to be factors
 rl_anova[, prolific_id:= as.factor(prolific_id)]
