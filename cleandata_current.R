@@ -19,7 +19,7 @@ immediate_dt= fread('immediatefluency_merged.csv')
 delay_dt= fread('delayedfluency_merged.csv')
 # To address issue where delay_dt has 'immediate col identifier'.
 # delay_dt= subset(delay_dt, select= -c(condition))
-# delay_dt[, condition:= "Delayed"]
+delay_dt[, condition:= "Delayed"]
 rbind(immediate_dt, delay_dt)
 dat= rbind(immediate_dt, delay_dt)
 # Double check to make sure that nobody has two different conditions
@@ -35,7 +35,7 @@ dat= subset(dat, select = -c(gamenum))
 dat[condition== "Delayed" & listnum==2, listnum:= 3]
 dat[condition== "Delayed" & listnum==1, listnum:= 2]
 dat[condition== "Delayed" & listnum==3, listnum:= 1]
-dat[, unique(condition), by= .(prolific_id)]
+# dat[, unique(condition), by= .(prolific_id)]
 ###IMPORTANT: THIS LINE OF CODE CHECKS FOR THE MERGE ROW SHIFT ISSUE ###
 #Rows can sometimes be duplicated for certain col identifiers with various dt functions
 # dat[, unique(condition), by= prolific_id]
@@ -131,4 +131,10 @@ dat=fread('combinedfluency.csv')
 # This works now 
 # But you need to run perseverationcode.R now to update the datafile that script generates
 dat[prolific_id== "640cf44e8bf4e101d82a76a1"]
+
+
+
+
+
+
 

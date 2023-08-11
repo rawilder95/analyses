@@ -22,8 +22,8 @@ dat[perseveration== 1 & itemnum== min(itemnum), perseveration:=0, by= .(prolific
 #Bar graph for perseveration rate
 toplot1= dat[listnum==1, mean(perseveration), by= .(listnum,condition, age)]
 toplot2= dat[listnum==2, mean(perseveration), by= .(listnum,condition, age)]
-p1= ggplot(data= toplot1, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 1")+ theme_classic()
-p2= ggplot(data= toplot2, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 2")+theme_classic()
+p1= ggplot(data= toplot1, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 1")+ theme_classic()+ylim(0,0.1)
+p2= ggplot(data= toplot2, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= 'identity', position= 'dodge')+ labs(x= 'Age', y= 'Perseveration Rate', fill= "Condition", title= "Perseverative Errors Trial 2")+theme_classic()+ylim(0,0.1)
 cowplot::plot_grid(p1,p2)
 ggsave('figures/perseverationsbargraph.png', device= 'png', dpi= 300)
 # Write data file with perseverations
@@ -31,6 +31,15 @@ ggsave('figures/perseverationsbargraph.png', device= 'png', dpi= 300)
 # which items were said more than once on any particular trial?
 # *perseveration* = col identifier in dat data.table
 # Create data table without perseverations to write out for subsequent analyses. Itemnum preserves ordinal position
+
+# Check to see if Delayed listnum 2 times are actually from listnum 1
+# If that's the case than it should be negative
+
+
+
+
+
+
 fluency_noerror= dat[perseveration==0]
 fwrite(fluency_noerror, 'fluency_noerror.csv')
 # Check that the issue with rows shifting hasn't happened again
