@@ -1,4 +1,3 @@
-options(scipen = 999)
 rm(list= ls())
 library(data.table)
 library(ggplot2)

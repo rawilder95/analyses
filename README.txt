@@ -3,14 +3,6 @@
 Brief description of what the project does.
 
 ## Table of Contents
-- [Instructions](#instructions)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [Testing](#testing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
 
 ## Note: If you are running this script for the first time or changes have been made to the datafile, 
 ## run/re-run all of the scripts in order to ensure that each file being used is updated as well.
@@ -34,13 +26,16 @@ Brief description of what the project does.
 #the following variables are added to the main data.table in this script
 -"word_counts": How many times was this word listed by this participant in this trial?  - "perseveration": Is this response perseveration? Calculated by indexing all instances where an item was repeated by the same participant, within a trial and excluding the first instance where it was listed.
 
-
+## Configuration
+- for script cleandata_current.R use 'immediatefluency_merged.csv' and 'delayedfluency_merged.csv'
+- for script perseverationcode.R use 'combined fluency.csv'
+- for script responselength_repetitions.R use 'fluency_noerror.csv'
+- for script custeranalysis.R use 'fluencynoerror.csv' (i.e. semantic fluency no spelling or perseveration errors) and 'clusterswitches.csv'
 
 ## Usage
-- 
 
-## Configuration
-[how to customize project]
+
+
 
 ## Contributing
 (Optional) Guidelines for contributing to the project, submitting pull requests, and the issue tracking process.
