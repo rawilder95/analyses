@@ -131,7 +131,8 @@ dat=fread('combinedfluency.csv')
 # This works now 
 # But you need to run perseverationcode.R now to update the datafile that script generates
 dat[prolific_id== "640cf44e8bf4e101d82a76a1"]
-
+### OPTIONAL ADD MANUALLY TO DIRECTORY ###
+# figures folder: Referenced in future scripts and good to add.  Or adjust code to not use the separate figures folder when writing figures.
 
 
 

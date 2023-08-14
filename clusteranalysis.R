@@ -51,6 +51,31 @@ delayedoldl2= subset(delayedoldl2, select= c(prolific_id, items))
 # Read in cluster csv's 
 ### Delayed Condition ###
 # Delayed-Old-List 1
-clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_switch_results.csv
-
+# Cluster switches
+d1= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+d1[, result:= "switch"]
+# Model fit
+nll= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_nll_results.csv"
+)
+# Set up col identifier for which part of the cluster results
+nll[, result:= "model_fit"]
+# Make data table to store all values in by factor 
+delayold1= rbind(d1, nll, fill= TRUE)
+# Model results
+model_results= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+# Add to main delay old data table
+delayold1= rbind(delayold1, model_results, fill= TRUE)
+# Add listnum as a value because you're going to combine data tables by trial
+delayold1[, listnum:= 1]
+# Save yourself some time later and start adding back in the factors for the ANOVA
+delayold1[, age:= as.factor("Old")]
+## Repeat for each set of csv files 
+### Immediate-Old-List 1 ###
+i1= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+nll= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
+model_results= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+immediateold1= rbind(i1, nll, model_results, fill= TRUE)
+immediateold1[, listnum:= 1]
+immediateold1[, age:= as.factor("Old")]
+immediateold1[, condition:= as.factor("Immediate")]
 
