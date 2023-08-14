@@ -19,6 +19,9 @@ write.table(immediateyoungl1, file = "clusteranalysis_immediateyounglist1.txt", 
 immediateyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
 immediateyoungl2= subset(immediateyoungl2, select= c(prolific_id, items))
 write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)
+
+# This section prepares a data table for a .txt file to be passed through the cluster analysis tool
+# The tool returns a table with switch values (beginning of a cluster, continuation of a cluster, and cluster switches)
 # immediate-old-list1
 immediateoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 immediateoldl1= subset(immediateoldl1, select= c(prolific_id, items))
@@ -43,6 +46,11 @@ write.table(immediateoldl1, file = "clusteranalysis_delayoldlist1.txt", sep = "\
 # delayed-old-list2
 delayedoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
 delayedoldl2= subset(delayedoldl2, select= c(prolific_id, items))
-write.table(immediateoldl2, file = "clusteranalysis_delayoldlist2.txt", sep = "\t", row.names = FALSE)
+# Uncomment if you need to use the SF cluster analysis tool
+# write.table(immediateoldl2, file = "clusteranalysis_delayoldlist2.txt", sep = "\t", row.names = FALSE)
+# Read in cluster csv's 
+### Delayed Condition ###
+# Delayed-Old-List 1
+clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_switch_results.csv
 
 
