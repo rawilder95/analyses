@@ -47,7 +47,11 @@ Brief description of what the project does.
 Clearly state the project's license.
 
 ## Acknowledgments
-(Optional) Give credit to those whose work your project builds upon.
+- Kumar, A.A., Apsel, M., Zhang, L., Xing, N., Jones. M.N. (2023). forager: A Python package and web interface for modeling mental search.
+
+- Kumar, A.A., Lundin, N. B., Jones, M.N. (2022). Mouse-mole-vole: The inconspicuous benefits of phonology during retrieval from semantic memory. In Proceedings of the 44th Annual Meeting of the Cognitive Science Society.
+
+-Hills, T. T., Jones, M. N., & Todd, P. M. (2012). Optimal foraging in semantic memory. Psychological Review, 119(2), 431.
 
 ## Contact
 (Optional) Provide contact information for users or developers to reach out for questions or feedback.

@@ -10,11 +10,19 @@ dat= fread('fluency_noerror.csv')
 # arrange a new data table that just preallocates prolific_id and items to textfile
 tooutput_all= dat[, items, by= .(prolific_id, listnum, age, condition)]
 # you need to upload each col identifier separately, since the software can only take subj id and words for columns
+# use the file_idx variable to evaluate whether you need to write a new textfile
+file_idx= list.files()
+check_idx= c("clusteranalysis_delayoldlist1.txt", "clusteranalysis_immediateoldlist1.txt", "clusteranalysis_delayoldlist2.txt", "clusteranalysis_immediateoldlist2.txt")
+# If there are not any instances where check_idx matches file_idx, run this next section of code
+if(!any(file_idx %in% check_idx)){
+}
+
 #Immediate Condition
 # immediate-young-list1
 immediateyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
 immediateyoungl1= subset(immediateyoungl1, select= c(prolific_id, items))
-write.table(immediateyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
+#Uncomment to write textfile
+# write.table(immediateyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
 # immediate-young-list2
 immediateyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
 immediateyoungl2= subset(immediateyoungl2, select= c(prolific_id, items))
@@ -69,13 +77,22 @@ delayold1= rbind(delayold1, model_results, fill= TRUE)
 delayold1[, listnum:= 1]
 # Save yourself some time later and start adding back in the factors for the ANOVA
 delayold1[, age:= as.factor("Old")]
+delayold1[, condition:= as.factor("Immediate")]
+delayold1[, method:= "simdrop"]
+delayold1[, model:= "dynamic"]
 ## Repeat for each set of csv files 
 ### Immediate-Old-List 1 ###
-i1= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+i1= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+i1[, result:= "switch"]
 nll= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
 model_results= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
 immediateold1= rbind(i1, nll, model_results, fill= TRUE)
 immediateold1[, listnum:= 1]
 immediateold1[, age:= as.factor("Old")]
 immediateold1[, condition:= as.factor("Immediate")]
+immediateold1[, model:= "dynamic"]
+immediateold1[, method:= "simdrop"]
+### OLD LIST 1 ####
+# Bind immediate and delayed old 1
+oldl1= rbind(immediateold1, delayold1)
 
