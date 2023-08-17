@@ -33,24 +33,24 @@ write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", 
 # immediate-old-list1
 immediateoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 immediateoldl1= subset(immediateoldl1, select= c(prolific_id, items))
-write.table(immediateoldl1, file = "clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
+# write.table(immediateoldl1, file = "clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
 # immediate-old-list2
 immediateoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
 immediateoldl2= subset(immediateoldl2, select= c(prolific_id, items))
-write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
+# write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
 # Delayed Condition
 # delayed-young-list1
 delayedyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
 delayedyoungl1= subset(delayedyoungl1, select= c(prolific_id, items))
-write.table(delayedyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
+# write.table(delayedyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
 # delayed-young-list2
 delayedyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
 delayedyoungl2= subset(delayedyoungl2, select= c(prolific_id, items))
-write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)
+# write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)
 # delayed-old-list1
 delayedoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 delayedoldl1= subset(delayedoldl1, select= c(prolific_id, items))
-write.table(immediateoldl1, file = "clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
+# write.table(immediateoldl1, file = "clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
 # delayed-old-list2
 delayedoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
 delayedoldl2= subset(delayedoldl2, select= c(prolific_id, items))
