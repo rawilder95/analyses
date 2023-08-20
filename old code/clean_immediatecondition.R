@@ -74,6 +74,7 @@ fluency_data[, rt:= rt/1000]
 fluency_data
 fluency_data[, sum(rt), by= gamenum]
 dist_data = dist_data[!(is.na(jatos_id)),]
+### Write all temporary files out to the child directory "temp_files" ###
 fwrite(fluency_data, "temp_files/immediate_fluency.csv")
 fwrite(demo_data, "temp_files/immediate_demographics.csv")
 fwrite(dist_data, "temp_files/immediate_distractor.csv")

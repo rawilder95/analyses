@@ -66,13 +66,15 @@ fluency_data= subset(fluency_data, select= -c(game_order))
 # double check that each participant did both trials
 # Fix javascript code error
 demo_data[, condition:= "Delayed"]
-fwrite(fluency_data, "delayed_fluency.csv")
-fwrite(demo_data, "delayed_demographics.csv")
+
+### Write all temporary files out to the child directory "temp_files" ###
+fwrite(fluency_data, "temp_files/delayed_fluency.csv")
+fwrite(demo_data, "temp_files/delayed_demographics.csv")
 j= merge(fluency_data, demo_data)
 # Fix javascript error for fluency 
 fluency_data[, condition:= "Delayed"]
-fwrite(j, "delayedfluency_merged.csv")
-k=fread('delayedfluency_merged.csv')
+fwrite(j, "temp_files/delayedfluency_merged.csv")
+k=fread('temp_files/delayedfluency_merged.csv')
 
 
 

@@ -31,16 +31,10 @@ ggsave('figures/perseverationsbargraph.png', device= 'png', dpi= 300)
 # which items were said more than once on any particular trial?
 # *perseveration* = col identifier in dat data.table
 # Create data table without perseverations to write out for subsequent analyses. Itemnum preserves ordinal position
-
 # Check to see if Delayed listnum 2 times are actually from listnum 1
 # If that's the case than it should be negative
-
-
-
-
-
-
 fluency_noerror= dat[perseveration==0]
+# No need to write this to temp folder because this is going to be the main file moving forward
 fwrite(fluency_noerror, 'fluency_noerror.csv')
 # Check that the issue with rows shifting hasn't happened again
 # print(dat[, unique(condition), prolific_id])

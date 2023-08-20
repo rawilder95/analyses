@@ -16,7 +16,7 @@ immediate_dt= fread('temp_files/immediatefluency_merged.csv')
 ### DELAYED ###
 # reset data table and other variables used
 # This is an older version of the delayed code that works
-delay_dt= fread('delayedfluency_merged.csv')
+delay_dt= fread('temp_files/delayedfluency_merged.csv')
 # To address issue where delay_dt has 'immediate col identifier'.
 # delay_dt= subset(delay_dt, select= -c(condition))
 delay_dt[, condition:= "Delayed"]
@@ -116,7 +116,6 @@ dat[prolific_id %in% bad_ids_age & ageText== 59, age:= "Old"]
 (bad_ids_age= dat[, is.na(unique(age)), by= .(prolific_id, condition)][V1== "TRUE"]$prolific_id)
 # exclude participant from data.table
 dat[!prolific_id %in% bad_ids_age]
-
 # I forgot to add back in the age text earlier, so I'm writing it in here.  It's now in the datafile so this line can stay uncommented.  I'm trying to rewrite the file as few times as possible to avoid some of the issues we've been seeing with the datafile.
 # get all delayed condition participants that only did one trial
 j= dat[condition== "Delayed" & listnum== 1, unique(prolific_id)]
@@ -124,13 +123,14 @@ k= dat[condition== "Delayed" & listnum== 2, unique(prolific_id)]
 # Get rid of that participant
 dat= dat[!prolific_id %in% j[!j %in% k],]
 dat= dat[!prolific_id== "5c17a9fbfeaf2c0001c4b19a"]
-fwrite(dat, 'combinedfluency.csv')
+fwrite(dat, 'temp_files/combinedfluency.csv')
 # person with NaN input mask out (Jeff instructions from lab meeting)
 # dat[, unique(condition), by= .(prolific_id)]
-dat=fread('combinedfluency.csv')
+dat=fread('temp_files/combinedfluency.csv')
 # This works now 
 # But you need to run perseverationcode.R now to update the datafile that script generates
-dat[prolific_id== "640cf44e8bf4e101d82a76a1"]
+# spotcheck subj ID that had error with doubling conditions (looks good here)
+# dat[prolific_id== "640cf44e8bf4e101d82a76a1"]
 ### OPTIONAL ADD MANUALLY TO DIRECTORY ###
 # figures folder: Referenced in future scripts and good to add.  Or adjust code to not use the separate figures folder when writing figures.
 
