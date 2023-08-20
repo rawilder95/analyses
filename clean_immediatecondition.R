@@ -74,12 +74,12 @@ fluency_data[, rt:= rt/1000]
 fluency_data
 fluency_data[, sum(rt), by= gamenum]
 dist_data = dist_data[!(is.na(jatos_id)),]
-fwrite(fluency_data, "immediate_fluency.csv")
-fwrite(demo_data, "immediate_demographics.csv")
-fwrite(dist_data, "immediate_distractor.csv")
+fwrite(fluency_data, "temp_files/immediate_fluency.csv")
+fwrite(demo_data, "temp_files/immediate_demographics.csv")
+fwrite(dist_data, "temp_files/immediate_distractor.csv")
 dist_data[, equations:= as.character(equations)]
 j= merge(fluency_data, demo_data)
-fwrite(j, "immediatefluency_merged.csv")
+fwrite(j, "temp_files/immediatefluency_merged.csv")
 
 
 

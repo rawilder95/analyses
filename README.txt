@@ -7,7 +7,7 @@ Brief description of what the project does.
 ## Note: If you are running this script for the first time or changes have been made to the datafile, 
 ## run/re-run all of the scripts in order to ensure that each file being used is updated as well.
 ## Instructions
-- Delayed Condition raw data: results_immediate.txt
+- Delayed Condition raw data: results_delayed.txt
 # cleaned using clean_delayedcondition.R
 - "jatos_id": Identifier provided by JATOS, works in place of prolific_id     - "prolific_id": Identifier provided by prolific website (participant recruitment). Is used as subject ID but can be swapped out with jatos_id. - "condition": Identifier for whether the participant completed the immediate or delayed condition    
 - "itemnum": Ordinal position of responses per trial      - "items": Responses for repeated fluency        - "times": Unix timestamp        - "firsttime": Response time between first key press and response submission    - "category": Semantic fluency category completed for given trial.     - "starttime": Time the trial started.  Used to calculate response times from "times".- "shortlist": Did participants list 5 words or less? If so, exclude them from analysis.    - "rt": Response times.           - "gender": Participant demographics       - "genderText": Participant demographics   - "ageText": Participant demographics        - "didYouTry": Participant demographics    - "understand": Participant demographics   - "comments": Participant demographics        - "listnum"/"gamenum": Col identifier for trial 1 versus trial 2. Original JSON file uses column identifier gamenum which is relabeled to "listnum" in initial cleaning script.        - "age": Participant demographics              

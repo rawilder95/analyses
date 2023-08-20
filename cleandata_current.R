@@ -12,7 +12,7 @@ setwd('~/Downloads/jatos_mac_java/analyses') # JCZ
 # get id for copied over prolific_id
 # bad_id <- "951b39f1338dd2a61f0cf72a"
 ### IMMEDIATE ###
-immediate_dt= fread('immediatefluency_merged.csv')
+immediate_dt= fread('temp_files/immediatefluency_merged.csv')
 ### DELAYED ###
 # reset data table and other variables used
 # This is an older version of the delayed code that works

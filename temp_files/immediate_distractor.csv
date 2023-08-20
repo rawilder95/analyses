@@ -1,0 +1,855 @@
+jatos_id,prolific_id,itemnum,equations,responses,condition
+449,61079a83c6af47f112977a97,1,(2 / 1) + (6 / 2),5,Immediate
+449,61079a83c6af47f112977a97,2,(20 / 5) + (28 / 7),8,Immediate
+449,61079a83c6af47f112977a97,3,(8 / 2) - (6 / 3),2,Immediate
+449,61079a83c6af47f112977a97,4,(30/10) + (60/20),6,Immediate
+449,61079a83c6af47f112977a97,5,(16/4) + (8/2),8,Immediate
+449,61079a83c6af47f112977a97,6,(12 / 4) + (4 / 4),4,Immediate
+449,61079a83c6af47f112977a97,7,(4 / 1) - (9 / 3),1,Immediate
+449,61079a83c6af47f112977a97,8,(12 / 2) + (12 / 6),8,Immediate
+449,61079a83c6af47f112977a97,9,(6 / 3) + (9 / 3),5,Immediate
+449,61079a83c6af47f112977a97,10,(4 / 4) + (4 / 2),3,Immediate
+449,61079a83c6af47f112977a97,11,(6 / 1) - (5 / 1),1,Immediate
+449,61079a83c6af47f112977a97,12,(8 / 2) - (2 / 2),3,Immediate
+448,600692691bca77a0deb8d927,1,(2 / 1) + (6 / 2),5,Immediate
+448,600692691bca77a0deb8d927,2,(20 / 5) + (28 / 7),7,Immediate
+448,600692691bca77a0deb8d927,3,(8 / 2) - (6 / 3),2,Immediate
+448,600692691bca77a0deb8d927,4,(30/10) + (60/20),6,Immediate
+448,600692691bca77a0deb8d927,5,(16/4) + (8/2),8,Immediate
+448,600692691bca77a0deb8d927,6,(12 / 4) + (4 / 4),4,Immediate
+448,600692691bca77a0deb8d927,7,(4 / 1) - (9 / 3),1,Immediate
+448,600692691bca77a0deb8d927,8,(12 / 2) + (12 / 6),8,Immediate
+448,600692691bca77a0deb8d927,9,(6 / 3) + (9 / 3),5,Immediate
+448,600692691bca77a0deb8d927,10,(4 / 4) + (4 / 2),3,Immediate
+448,600692691bca77a0deb8d927,11,(6 / 1) - (5 / 1),1,Immediate
+448,600692691bca77a0deb8d927,12,(8 / 2) - (2 / 2),3,Immediate
+448,600692691bca77a0deb8d927,13,(12 / 3) - (6 / 3),2,Immediate
+448,600692691bca77a0deb8d927,14,(16 / 4) - (8 / 4),2,Immediate
+447,61004bf77aff9a6e73bcca30,1,(2 / 1) + (6 / 2),4,Immediate
+447,61004bf77aff9a6e73bcca30,2,(20 / 5) + (28 / 7),8,Immediate
+447,61004bf77aff9a6e73bcca30,3,(8 / 2) - (6 / 3),2,Immediate
+445,5f15679513afe8025c820671,1,(2 / 1) + (6 / 2),5,Immediate
+445,5f15679513afe8025c820671,2,(20 / 5) + (28 / 7),8,Immediate
+445,5f15679513afe8025c820671,3,(8 / 2) - (6 / 3),6,Immediate
+445,5f15679513afe8025c820671,4,(30/10) + (60/20),6,Immediate
+445,5f15679513afe8025c820671,5,(16/4) + (8/2),8,Immediate
+445,5f15679513afe8025c820671,6,(12 / 4) + (4 / 4),4,Immediate
+445,5f15679513afe8025c820671,7,(4 / 1) - (9 / 3),7,Immediate
+445,5f15679513afe8025c820671,8,(12 / 2) + (12 / 6),8,Immediate
+445,5f15679513afe8025c820671,9,(6 / 3) + (9 / 3),5,Immediate
+445,5f15679513afe8025c820671,10,(4 / 4) + (4 / 2),3,Immediate
+445,5f15679513afe8025c820671,11,(6 / 1) - (5 / 1),9,Immediate
+444,64013a87deea9afecb68b755,1,(2 / 1) + (6 / 2),5,Immediate
+444,64013a87deea9afecb68b755,2,(20 / 5) + (28 / 7),8,Immediate
+444,64013a87deea9afecb68b755,3,(8 / 2) - (6 / 3),2,Immediate
+444,64013a87deea9afecb68b755,4,(30/10) + (60/20),6,Immediate
+444,64013a87deea9afecb68b755,5,(16/4) + (8/2),8,Immediate
+444,64013a87deea9afecb68b755,6,(12 / 4) + (4 / 4),4,Immediate
+444,64013a87deea9afecb68b755,7,(4 / 1) - (9 / 3),1,Immediate
+444,64013a87deea9afecb68b755,8,(12 / 2) + (12 / 6),8,Immediate
+444,64013a87deea9afecb68b755,9,(6 / 3) + (9 / 3),5,Immediate
+444,64013a87deea9afecb68b755,10,(4 / 4) + (4 / 2),3,Immediate
+444,64013a87deea9afecb68b755,11,(6 / 1) - (5 / 1),1,Immediate
+444,64013a87deea9afecb68b755,12,(8 / 2) - (2 / 2),3,Immediate
+444,64013a87deea9afecb68b755,13,(12 / 3) - (6 / 3),2,Immediate
+443,64626c991bcb3a8bbd2880d8,1,(2 / 1) + (6 / 2),5,Immediate
+443,64626c991bcb3a8bbd2880d8,2,(20 / 5) + (28 / 7),8,Immediate
+443,64626c991bcb3a8bbd2880d8,3,(8 / 2) - (6 / 3),2,Immediate
+443,64626c991bcb3a8bbd2880d8,4,(30/10) + (60/20),6,Immediate
+443,64626c991bcb3a8bbd2880d8,5,(16/4) + (8/2),6,Immediate
+443,64626c991bcb3a8bbd2880d8,6,(12 / 4) + (4 / 4),7,Immediate
+443,64626c991bcb3a8bbd2880d8,7,(4 / 1) - (9 / 3),1,Immediate
+443,64626c991bcb3a8bbd2880d8,8,(12 / 2) + (12 / 6),8,Immediate
+443,64626c991bcb3a8bbd2880d8,9,(6 / 3) + (9 / 3),5,Immediate
+443,64626c991bcb3a8bbd2880d8,10,(4 / 4) + (4 / 2),6,Immediate
+443,64626c991bcb3a8bbd2880d8,11,(6 / 1) - (5 / 1),1,Immediate
+443,64626c991bcb3a8bbd2880d8,12,(8 / 2) - (2 / 2),2,Immediate
+442,61080eaae202b0ef135056a5,1,(2 / 1) + (6 / 2),4,Immediate
+442,61080eaae202b0ef135056a5,2,(20 / 5) + (28 / 7),8,Immediate
+442,61080eaae202b0ef135056a5,3,(8 / 2) - (6 / 3),2,Immediate
+442,61080eaae202b0ef135056a5,4,(30/10) + (60/20),6,Immediate
+442,61080eaae202b0ef135056a5,5,(16/4) + (8/2),8,Immediate
+442,61080eaae202b0ef135056a5,6,(12 / 4) + (4 / 4),4,Immediate
+442,61080eaae202b0ef135056a5,7,(4 / 1) - (9 / 3),1,Immediate
+442,61080eaae202b0ef135056a5,8,(12 / 2) + (12 / 6),8,Immediate
+442,61080eaae202b0ef135056a5,9,(6 / 3) + (9 / 3),5,Immediate
+442,61080eaae202b0ef135056a5,10,(4 / 4) + (4 / 2),3,Immediate
+442,61080eaae202b0ef135056a5,11,(6 / 1) - (5 / 1),1,Immediate
+441,63d7e97b18c8503ff5be482c,1,(2 / 1) + (6 / 2),4,Immediate
+441,63d7e97b18c8503ff5be482c,2,(20 / 5) + (28 / 7),8,Immediate
+441,63d7e97b18c8503ff5be482c,3,(8 / 2) - (6 / 3),2,Immediate
+441,63d7e97b18c8503ff5be482c,4,(30/10) + (60/20),6,Immediate
+441,63d7e97b18c8503ff5be482c,5,(16/4) + (8/2),8,Immediate
+440,5f7f8c5995690d14b8e136bb,1,(2 / 1) + (6 / 2),4,Immediate
+440,5f7f8c5995690d14b8e136bb,2,(20 / 5) + (28 / 7),8,Immediate
+440,5f7f8c5995690d14b8e136bb,3,(8 / 2) - (6 / 3),6,Immediate
+439,612f152f7d455625729c73b7,1,(2 / 1) + (6 / 2),4,Immediate
+439,612f152f7d455625729c73b7,2,(20 / 5) + (28 / 7),8,Immediate
+439,612f152f7d455625729c73b7,3,(8 / 2) - (6 / 3),2,Immediate
+439,612f152f7d455625729c73b7,4,(30/10) + (60/20),6,Immediate
+439,612f152f7d455625729c73b7,5,(16/4) + (8/2),8,Immediate
+439,612f152f7d455625729c73b7,6,(12 / 4) + (4 / 4),4,Immediate
+439,612f152f7d455625729c73b7,7,(4 / 1) - (9 / 3),-2,Immediate
+439,612f152f7d455625729c73b7,8,(12 / 2) + (12 / 6),8,Immediate
+439,612f152f7d455625729c73b7,9,(6 / 3) + (9 / 3),5,Immediate
+439,612f152f7d455625729c73b7,10,(4 / 4) + (4 / 2),3,Immediate
+439,612f152f7d455625729c73b7,11,(6 / 1) - (5 / 1),0,Immediate
+439,612f152f7d455625729c73b7,12,(8 / 2) - (2 / 2),3,Immediate
+439,612f152f7d455625729c73b7,13,(12 / 3) - (6 / 3),2,Immediate
+439,612f152f7d455625729c73b7,14,(16 / 4) - (8 / 4),2,Immediate
+438,641e3e47556ffc12b0489d88,1,(2 / 1) + (6 / 2),5,Immediate
+438,641e3e47556ffc12b0489d88,2,(20 / 5) + (28 / 7),39,Immediate
+438,641e3e47556ffc12b0489d88,3,(8 / 2) - (6 / 3),2,Immediate
+438,641e3e47556ffc12b0489d88,4,(30/10) + (60/20),6,Immediate
+438,641e3e47556ffc12b0489d88,5,(16/4) + (8/2),8,Immediate
+438,641e3e47556ffc12b0489d88,6,(12 / 4) + (4 / 4),4,Immediate
+438,641e3e47556ffc12b0489d88,7,(4 / 1) - (9 / 3),1,Immediate
+438,641e3e47556ffc12b0489d88,8,(12 / 2) + (12 / 6),8,Immediate
+438,641e3e47556ffc12b0489d88,9,(6 / 3) + (9 / 3),5,Immediate
+437,60fce3b18212191d4efd3422,1,(2 / 1) + (6 / 2),4,Immediate
+437,60fce3b18212191d4efd3422,2,(20 / 5) + (28 / 7),8,Immediate
+437,60fce3b18212191d4efd3422,3,(8 / 2) - (6 / 3),2,Immediate
+437,60fce3b18212191d4efd3422,4,(30/10) + (60/20),6,Immediate
+437,60fce3b18212191d4efd3422,5,(16/4) + (8/2),8,Immediate
+437,60fce3b18212191d4efd3422,6,(12 / 4) + (4 / 4),4,Immediate
+437,60fce3b18212191d4efd3422,7,(4 / 1) - (9 / 3),1,Immediate
+437,60fce3b18212191d4efd3422,8,(12 / 2) + (12 / 6),8,Immediate
+437,60fce3b18212191d4efd3422,9,(6 / 3) + (9 / 3),5,Immediate
+437,60fce3b18212191d4efd3422,10,(4 / 4) + (4 / 2),3,Immediate
+436,6171dc9f96de917908c8bb67,1,(2 / 1) + (6 / 2),4,Immediate
+436,6171dc9f96de917908c8bb67,2,(20 / 5) + (28 / 7),7,Immediate
+436,6171dc9f96de917908c8bb67,3,(8 / 2) - (6 / 3),2,Immediate
+436,6171dc9f96de917908c8bb67,4,(30/10) + (60/20),22,Immediate
+436,6171dc9f96de917908c8bb67,5,(16/4) + (8/2),8,Immediate
+436,6171dc9f96de917908c8bb67,6,(12 / 4) + (4 / 4),4,Immediate
+436,6171dc9f96de917908c8bb67,7,(4 / 1) - (9 / 3),1,Immediate
+436,6171dc9f96de917908c8bb67,8,(12 / 2) + (12 / 6),8,Immediate
+436,6171dc9f96de917908c8bb67,9,(6 / 3) + (9 / 3),5,Immediate
+435,5fbd74fba75aff164f4a5de8,1,(2 / 1) + (6 / 2),5,Immediate
+435,5fbd74fba75aff164f4a5de8,2,(20 / 5) + (28 / 7),8,Immediate
+435,5fbd74fba75aff164f4a5de8,3,(8 / 2) - (6 / 3),2,Immediate
+435,5fbd74fba75aff164f4a5de8,4,(30/10) + (60/20),6,Immediate
+435,5fbd74fba75aff164f4a5de8,5,(16/4) + (8/2),8,Immediate
+435,5fbd74fba75aff164f4a5de8,6,(12 / 4) + (4 / 4),4,Immediate
+435,5fbd74fba75aff164f4a5de8,7,(4 / 1) - (9 / 3),1,Immediate
+435,5fbd74fba75aff164f4a5de8,8,(12 / 2) + (12 / 6),8,Immediate
+435,5fbd74fba75aff164f4a5de8,9,(6 / 3) + (9 / 3),5,Immediate
+435,5fbd74fba75aff164f4a5de8,10,(4 / 4) + (4 / 2),3,Immediate
+435,5fbd74fba75aff164f4a5de8,11,(6 / 1) - (5 / 1),1,Immediate
+434,615b22b2b654b57bcb5ad7b3,1,(2 / 1) + (6 / 2),4,Immediate
+434,615b22b2b654b57bcb5ad7b3,2,(20 / 5) + (28 / 7),8,Immediate
+434,615b22b2b654b57bcb5ad7b3,3,(8 / 2) - (6 / 3),2,Immediate
+434,615b22b2b654b57bcb5ad7b3,4,(30/10) + (60/20),6,Immediate
+434,615b22b2b654b57bcb5ad7b3,5,(16/4) + (8/2),8,Immediate
+434,615b22b2b654b57bcb5ad7b3,6,(12 / 4) + (4 / 4),4,Immediate
+434,615b22b2b654b57bcb5ad7b3,7,(4 / 1) - (9 / 3),1,Immediate
+434,615b22b2b654b57bcb5ad7b3,8,(12 / 2) + (12 / 6),8,Immediate
+434,615b22b2b654b57bcb5ad7b3,9,(6 / 3) + (9 / 3),5,Immediate
+434,615b22b2b654b57bcb5ad7b3,10,(4 / 4) + (4 / 2),3,Immediate
+434,615b22b2b654b57bcb5ad7b3,11,(6 / 1) - (5 / 1),1,Immediate
+434,615b22b2b654b57bcb5ad7b3,12,(8 / 2) - (2 / 2),3,Immediate
+434,615b22b2b654b57bcb5ad7b3,13,(12 / 3) - (6 / 3),2,Immediate
+434,615b22b2b654b57bcb5ad7b3,14,(16 / 4) - (8 / 4),2,Immediate
+433,5c17a9fbfeaf2c0001c4b19a,1,(2 / 1) + (6 / 2),5,Immediate
+433,5c17a9fbfeaf2c0001c4b19a,2,(20 / 5) + (28 / 7),8,Immediate
+433,5c17a9fbfeaf2c0001c4b19a,3,(8 / 2) - (6 / 3),2,Immediate
+433,5c17a9fbfeaf2c0001c4b19a,4,(30/10) + (60/20),6,Immediate
+432,63d3ff383464ef54bffdf0d2,1,(2 / 1) + (6 / 2),4,Immediate
+430,60fdaf04746b25a179b05245,1,(2 / 1) + (6 / 2),5,Immediate
+430,60fdaf04746b25a179b05245,2,(20 / 5) + (28 / 7),8,Immediate
+430,60fdaf04746b25a179b05245,3,(8 / 2) - (6 / 3),2,Immediate
+430,60fdaf04746b25a179b05245,4,(30/10) + (60/20),6,Immediate
+430,60fdaf04746b25a179b05245,5,(16/4) + (8/2),8,Immediate
+429,644bd5f65278efdaecb4f62f,1,(2 / 1) + (6 / 2),4,Immediate
+429,644bd5f65278efdaecb4f62f,2,(20 / 5) + (28 / 7),8,Immediate
+429,644bd5f65278efdaecb4f62f,3,(8 / 2) - (6 / 3),2,Immediate
+429,644bd5f65278efdaecb4f62f,4,(30/10) + (60/20),6,Immediate
+429,644bd5f65278efdaecb4f62f,5,(16/4) + (8/2),8,Immediate
+429,644bd5f65278efdaecb4f62f,6,(12 / 4) + (4 / 4),4,Immediate
+429,644bd5f65278efdaecb4f62f,7,(4 / 1) - (9 / 3),1,Immediate
+429,644bd5f65278efdaecb4f62f,8,(12 / 2) + (12 / 6),8,Immediate
+429,644bd5f65278efdaecb4f62f,9,(6 / 3) + (9 / 3),5,Immediate
+429,644bd5f65278efdaecb4f62f,10,(4 / 4) + (4 / 2),3,Immediate
+429,644bd5f65278efdaecb4f62f,11,(6 / 1) - (5 / 1),1,Immediate
+429,644bd5f65278efdaecb4f62f,12,(8 / 2) - (2 / 2),3,Immediate
+429,644bd5f65278efdaecb4f62f,13,(12 / 3) - (6 / 3),2,Immediate
+429,644bd5f65278efdaecb4f62f,14,(16 / 4) - (8 / 4),2,Immediate
+429,644bd5f65278efdaecb4f62f,15,(100/20) + (14/2),12,Immediate
+429,644bd5f65278efdaecb4f62f,16,(80/40) + (10/2),7,Immediate
+429,644bd5f65278efdaecb4f62f,17,(10/2) - (4/2),3,Immediate
+429,644bd5f65278efdaecb4f62f,18,(21/7) + (9/3),6,Immediate
+428,611dcc61f61f99fe71cc29fb,1,(2 / 1) + (6 / 2),5,Immediate
+428,611dcc61f61f99fe71cc29fb,2,(20 / 5) + (28 / 7),8,Immediate
+428,611dcc61f61f99fe71cc29fb,3,(8 / 2) - (6 / 3),2,Immediate
+427,5fc1fd0f60e49e305afcc6a5,1,(2 / 1) + (6 / 2),5,Immediate
+427,5fc1fd0f60e49e305afcc6a5,2,(20 / 5) + (28 / 7),8,Immediate
+427,5fc1fd0f60e49e305afcc6a5,3,(8 / 2) - (6 / 3),2,Immediate
+427,5fc1fd0f60e49e305afcc6a5,4,(30/10) + (60/20),6,Immediate
+427,5fc1fd0f60e49e305afcc6a5,5,(16/4) + (8/2),8,Immediate
+427,5fc1fd0f60e49e305afcc6a5,6,(12 / 4) + (4 / 4),4,Immediate
+427,5fc1fd0f60e49e305afcc6a5,7,(4 / 1) - (9 / 3),1,Immediate
+427,5fc1fd0f60e49e305afcc6a5,8,(12 / 2) + (12 / 6),8,Immediate
+427,5fc1fd0f60e49e305afcc6a5,9,(6 / 3) + (9 / 3),5,Immediate
+427,5fc1fd0f60e49e305afcc6a5,10,(4 / 4) + (4 / 2),3,Immediate
+427,5fc1fd0f60e49e305afcc6a5,11,(6 / 1) - (5 / 1),1,Immediate
+427,5fc1fd0f60e49e305afcc6a5,12,(8 / 2) - (2 / 2),3,Immediate
+427,5fc1fd0f60e49e305afcc6a5,13,(12 / 3) - (6 / 3),2,Immediate
+427,5fc1fd0f60e49e305afcc6a5,14,(16 / 4) - (8 / 4),2,Immediate
+427,5fc1fd0f60e49e305afcc6a5,15,(100/20) + (14/2),12,Immediate
+427,5fc1fd0f60e49e305afcc6a5,16,(80/40) + (10/2),7,Immediate
+426,60ff1a1450c5e5c8fe6922d1,1,(2 / 1) + (6 / 2),5,Immediate
+426,60ff1a1450c5e5c8fe6922d1,2,(20 / 5) + (28 / 7),8,Immediate
+426,60ff1a1450c5e5c8fe6922d1,3,(8 / 2) - (6 / 3),2,Immediate
+426,60ff1a1450c5e5c8fe6922d1,4,(30/10) + (60/20),6,Immediate
+426,60ff1a1450c5e5c8fe6922d1,5,(16/4) + (8/2),8,Immediate
+426,60ff1a1450c5e5c8fe6922d1,6,(12 / 4) + (4 / 4),4,Immediate
+426,60ff1a1450c5e5c8fe6922d1,7,(4 / 1) - (9 / 3),1,Immediate
+426,60ff1a1450c5e5c8fe6922d1,8,(12 / 2) + (12 / 6),8,Immediate
+426,60ff1a1450c5e5c8fe6922d1,9,(6 / 3) + (9 / 3),5,Immediate
+426,60ff1a1450c5e5c8fe6922d1,10,(4 / 4) + (4 / 2),3,Immediate
+426,60ff1a1450c5e5c8fe6922d1,11,(6 / 1) - (5 / 1),1,Immediate
+426,60ff1a1450c5e5c8fe6922d1,12,(8 / 2) - (2 / 2),2,Immediate
+426,60ff1a1450c5e5c8fe6922d1,13,(12 / 3) - (6 / 3),2,Immediate
+426,60ff1a1450c5e5c8fe6922d1,14,(16 / 4) - (8 / 4),2,Immediate
+426,60ff1a1450c5e5c8fe6922d1,15,(100/20) + (14/2),12,Immediate
+426,60ff1a1450c5e5c8fe6922d1,16,(80/40) + (10/2),7,Immediate
+425,5f2a43a95f057c229165aeed,1,(2 / 1) + (6 / 2),5,Immediate
+425,5f2a43a95f057c229165aeed,2,(20 / 5) + (28 / 7),8,Immediate
+425,5f2a43a95f057c229165aeed,3,(8 / 2) - (6 / 3),2,Immediate
+425,5f2a43a95f057c229165aeed,4,(30/10) + (60/20),6,Immediate
+425,5f2a43a95f057c229165aeed,5,(16/4) + (8/2),8,Immediate
+425,5f2a43a95f057c229165aeed,6,(12 / 4) + (4 / 4),4,Immediate
+425,5f2a43a95f057c229165aeed,7,(4 / 1) - (9 / 3),1,Immediate
+425,5f2a43a95f057c229165aeed,8,(12 / 2) + (12 / 6),8,Immediate
+425,5f2a43a95f057c229165aeed,9,(6 / 3) + (9 / 3),6,Immediate
+425,5f2a43a95f057c229165aeed,10,(4 / 4) + (4 / 2),3,Immediate
+425,5f2a43a95f057c229165aeed,11,(6 / 1) - (5 / 1),1,Immediate
+425,5f2a43a95f057c229165aeed,12,(8 / 2) - (2 / 2),3,Immediate
+425,5f2a43a95f057c229165aeed,13,(12 / 3) - (6 / 3),1,Immediate
+425,5f2a43a95f057c229165aeed,14,(16 / 4) - (8 / 4),2,Immediate
+425,5f2a43a95f057c229165aeed,15,(100/20) + (14/2),12,Immediate
+424,63d1988fabf100b710125c92,1,(2 / 1) + (6 / 2),4,Immediate
+424,63d1988fabf100b710125c92,2,(20 / 5) + (28 / 7),8,Immediate
+424,63d1988fabf100b710125c92,3,(8 / 2) - (6 / 3),2,Immediate
+424,63d1988fabf100b710125c92,4,(30/10) + (60/20),6,Immediate
+424,63d1988fabf100b710125c92,5,(16/4) + (8/2),8,Immediate
+424,63d1988fabf100b710125c92,6,(12 / 4) + (4 / 4),4,Immediate
+424,63d1988fabf100b710125c92,7,(4 / 1) - (9 / 3),1,Immediate
+424,63d1988fabf100b710125c92,8,(12 / 2) + (12 / 6),8,Immediate
+424,63d1988fabf100b710125c92,9,(6 / 3) + (9 / 3),5,Immediate
+424,63d1988fabf100b710125c92,10,(4 / 4) + (4 / 2),3,Immediate
+424,63d1988fabf100b710125c92,11,(6 / 1) - (5 / 1),1,Immediate
+423,610095a43c0a28ad8189d48f,1,(2 / 1) + (6 / 2),4,Immediate
+423,610095a43c0a28ad8189d48f,2,(20 / 5) + (28 / 7),1,Immediate
+423,610095a43c0a28ad8189d48f,3,(8 / 2) - (6 / 3),2,Immediate
+423,610095a43c0a28ad8189d48f,4,(30/10) + (60/20),1,Immediate
+423,610095a43c0a28ad8189d48f,5,(16/4) + (8/2),1,Immediate
+423,610095a43c0a28ad8189d48f,6,(12 / 4) + (4 / 4),3,Immediate
+422,645a93f0017bb2a61f0cf72a,1,(2 / 1) + (6 / 2),5,Immediate
+422,645a93f0017bb2a61f0cf72a,2,(20 / 5) + (28 / 7),8,Immediate
+422,645a93f0017bb2a61f0cf72a,3,(8 / 2) - (6 / 3),2,Immediate
+422,645a93f0017bb2a61f0cf72a,4,(30/10) + (60/20),7,Immediate
+422,645a93f0017bb2a61f0cf72a,5,(16/4) + (8/2),8,Immediate
+422,645a93f0017bb2a61f0cf72a,6,(12 / 4) + (4 / 4),4,Immediate
+422,645a93f0017bb2a61f0cf72a,7,(4 / 1) - (9 / 3),1,Immediate
+422,645a93f0017bb2a61f0cf72a,8,(12 / 2) + (12 / 6),8,Immediate
+422,645a93f0017bb2a61f0cf72a,9,(6 / 3) + (9 / 3),5,Immediate
+422,645a93f0017bb2a61f0cf72a,10,(4 / 4) + (4 / 2),3,Immediate
+422,645a93f0017bb2a61f0cf72a,11,(6 / 1) - (5 / 1),1,Immediate
+422,645a93f0017bb2a61f0cf72a,12,(8 / 2) - (2 / 2),3,Immediate
+422,645a93f0017bb2a61f0cf72a,13,(12 / 3) - (6 / 3),2,Immediate
+422,645a93f0017bb2a61f0cf72a,14,(16 / 4) - (8 / 4),2,Immediate
+422,645a93f0017bb2a61f0cf72a,15,(100/20) + (14/2),12,Immediate
+422,645a93f0017bb2a61f0cf72a,16,(80/40) + (10/2),7,Immediate
+422,645a93f0017bb2a61f0cf72a,17,(10/2) - (4/2),3,Immediate
+421,5e71037dea647c000ac49f12,1,(2 / 1) + (6 / 2),5,Immediate
+421,5e71037dea647c000ac49f12,2,(20 / 5) + (28 / 7),8,Immediate
+421,5e71037dea647c000ac49f12,3,(8 / 2) - (6 / 3),2,Immediate
+421,5e71037dea647c000ac49f12,4,(30/10) + (60/20),6,Immediate
+421,5e71037dea647c000ac49f12,5,(16/4) + (8/2),8,Immediate
+421,5e71037dea647c000ac49f12,6,(12 / 4) + (4 / 4),4,Immediate
+421,5e71037dea647c000ac49f12,7,(4 / 1) - (9 / 3),1,Immediate
+421,5e71037dea647c000ac49f12,8,(12 / 2) + (12 / 6),8,Immediate
+421,5e71037dea647c000ac49f12,9,(6 / 3) + (9 / 3),5,Immediate
+421,5e71037dea647c000ac49f12,10,(4 / 4) + (4 / 2),3,Immediate
+421,5e71037dea647c000ac49f12,11,(6 / 1) - (5 / 1),1,Immediate
+420,6108a3ec358bd04e37038c12,1,(2 / 1) + (6 / 2),5,Immediate
+420,6108a3ec358bd04e37038c12,2,(20 / 5) + (28 / 7),8,Immediate
+420,6108a3ec358bd04e37038c12,3,(8 / 2) - (6 / 3),2,Immediate
+420,6108a3ec358bd04e37038c12,4,(30/10) + (60/20),6,Immediate
+420,6108a3ec358bd04e37038c12,5,(16/4) + (8/2),8,Immediate
+420,6108a3ec358bd04e37038c12,6,(12 / 4) + (4 / 4),4,Immediate
+420,6108a3ec358bd04e37038c12,7,(4 / 1) - (9 / 3),1,Immediate
+420,6108a3ec358bd04e37038c12,8,(12 / 2) + (12 / 6),8,Immediate
+420,6108a3ec358bd04e37038c12,9,(6 / 3) + (9 / 3),5,Immediate
+418,63f8e18b5176d042dd67f01c,1,(2 / 1) + (6 / 2),4,Immediate
+418,63f8e18b5176d042dd67f01c,2,(20 / 5) + (28 / 7),14,Immediate
+418,63f8e18b5176d042dd67f01c,3,(8 / 2) - (6 / 3),2,Immediate
+418,63f8e18b5176d042dd67f01c,4,(30/10) + (60/20),6,Immediate
+418,63f8e18b5176d042dd67f01c,5,(16/4) + (8/2),8,Immediate
+418,63f8e18b5176d042dd67f01c,6,(12 / 4) + (4 / 4),4,Immediate
+418,63f8e18b5176d042dd67f01c,7,(4 / 1) - (9 / 3),1,Immediate
+417,63d7b0b45f9993cbb237fcd6,1,(2 / 1) + (6 / 2),5,Immediate
+417,63d7b0b45f9993cbb237fcd6,2,(20 / 5) + (28 / 7),8,Immediate
+417,63d7b0b45f9993cbb237fcd6,3,(8 / 2) - (6 / 3),2,Immediate
+417,63d7b0b45f9993cbb237fcd6,4,(30/10) + (60/20),6,Immediate
+417,63d7b0b45f9993cbb237fcd6,5,(16/4) + (8/2),8,Immediate
+417,63d7b0b45f9993cbb237fcd6,6,(12 / 4) + (4 / 4),4,Immediate
+417,63d7b0b45f9993cbb237fcd6,7,(4 / 1) - (9 / 3),1,Immediate
+417,63d7b0b45f9993cbb237fcd6,8,(12 / 2) + (12 / 6),8,Immediate
+417,63d7b0b45f9993cbb237fcd6,9,(6 / 3) + (9 / 3),5,Immediate
+417,63d7b0b45f9993cbb237fcd6,10,(4 / 4) + (4 / 2),3,Immediate
+417,63d7b0b45f9993cbb237fcd6,11,(6 / 1) - (5 / 1),1,Immediate
+417,63d7b0b45f9993cbb237fcd6,12,(8 / 2) - (2 / 2),3,Immediate
+417,63d7b0b45f9993cbb237fcd6,13,(12 / 3) - (6 / 3),2,Immediate
+417,63d7b0b45f9993cbb237fcd6,14,(16 / 4) - (8 / 4),2,Immediate
+416,5ed1d52eea444913b2d4576d,1,(2 / 1) + (6 / 2),5,Immediate
+416,5ed1d52eea444913b2d4576d,2,(20 / 5) + (28 / 7),8,Immediate
+416,5ed1d52eea444913b2d4576d,3,(8 / 2) - (6 / 3),2,Immediate
+416,5ed1d52eea444913b2d4576d,4,(30/10) + (60/20),83,Immediate
+416,5ed1d52eea444913b2d4576d,5,(16/4) + (8/2),8,Immediate
+416,5ed1d52eea444913b2d4576d,6,(12 / 4) + (4 / 4),4,Immediate
+416,5ed1d52eea444913b2d4576d,7,(4 / 1) - (9 / 3),3,Immediate
+416,5ed1d52eea444913b2d4576d,8,(12 / 2) + (12 / 6),8,Immediate
+416,5ed1d52eea444913b2d4576d,9,(6 / 3) + (9 / 3),5,Immediate
+416,5ed1d52eea444913b2d4576d,10,(4 / 4) + (4 / 2),3,Immediate
+416,5ed1d52eea444913b2d4576d,11,(6 / 1) - (5 / 1),1,Immediate
+416,5ed1d52eea444913b2d4576d,12,(8 / 2) - (2 / 2),3,Immediate
+416,5ed1d52eea444913b2d4576d,13,(12 / 3) - (6 / 3),2,Immediate
+415,6293e6c41fde6ff01b69760b,1,(2 / 1) + (6 / 2),5,Immediate
+415,6293e6c41fde6ff01b69760b,2,(20 / 5) + (28 / 7),8,Immediate
+415,6293e6c41fde6ff01b69760b,3,(8 / 2) - (6 / 3),2,Immediate
+415,6293e6c41fde6ff01b69760b,4,(30/10) + (60/20),6,Immediate
+414,5f511ab38505ac2e8fbfac5e,1,(2 / 1) + (6 / 2),5,Immediate
+414,5f511ab38505ac2e8fbfac5e,2,(20 / 5) + (28 / 7),8,Immediate
+414,5f511ab38505ac2e8fbfac5e,3,(8 / 2) - (6 / 3),2,Immediate
+414,5f511ab38505ac2e8fbfac5e,4,(30/10) + (60/20),6,Immediate
+414,5f511ab38505ac2e8fbfac5e,5,(16/4) + (8/2),8,Immediate
+414,5f511ab38505ac2e8fbfac5e,6,(12 / 4) + (4 / 4),4,Immediate
+414,5f511ab38505ac2e8fbfac5e,7,(4 / 1) - (9 / 3),1,Immediate
+414,5f511ab38505ac2e8fbfac5e,8,(12 / 2) + (12 / 6),8,Immediate
+414,5f511ab38505ac2e8fbfac5e,9,(6 / 3) + (9 / 3),5,Immediate
+414,5f511ab38505ac2e8fbfac5e,10,(4 / 4) + (4 / 2),3,Immediate
+414,5f511ab38505ac2e8fbfac5e,11,(6 / 1) - (5 / 1),1,Immediate
+414,5f511ab38505ac2e8fbfac5e,12,(8 / 2) - (2 / 2),3,Immediate
+414,5f511ab38505ac2e8fbfac5e,13,(12 / 3) - (6 / 3),2,Immediate
+414,5f511ab38505ac2e8fbfac5e,14,(16 / 4) - (8 / 4),2,Immediate
+414,5f511ab38505ac2e8fbfac5e,15,(100/20) + (14/2),12,Immediate
+413,60fd7f2e69e5a781cb3ef542,1,(2 / 1) + (6 / 2),4,Immediate
+413,60fd7f2e69e5a781cb3ef542,2,(20 / 5) + (28 / 7),8,Immediate
+413,60fd7f2e69e5a781cb3ef542,3,(8 / 2) - (6 / 3),2,Immediate
+413,60fd7f2e69e5a781cb3ef542,4,(30/10) + (60/20),6,Immediate
+413,60fd7f2e69e5a781cb3ef542,5,(16/4) + (8/2),8,Immediate
+413,60fd7f2e69e5a781cb3ef542,6,(12 / 4) + (4 / 4),4,Immediate
+413,60fd7f2e69e5a781cb3ef542,7,(4 / 1) - (9 / 3),0,Immediate
+413,60fd7f2e69e5a781cb3ef542,8,(12 / 2) + (12 / 6),8,Immediate
+413,60fd7f2e69e5a781cb3ef542,9,(6 / 3) + (9 / 3),5,Immediate
+413,60fd7f2e69e5a781cb3ef542,10,(4 / 4) + (4 / 2),3,Immediate
+413,60fd7f2e69e5a781cb3ef542,11,(6 / 1) - (5 / 1),1,Immediate
+412,60fcaa7ac117649e189a3ee1,1,(2 / 1) + (6 / 2),4,Immediate
+412,60fcaa7ac117649e189a3ee1,2,(20 / 5) + (28 / 7),8,Immediate
+412,60fcaa7ac117649e189a3ee1,3,(8 / 2) - (6 / 3),2,Immediate
+412,60fcaa7ac117649e189a3ee1,4,(30/10) + (60/20),6,Immediate
+412,60fcaa7ac117649e189a3ee1,5,(16/4) + (8/2),8,Immediate
+412,60fcaa7ac117649e189a3ee1,6,(12 / 4) + (4 / 4),4,Immediate
+412,60fcaa7ac117649e189a3ee1,7,(4 / 1) - (9 / 3),1,Immediate
+412,60fcaa7ac117649e189a3ee1,8,(12 / 2) + (12 / 6),8,Immediate
+412,60fcaa7ac117649e189a3ee1,9,(6 / 3) + (9 / 3),5,Immediate
+412,60fcaa7ac117649e189a3ee1,10,(4 / 4) + (4 / 2),3,Immediate
+412,60fcaa7ac117649e189a3ee1,11,(6 / 1) - (5 / 1),1,Immediate
+412,60fcaa7ac117649e189a3ee1,12,(8 / 2) - (2 / 2),3,Immediate
+412,60fcaa7ac117649e189a3ee1,13,(12 / 3) - (6 / 3),2,Immediate
+412,60fcaa7ac117649e189a3ee1,14,(16 / 4) - (8 / 4),2,Immediate
+412,60fcaa7ac117649e189a3ee1,15,(100/20) + (14/2),12,Immediate
+412,60fcaa7ac117649e189a3ee1,16,(80/40) + (10/2),7,Immediate
+412,60fcaa7ac117649e189a3ee1,17,(10/2) - (4/2),3,Immediate
+412,60fcaa7ac117649e189a3ee1,18,(21/7) + (9/3),6,Immediate
+412,60fcaa7ac117649e189a3ee1,19,(6 / 2) + (8 / 4),5,Immediate
+411,5bef317a2d982b0001059f44,1,(2 / 1) + (6 / 2),5,Immediate
+411,5bef317a2d982b0001059f44,2,(20 / 5) + (28 / 7),8,Immediate
+411,5bef317a2d982b0001059f44,3,(8 / 2) - (6 / 3),2,Immediate
+411,5bef317a2d982b0001059f44,4,(30/10) + (60/20),33,Immediate
+410,6101b0045f55decb70142341,1,(2 / 1) + (6 / 2),4,Immediate
+410,6101b0045f55decb70142341,2,(20 / 5) + (28 / 7),7,Immediate
+410,6101b0045f55decb70142341,3,(8 / 2) - (6 / 3),2,Immediate
+410,6101b0045f55decb70142341,4,(30/10) + (60/20),6,Immediate
+410,6101b0045f55decb70142341,5,(16/4) + (8/2),8,Immediate
+410,6101b0045f55decb70142341,6,(12 / 4) + (4 / 4),4,Immediate
+410,6101b0045f55decb70142341,7,(4 / 1) - (9 / 3),1,Immediate
+410,6101b0045f55decb70142341,8,(12 / 2) + (12 / 6),8,Immediate
+410,6101b0045f55decb70142341,9,(6 / 3) + (9 / 3),5,Immediate
+409,63ede400ea283f02067dadad,1,(2 / 1) + (6 / 2),5,Immediate
+408,610000c595c5a1847c235e17,1,(2 / 1) + (6 / 2),5,Immediate
+408,610000c595c5a1847c235e17,2,(20 / 5) + (28 / 7),8,Immediate
+408,610000c595c5a1847c235e17,3,(8 / 2) - (6 / 3),2,Immediate
+408,610000c595c5a1847c235e17,4,(30/10) + (60/20),6,Immediate
+408,610000c595c5a1847c235e17,5,(16/4) + (8/2),8,Immediate
+408,610000c595c5a1847c235e17,6,(12 / 4) + (4 / 4),4,Immediate
+408,610000c595c5a1847c235e17,7,(4 / 1) - (9 / 3),1,Immediate
+408,610000c595c5a1847c235e17,8,(12 / 2) + (12 / 6),8,Immediate
+408,610000c595c5a1847c235e17,9,(6 / 3) + (9 / 3),5,Immediate
+408,610000c595c5a1847c235e17,10,(4 / 4) + (4 / 2),3,Immediate
+408,610000c595c5a1847c235e17,11,(6 / 1) - (5 / 1),1,Immediate
+408,610000c595c5a1847c235e17,12,(8 / 2) - (2 / 2),3,Immediate
+408,610000c595c5a1847c235e17,13,(12 / 3) - (6 / 3),2,Immediate
+407,63f7dc48f2c570e31e1526cf,1,(2 / 1) + (6 / 2),4,Immediate
+407,63f7dc48f2c570e31e1526cf,2,(20 / 5) + (28 / 7),8,Immediate
+407,63f7dc48f2c570e31e1526cf,3,(8 / 2) - (6 / 3),1,Immediate
+407,63f7dc48f2c570e31e1526cf,4,(30/10) + (60/20),6,Immediate
+407,63f7dc48f2c570e31e1526cf,5,(16/4) + (8/2),8,Immediate
+407,63f7dc48f2c570e31e1526cf,6,(12 / 4) + (4 / 4),4,Immediate
+407,63f7dc48f2c570e31e1526cf,7,(4 / 1) - (9 / 3),0,Immediate
+407,63f7dc48f2c570e31e1526cf,8,(12 / 2) + (12 / 6),8,Immediate
+407,63f7dc48f2c570e31e1526cf,9,(6 / 3) + (9 / 3),5,Immediate
+407,63f7dc48f2c570e31e1526cf,10,(4 / 4) + (4 / 2),3,Immediate
+407,63f7dc48f2c570e31e1526cf,11,(6 / 1) - (5 / 1),1,Immediate
+407,63f7dc48f2c570e31e1526cf,12,(8 / 2) - (2 / 2),3,Immediate
+407,63f7dc48f2c570e31e1526cf,13,(12 / 3) - (6 / 3),2,Immediate
+407,63f7dc48f2c570e31e1526cf,14,(16 / 4) - (8 / 4),2,Immediate
+407,63f7dc48f2c570e31e1526cf,15,(100/20) + (14/2),13,Immediate
+407,63f7dc48f2c570e31e1526cf,16,(80/40) + (10/2),7,Immediate
+407,63f7dc48f2c570e31e1526cf,17,(10/2) - (4/2),3,Immediate
+407,63f7dc48f2c570e31e1526cf,18,(21/7) + (9/3),6,Immediate
+406,640cc04b3cc033171c75638e,1,(2 / 1) + (6 / 2),5,Immediate
+406,640cc04b3cc033171c75638e,2,(20 / 5) + (28 / 7),8,Immediate
+406,640cc04b3cc033171c75638e,3,(8 / 2) - (6 / 3),2,Immediate
+406,640cc04b3cc033171c75638e,4,(30/10) + (60/20),6,Immediate
+406,640cc04b3cc033171c75638e,5,(16/4) + (8/2),8,Immediate
+406,640cc04b3cc033171c75638e,6,(12 / 4) + (4 / 4),4,Immediate
+406,640cc04b3cc033171c75638e,7,(4 / 1) - (9 / 3),1,Immediate
+406,640cc04b3cc033171c75638e,8,(12 / 2) + (12 / 6),8,Immediate
+406,640cc04b3cc033171c75638e,9,(6 / 3) + (9 / 3),5,Immediate
+406,640cc04b3cc033171c75638e,10,(4 / 4) + (4 / 2),3,Immediate
+405,605bd9acd66170da8fbcdc92,1,(2 / 1) + (6 / 2),5,Immediate
+405,605bd9acd66170da8fbcdc92,2,(20 / 5) + (28 / 7),8,Immediate
+405,605bd9acd66170da8fbcdc92,3,(8 / 2) - (6 / 3),2,Immediate
+405,605bd9acd66170da8fbcdc92,4,(30/10) + (60/20),6,Immediate
+405,605bd9acd66170da8fbcdc92,5,(16/4) + (8/2),8,Immediate
+405,605bd9acd66170da8fbcdc92,6,(12 / 4) + (4 / 4),4,Immediate
+404,61140fbc763ecf6f2de71183,1,(2 / 1) + (6 / 2),5,Immediate
+404,61140fbc763ecf6f2de71183,2,(20 / 5) + (28 / 7),8,Immediate
+404,61140fbc763ecf6f2de71183,3,(8 / 2) - (6 / 3),2,Immediate
+404,61140fbc763ecf6f2de71183,4,(30/10) + (60/20),6,Immediate
+404,61140fbc763ecf6f2de71183,5,(16/4) + (8/2),8,Immediate
+404,61140fbc763ecf6f2de71183,6,(12 / 4) + (4 / 4),4,Immediate
+404,61140fbc763ecf6f2de71183,7,(4 / 1) - (9 / 3),1,Immediate
+404,61140fbc763ecf6f2de71183,8,(12 / 2) + (12 / 6),8,Immediate
+404,61140fbc763ecf6f2de71183,9,(6 / 3) + (9 / 3),5,Immediate
+404,61140fbc763ecf6f2de71183,10,(4 / 4) + (4 / 2),3,Immediate
+404,61140fbc763ecf6f2de71183,11,(6 / 1) - (5 / 1),1,Immediate
+404,61140fbc763ecf6f2de71183,12,(8 / 2) - (2 / 2),3,Immediate
+403,5e4ccf6b4028e711db748f95,1,(2 / 1) + (6 / 2),5,Immediate
+403,5e4ccf6b4028e711db748f95,2,(20 / 5) + (28 / 7),8,Immediate
+403,5e4ccf6b4028e711db748f95,3,(8 / 2) - (6 / 3),6,Immediate
+403,5e4ccf6b4028e711db748f95,4,(30/10) + (60/20),6,Immediate
+403,5e4ccf6b4028e711db748f95,5,(16/4) + (8/2),8,Immediate
+403,5e4ccf6b4028e711db748f95,6,(12 / 4) + (4 / 4),4,Immediate
+402,5fff3f938921560203546f23,1,(2 / 1) + (6 / 2),4,Immediate
+402,5fff3f938921560203546f23,2,(20 / 5) + (28 / 7),8,Immediate
+402,5fff3f938921560203546f23,3,(8 / 2) - (6 / 3),2,Immediate
+402,5fff3f938921560203546f23,4,(30/10) + (60/20),6,Immediate
+402,5fff3f938921560203546f23,5,(16/4) + (8/2),8,Immediate
+402,5fff3f938921560203546f23,6,(12 / 4) + (4 / 4),4,Immediate
+402,5fff3f938921560203546f23,7,(4 / 1) - (9 / 3),1,Immediate
+402,5fff3f938921560203546f23,8,(12 / 2) + (12 / 6),8,Immediate
+402,5fff3f938921560203546f23,9,(6 / 3) + (9 / 3),5,Immediate
+402,5fff3f938921560203546f23,10,(4 / 4) + (4 / 2),3,Immediate
+402,5fff3f938921560203546f23,11,(6 / 1) - (5 / 1),1,Immediate
+402,5fff3f938921560203546f23,12,(8 / 2) - (2 / 2),3,Immediate
+402,5fff3f938921560203546f23,13,(12 / 3) - (6 / 3),2,Immediate
+402,5fff3f938921560203546f23,14,(16 / 4) - (8 / 4),2,Immediate
+401,5e82279d39ea6d067ea804eb,1,(2 / 1) + (6 / 2),4,Immediate
+401,5e82279d39ea6d067ea804eb,2,(20 / 5) + (28 / 7),7,Immediate
+401,5e82279d39ea6d067ea804eb,3,(8 / 2) - (6 / 3),2,Immediate
+401,5e82279d39ea6d067ea804eb,4,(30/10) + (60/20),33,Immediate
+401,5e82279d39ea6d067ea804eb,5,(16/4) + (8/2),8,Immediate
+400,6435b95691d542284002bc90,1,(2 / 1) + (6 / 2),5,Immediate
+400,6435b95691d542284002bc90,2,(20 / 5) + (28 / 7),8,Immediate
+400,6435b95691d542284002bc90,3,(8 / 2) - (6 / 3),6,Immediate
+400,6435b95691d542284002bc90,4,(30/10) + (60/20),6,Immediate
+400,6435b95691d542284002bc90,5,(16/4) + (8/2),8,Immediate
+400,6435b95691d542284002bc90,6,(12 / 4) + (4 / 4),4,Immediate
+400,6435b95691d542284002bc90,7,(4 / 1) - (9 / 3),1,Immediate
+399,60778adf13e3a5f0d0f655db,1,(2 / 1) + (6 / 2),4,Immediate
+399,60778adf13e3a5f0d0f655db,2,(20 / 5) + (28 / 7),8,Immediate
+399,60778adf13e3a5f0d0f655db,3,(8 / 2) - (6 / 3),7,Immediate
+399,60778adf13e3a5f0d0f655db,4,(30/10) + (60/20),7,Immediate
+399,60778adf13e3a5f0d0f655db,5,(16/4) + (8/2),8,Immediate
+399,60778adf13e3a5f0d0f655db,6,(12 / 4) + (4 / 4),4,Immediate
+399,60778adf13e3a5f0d0f655db,7,(4 / 1) - (9 / 3),7,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,1,(2 / 1) + (6 / 2),5,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,2,(20 / 5) + (28 / 7),8,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,3,(8 / 2) - (6 / 3),1,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,4,(30/10) + (60/20),6,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,5,(16/4) + (8/2),8,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,6,(12 / 4) + (4 / 4),4,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,7,(4 / 1) - (9 / 3),1,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,8,(12 / 2) + (12 / 6),8,Immediate
+398,5e6bdd2a3ea572199bb7f6b6,9,(6 / 3) + (9 / 3),5,Immediate
+397,645527d9c3028610267467a3,1,(2 / 1) + (6 / 2),4,Immediate
+397,645527d9c3028610267467a3,2,(20 / 5) + (28 / 7),8,Immediate
+396,5f119c5ad521140253f60e86,1,(2 / 1) + (6 / 2),4,Immediate
+396,5f119c5ad521140253f60e86,2,(20 / 5) + (28 / 7),8,Immediate
+396,5f119c5ad521140253f60e86,3,(8 / 2) - (6 / 3),2,Immediate
+395,5484655ffdf99b07b28f22cc,1,(2 / 1) + (6 / 2),5,Immediate
+395,5484655ffdf99b07b28f22cc,2,(20 / 5) + (28 / 7),8,Immediate
+395,5484655ffdf99b07b28f22cc,3,(8 / 2) - (6 / 3),12,Immediate
+395,5484655ffdf99b07b28f22cc,4,(30/10) + (60/20),6,Immediate
+395,5484655ffdf99b07b28f22cc,5,(16/4) + (8/2),8,Immediate
+395,5484655ffdf99b07b28f22cc,6,(12 / 4) + (4 / 4),7,Immediate
+395,5484655ffdf99b07b28f22cc,7,(4 / 1) - (9 / 3),1,Immediate
+395,5484655ffdf99b07b28f22cc,8,(12 / 2) + (12 / 6),8,Immediate
+394,5fc50bb38378c80ac88354ef,1,(2 / 1) + (6 / 2),5,Immediate
+394,5fc50bb38378c80ac88354ef,2,(20 / 5) + (28 / 7),8,Immediate
+394,5fc50bb38378c80ac88354ef,3,(8 / 2) - (6 / 3),2,Immediate
+394,5fc50bb38378c80ac88354ef,4,(30/10) + (60/20),6,Immediate
+394,5fc50bb38378c80ac88354ef,5,(16/4) + (8/2),6,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,1,(2 / 1) + (6 / 2),5,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,2,(20 / 5) + (28 / 7),8,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,3,(8 / 2) - (6 / 3),1,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,4,(30/10) + (60/20),6,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,5,(16/4) + (8/2),8,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,6,(12 / 4) + (4 / 4),4,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,7,(4 / 1) - (9 / 3),1,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,8,(12 / 2) + (12 / 6),8,Immediate
+393,622a2074fe80192aa7a0212a622a2074fe80192aa7a0212a,9,(6 / 3) + (9 / 3),6,Immediate
+392,62d5db8e2d079e00489d8c76,1,(2 / 1) + (6 / 2),4,Immediate
+392,62d5db8e2d079e00489d8c76,2,(20 / 5) + (28 / 7),8,Immediate
+392,62d5db8e2d079e00489d8c76,3,(8 / 2) - (6 / 3),2,Immediate
+392,62d5db8e2d079e00489d8c76,4,(30/10) + (60/20),6,Immediate
+392,62d5db8e2d079e00489d8c76,5,(16/4) + (8/2),8,Immediate
+392,62d5db8e2d079e00489d8c76,6,(12 / 4) + (4 / 4),3,Immediate
+392,62d5db8e2d079e00489d8c76,7,(4 / 1) - (9 / 3),1,Immediate
+392,62d5db8e2d079e00489d8c76,8,(12 / 2) + (12 / 6),12,Immediate
+390,5e1fc8d45427912f6143b012,1,(2 / 1) + (6 / 2),5,Immediate
+390,5e1fc8d45427912f6143b012,2,(20 / 5) + (28 / 7),8,Immediate
+390,5e1fc8d45427912f6143b012,3,(8 / 2) - (6 / 3),1,Immediate
+390,5e1fc8d45427912f6143b012,4,(30/10) + (60/20),6,Immediate
+390,5e1fc8d45427912f6143b012,5,(16/4) + (8/2),8,Immediate
+390,5e1fc8d45427912f6143b012,6,(12 / 4) + (4 / 4),4,Immediate
+390,5e1fc8d45427912f6143b012,7,(4 / 1) - (9 / 3),1,Immediate
+390,5e1fc8d45427912f6143b012,8,(12 / 2) + (12 / 6),8,Immediate
+390,5e1fc8d45427912f6143b012,9,(6 / 3) + (9 / 3),5,Immediate
+390,5e1fc8d45427912f6143b012,10,(4 / 4) + (4 / 2),3,Immediate
+390,5e1fc8d45427912f6143b012,11,(6 / 1) - (5 / 1),1,Immediate
+390,5e1fc8d45427912f6143b012,12,(8 / 2) - (2 / 2),3,Immediate
+389,628bb39061393e64b1907bbb,1,(2 / 1) + (6 / 2),4,Immediate
+389,628bb39061393e64b1907bbb,2,(20 / 5) + (28 / 7),8,Immediate
+389,628bb39061393e64b1907bbb,3,(8 / 2) - (6 / 3),2,Immediate
+389,628bb39061393e64b1907bbb,4,(30/10) + (60/20),6,Immediate
+389,628bb39061393e64b1907bbb,5,(16/4) + (8/2),8,Immediate
+389,628bb39061393e64b1907bbb,6,(12 / 4) + (4 / 4),4,Immediate
+389,628bb39061393e64b1907bbb,7,(4 / 1) - (9 / 3),0,Immediate
+389,628bb39061393e64b1907bbb,8,(12 / 2) + (12 / 6),9,Immediate
+388,62879b859698ba45e6afa90f,1,(2 / 1) + (6 / 2),14,Immediate
+388,62879b859698ba45e6afa90f,2,(20 / 5) + (28 / 7),8,Immediate
+388,62879b859698ba45e6afa90f,3,(8 / 2) - (6 / 3),6,Immediate
+388,62879b859698ba45e6afa90f,4,(30/10) + (60/20),6,Immediate
+388,62879b859698ba45e6afa90f,5,(16/4) + (8/2),8,Immediate
+388,62879b859698ba45e6afa90f,6,(12 / 4) + (4 / 4),4,Immediate
+385,62c08fa6cab36e3a08790b49,1,(2 / 1) + (6 / 2),5,Immediate
+385,62c08fa6cab36e3a08790b49,2,(20 / 5) + (28 / 7),8,Immediate
+385,62c08fa6cab36e3a08790b49,3,(8 / 2) - (6 / 3),2,Immediate
+385,62c08fa6cab36e3a08790b49,4,(30/10) + (60/20),6,Immediate
+385,62c08fa6cab36e3a08790b49,5,(16/4) + (8/2),8,Immediate
+385,62c08fa6cab36e3a08790b49,6,(12 / 4) + (4 / 4),4,Immediate
+385,62c08fa6cab36e3a08790b49,7,(4 / 1) - (9 / 3),1,Immediate
+385,62c08fa6cab36e3a08790b49,8,(12 / 2) + (12 / 6),8,Immediate
+385,62c08fa6cab36e3a08790b49,9,(6 / 3) + (9 / 3),5,Immediate
+385,62c08fa6cab36e3a08790b49,10,(4 / 4) + (4 / 2),3,Immediate
+385,62c08fa6cab36e3a08790b49,11,(6 / 1) - (5 / 1),1,Immediate
+384,5de5538f8fde1c4dbc951498,1,(2 / 1) + (6 / 2),4,Immediate
+384,5de5538f8fde1c4dbc951498,2,(20 / 5) + (28 / 7),8,Immediate
+384,5de5538f8fde1c4dbc951498,3,(8 / 2) - (6 / 3),7,Immediate
+384,5de5538f8fde1c4dbc951498,4,(30/10) + (60/20),60,Immediate
+384,5de5538f8fde1c4dbc951498,5,(16/4) + (8/2),8,Immediate
+384,5de5538f8fde1c4dbc951498,6,(12 / 4) + (4 / 4),12,Immediate
+384,5de5538f8fde1c4dbc951498,7,(4 / 1) - (9 / 3),0,Immediate
+384,5de5538f8fde1c4dbc951498,8,(12 / 2) + (12 / 6),8,Immediate
+383,5f77c6a1a110ce346dc016ec,1,(2 / 1) + (6 / 2),5,Immediate
+383,5f77c6a1a110ce346dc016ec,2,(20 / 5) + (28 / 7),8,Immediate
+383,5f77c6a1a110ce346dc016ec,3,(8 / 2) - (6 / 3),2,Immediate
+383,5f77c6a1a110ce346dc016ec,4,(30/10) + (60/20),6,Immediate
+383,5f77c6a1a110ce346dc016ec,5,(16/4) + (8/2),8,Immediate
+383,5f77c6a1a110ce346dc016ec,6,(12 / 4) + (4 / 4),4,Immediate
+382,640618ed4acdff51122e13c4,1,(2 / 1) + (6 / 2),4,Immediate
+382,640618ed4acdff51122e13c4,2,(20 / 5) + (28 / 7),8,Immediate
+382,640618ed4acdff51122e13c4,3,(8 / 2) - (6 / 3),2,Immediate
+382,640618ed4acdff51122e13c4,4,(30/10) + (60/20),7,Immediate
+382,640618ed4acdff51122e13c4,5,(16/4) + (8/2),8,Immediate
+382,640618ed4acdff51122e13c4,6,(12 / 4) + (4 / 4),4,Immediate
+382,640618ed4acdff51122e13c4,7,(4 / 1) - (9 / 3),1,Immediate
+382,640618ed4acdff51122e13c4,8,(12 / 2) + (12 / 6),8,Immediate
+382,640618ed4acdff51122e13c4,9,(6 / 3) + (9 / 3),5,Immediate
+382,640618ed4acdff51122e13c4,10,(4 / 4) + (4 / 2),3,Immediate
+382,640618ed4acdff51122e13c4,11,(6 / 1) - (5 / 1),1,Immediate
+382,640618ed4acdff51122e13c4,12,(8 / 2) - (2 / 2),3,Immediate
+382,640618ed4acdff51122e13c4,13,(12 / 3) - (6 / 3),2,Immediate
+382,640618ed4acdff51122e13c4,14,(16 / 4) - (8 / 4),2,Immediate
+382,640618ed4acdff51122e13c4,15,(100/20) + (14/2),12,Immediate
+381,5c01dc58067bbf00019bb318,1,(2 / 1) + (6 / 2),5,Immediate
+381,5c01dc58067bbf00019bb318,2,(20 / 5) + (28 / 7),8,Immediate
+381,5c01dc58067bbf00019bb318,3,(8 / 2) - (6 / 3),2,Immediate
+381,5c01dc58067bbf00019bb318,4,(30/10) + (60/20),6,Immediate
+381,5c01dc58067bbf00019bb318,5,(16/4) + (8/2),8,Immediate
+381,5c01dc58067bbf00019bb318,6,(12 / 4) + (4 / 4),4,Immediate
+381,5c01dc58067bbf00019bb318,7,(4 / 1) - (9 / 3),1,Immediate
+381,5c01dc58067bbf00019bb318,8,(12 / 2) + (12 / 6),8,Immediate
+381,5c01dc58067bbf00019bb318,9,(6 / 3) + (9 / 3),5,Immediate
+381,5c01dc58067bbf00019bb318,10,(4 / 4) + (4 / 2),3,Immediate
+381,5c01dc58067bbf00019bb318,11,(6 / 1) - (5 / 1),1,Immediate
+381,5c01dc58067bbf00019bb318,12,(8 / 2) - (2 / 2),3,Immediate
+380,599ec7dc617ca80001fcd124,1,(2 / 1) + (6 / 2),4,Immediate
+380,599ec7dc617ca80001fcd124,2,(20 / 5) + (28 / 7),8,Immediate
+380,599ec7dc617ca80001fcd124,3,(8 / 2) - (6 / 3),1,Immediate
+380,599ec7dc617ca80001fcd124,4,(30/10) + (60/20),6,Immediate
+380,599ec7dc617ca80001fcd124,5,(16/4) + (8/2),8,Immediate
+380,599ec7dc617ca80001fcd124,6,(12 / 4) + (4 / 4),4,Immediate
+380,599ec7dc617ca80001fcd124,7,(4 / 1) - (9 / 3),7,Immediate
+380,599ec7dc617ca80001fcd124,8,(12 / 2) + (12 / 6),8,Immediate
+380,599ec7dc617ca80001fcd124,9,(6 / 3) + (9 / 3),5,Immediate
+380,599ec7dc617ca80001fcd124,10,(4 / 4) + (4 / 2),3,Immediate
+380,599ec7dc617ca80001fcd124,11,(6 / 1) - (5 / 1),1,Immediate
+380,599ec7dc617ca80001fcd124,12,(8 / 2) - (2 / 2),3,Immediate
+379,63ceb402a31914be6497e671,1,(2 / 1) + (6 / 2),4,Immediate
+376,60eb1a7c95641da67ae7d611,1,(2 / 1) + (6 / 2),4,Immediate
+376,60eb1a7c95641da67ae7d611,2,(20 / 5) + (28 / 7),8,Immediate
+376,60eb1a7c95641da67ae7d611,3,(8 / 2) - (6 / 3),5,Immediate
+376,60eb1a7c95641da67ae7d611,4,(30/10) + (60/20),6,Immediate
+376,60eb1a7c95641da67ae7d611,5,(16/4) + (8/2),8,Immediate
+376,60eb1a7c95641da67ae7d611,6,(12 / 4) + (4 / 4),3,Immediate
+375,63bf3247bf3b5ebd734157ee,1,(2 / 1) + (6 / 2),4,Immediate
+375,63bf3247bf3b5ebd734157ee,2,(20 / 5) + (28 / 7),8,Immediate
+375,63bf3247bf3b5ebd734157ee,3,(8 / 2) - (6 / 3),2,Immediate
+374,63bcbf7e0ac7e876387ef720,1,(2 / 1) + (6 / 2),5,Immediate
+373,62fcf3d9948e4a6a9623cce8,1,(2 / 1) + (6 / 2),5,Immediate
+373,62fcf3d9948e4a6a9623cce8,2,(20 / 5) + (28 / 7),8,Immediate
+373,62fcf3d9948e4a6a9623cce8,3,(8 / 2) - (6 / 3),2,Immediate
+373,62fcf3d9948e4a6a9623cce8,4,(30/10) + (60/20),6,Immediate
+373,62fcf3d9948e4a6a9623cce8,5,(16/4) + (8/2),8,Immediate
+373,62fcf3d9948e4a6a9623cce8,6,(12 / 4) + (4 / 4),4,Immediate
+373,62fcf3d9948e4a6a9623cce8,7,(4 / 1) - (9 / 3),1,Immediate
+373,62fcf3d9948e4a6a9623cce8,8,(12 / 2) + (12 / 6),8,Immediate
+373,62fcf3d9948e4a6a9623cce8,9,(6 / 3) + (9 / 3),5,Immediate
+373,62fcf3d9948e4a6a9623cce8,10,(4 / 4) + (4 / 2),3,Immediate
+373,62fcf3d9948e4a6a9623cce8,11,(6 / 1) - (5 / 1),1,Immediate
+373,62fcf3d9948e4a6a9623cce8,12,(8 / 2) - (2 / 2),3,Immediate
+373,62fcf3d9948e4a6a9623cce8,13,(12 / 3) - (6 / 3),2,Immediate
+373,62fcf3d9948e4a6a9623cce8,14,(16 / 4) - (8 / 4),2,Immediate
+373,62fcf3d9948e4a6a9623cce8,15,(100/20) + (14/2),12,Immediate
+373,62fcf3d9948e4a6a9623cce8,16,(80/40) + (10/2),9,Immediate
+372,5e36f211c5175f000b4038e9,1,(2 / 1) + (6 / 2),4,Immediate
+372,5e36f211c5175f000b4038e9,2,(20 / 5) + (28 / 7),8,Immediate
+372,5e36f211c5175f000b4038e9,3,(8 / 2) - (6 / 3),2,Immediate
+372,5e36f211c5175f000b4038e9,4,(30/10) + (60/20),6,Immediate
+372,5e36f211c5175f000b4038e9,5,(16/4) + (8/2),8,Immediate
+372,5e36f211c5175f000b4038e9,6,(12 / 4) + (4 / 4),4,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,1,(2 / 1) + (6 / 2),5,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,2,(20 / 5) + (28 / 7),8,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,3,(8 / 2) - (6 / 3),1,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,4,(30/10) + (60/20),6,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,5,(16/4) + (8/2),8,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,6,(12 / 4) + (4 / 4),4,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,7,(4 / 1) - (9 / 3),1,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,8,(12 / 2) + (12 / 6),8,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,9,(6 / 3) + (9 / 3),5,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,10,(4 / 4) + (4 / 2),3,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,11,(6 / 1) - (5 / 1),1,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,12,(8 / 2) - (2 / 2),3,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,13,(12 / 3) - (6 / 3),2,Immediate
+371,5f402eb4fbd8df145068b8055f402eb4fbd8df145068b805,14,(16 / 4) - (8 / 4),2,Immediate
+370,62cba72839d35cbf953cdd6f,1,(2 / 1) + (6 / 2),4,Immediate
+370,62cba72839d35cbf953cdd6f,2,(20 / 5) + (28 / 7),8,Immediate
+370,62cba72839d35cbf953cdd6f,3,(8 / 2) - (6 / 3),1,Immediate
+370,62cba72839d35cbf953cdd6f,4,(30/10) + (60/20),6,Immediate
+370,62cba72839d35cbf953cdd6f,5,(16/4) + (8/2),8,Immediate
+369,645abc0f7fa6368e6df2d973,1,(2 / 1) + (6 / 2),5,Immediate
+369,645abc0f7fa6368e6df2d973,2,(20 / 5) + (28 / 7),8,Immediate
+369,645abc0f7fa6368e6df2d973,3,(8 / 2) - (6 / 3),2,Immediate
+369,645abc0f7fa6368e6df2d973,4,(30/10) + (60/20),6,Immediate
+369,645abc0f7fa6368e6df2d973,5,(16/4) + (8/2),8,Immediate
+369,645abc0f7fa6368e6df2d973,6,(12 / 4) + (4 / 4),4,Immediate
+369,645abc0f7fa6368e6df2d973,7,(4 / 1) - (9 / 3),1,Immediate
+369,645abc0f7fa6368e6df2d973,8,(12 / 2) + (12 / 6),8,Immediate
+369,645abc0f7fa6368e6df2d973,9,(6 / 3) + (9 / 3),5,Immediate
+369,645abc0f7fa6368e6df2d973,10,(4 / 4) + (4 / 2),3,Immediate
+369,645abc0f7fa6368e6df2d973,11,(6 / 1) - (5 / 1),1,Immediate
+369,645abc0f7fa6368e6df2d973,12,(8 / 2) - (2 / 2),3,Immediate
+368,6332517a492e9ac48804f991,1,(2 / 1) + (6 / 2),14,Immediate
+368,6332517a492e9ac48804f991,2,(20 / 5) + (28 / 7),8,Immediate
+368,6332517a492e9ac48804f991,3,(8 / 2) - (6 / 3),6,Immediate
+368,6332517a492e9ac48804f991,4,(30/10) + (60/20),6,Immediate
+368,6332517a492e9ac48804f991,5,(16/4) + (8/2),7,Immediate
+368,6332517a492e9ac48804f991,6,(12 / 4) + (4 / 4),3,Immediate
+368,6332517a492e9ac48804f991,7,(4 / 1) - (9 / 3),7,Immediate
+368,6332517a492e9ac48804f991,8,(12 / 2) + (12 / 6),8,Immediate
+367,5be1ca6d91deed00015a986c,1,(2 / 1) + (6 / 2),1,Immediate
+366,6081ca47eeed1bb51c1d7f7b,1,(2 / 1) + (6 / 2),5,Immediate
+366,6081ca47eeed1bb51c1d7f7b,2,(20 / 5) + (28 / 7),8,Immediate
+366,6081ca47eeed1bb51c1d7f7b,3,(8 / 2) - (6 / 3),6,Immediate
+366,6081ca47eeed1bb51c1d7f7b,4,(30/10) + (60/20),6,Immediate
+366,6081ca47eeed1bb51c1d7f7b,5,(16/4) + (8/2),8,Immediate
+366,6081ca47eeed1bb51c1d7f7b,6,(12 / 4) + (4 / 4),4,Immediate
+366,6081ca47eeed1bb51c1d7f7b,7,(4 / 1) - (9 / 3),1,Immediate
+366,6081ca47eeed1bb51c1d7f7b,8,(12 / 2) + (12 / 6),8,Immediate
+366,6081ca47eeed1bb51c1d7f7b,9,(6 / 3) + (9 / 3),5,Immediate
+365,5b342c9da2982a0001dd9f25,1,(2 / 1) + (6 / 2),5,Immediate
+365,5b342c9da2982a0001dd9f25,2,(20 / 5) + (28 / 7),8,Immediate
+365,5b342c9da2982a0001dd9f25,3,(8 / 2) - (6 / 3),4,Immediate
+365,5b342c9da2982a0001dd9f25,4,(30/10) + (60/20),6,Immediate
+365,5b342c9da2982a0001dd9f25,5,(16/4) + (8/2),8,Immediate
+365,5b342c9da2982a0001dd9f25,6,(12 / 4) + (4 / 4),4,Immediate
+365,5b342c9da2982a0001dd9f25,7,(4 / 1) - (9 / 3),1,Immediate
+365,5b342c9da2982a0001dd9f25,8,(12 / 2) + (12 / 6),8,Immediate
+365,5b342c9da2982a0001dd9f25,9,(6 / 3) + (9 / 3),5,Immediate
+365,5b342c9da2982a0001dd9f25,10,(4 / 4) + (4 / 2),3,Immediate
+365,5b342c9da2982a0001dd9f25,11,(6 / 1) - (5 / 1),1,Immediate
+365,5b342c9da2982a0001dd9f25,12,(8 / 2) - (2 / 2),3,Immediate
+365,5b342c9da2982a0001dd9f25,13,(12 / 3) - (6 / 3),1,Immediate
+365,5b342c9da2982a0001dd9f25,14,(16 / 4) - (8 / 4),0,Immediate
+364,5ba176b4f7e29100014449e2,1,(2 / 1) + (6 / 2),4,Immediate
+364,5ba176b4f7e29100014449e2,2,(20 / 5) + (28 / 7),8,Immediate
+364,5ba176b4f7e29100014449e2,3,(8 / 2) - (6 / 3),1,Immediate
+364,5ba176b4f7e29100014449e2,4,(30/10) + (60/20),33,Immediate
+364,5ba176b4f7e29100014449e2,5,(16/4) + (8/2),8,Immediate
+364,5ba176b4f7e29100014449e2,6,(12 / 4) + (4 / 4),4,Immediate
+364,5ba176b4f7e29100014449e2,7,(4 / 1) - (9 / 3),1,Immediate
+364,5ba176b4f7e29100014449e2,8,(12 / 2) + (12 / 6),12,Immediate
+364,5ba176b4f7e29100014449e2,9,(6 / 3) + (9 / 3),5,Immediate
+362,58b2338a898c2e0001a5ca56,1,(2 / 1) + (6 / 2),4,Immediate
+362,58b2338a898c2e0001a5ca56,2,(20 / 5) + (28 / 7),13,Immediate
+362,58b2338a898c2e0001a5ca56,3,(8 / 2) - (6 / 3),2,Immediate
+362,58b2338a898c2e0001a5ca56,4,(30/10) + (60/20),6,Immediate
+362,58b2338a898c2e0001a5ca56,5,(16/4) + (8/2),8,Immediate
+362,58b2338a898c2e0001a5ca56,6,(12 / 4) + (4 / 4),4,Immediate
+362,58b2338a898c2e0001a5ca56,7,(4 / 1) - (9 / 3),1,Immediate
+362,58b2338a898c2e0001a5ca56,8,(12 / 2) + (12 / 6),8,Immediate
+362,58b2338a898c2e0001a5ca56,9,(6 / 3) + (9 / 3),5,Immediate
+361,5e2d96d3bc554937d1b3917a,1,(2 / 1) + (6 / 2),5,Immediate
+361,5e2d96d3bc554937d1b3917a,2,(20 / 5) + (28 / 7),8,Immediate
+361,5e2d96d3bc554937d1b3917a,3,(8 / 2) - (6 / 3),2,Immediate
+361,5e2d96d3bc554937d1b3917a,4,(30/10) + (60/20),6,Immediate
+361,5e2d96d3bc554937d1b3917a,5,(16/4) + (8/2),8,Immediate
+361,5e2d96d3bc554937d1b3917a,6,(12 / 4) + (4 / 4),4,Immediate
+361,5e2d96d3bc554937d1b3917a,7,(4 / 1) - (9 / 3),1,Immediate
+361,5e2d96d3bc554937d1b3917a,8,(12 / 2) + (12 / 6),8,Immediate
+361,5e2d96d3bc554937d1b3917a,9,(6 / 3) + (9 / 3),5,Immediate
+361,5e2d96d3bc554937d1b3917a,10,(4 / 4) + (4 / 2),3,Immediate
+360,606609111ba10f35596db018,1,(2 / 1) + (6 / 2),4,Immediate
+360,606609111ba10f35596db018,2,(20 / 5) + (28 / 7),8,Immediate
+360,606609111ba10f35596db018,3,(8 / 2) - (6 / 3),1,Immediate
+360,606609111ba10f35596db018,4,(30/10) + (60/20),6,Immediate
+360,606609111ba10f35596db018,5,(16/4) + (8/2),8,Immediate
+360,606609111ba10f35596db018,6,(12 / 4) + (4 / 4),4,Immediate
+359,640e4ddaf9f67c6c8ea4936b,1,(2 / 1) + (6 / 2),12,Immediate
+359,640e4ddaf9f67c6c8ea4936b,2,(20 / 5) + (28 / 7),42,Immediate
+359,640e4ddaf9f67c6c8ea4936b,3,(8 / 2) - (6 / 3),30,Immediate
+358,6056962634a5230dacdb63fc,1,(2 / 1) + (6 / 2),5,Immediate
+358,6056962634a5230dacdb63fc,2,(20 / 5) + (28 / 7),8,Immediate
+358,6056962634a5230dacdb63fc,3,(8 / 2) - (6 / 3),2,Immediate
+358,6056962634a5230dacdb63fc,4,(30/10) + (60/20),6,Immediate
+358,6056962634a5230dacdb63fc,5,(16/4) + (8/2),8,Immediate
+358,6056962634a5230dacdb63fc,6,(12 / 4) + (4 / 4),4,Immediate
+358,6056962634a5230dacdb63fc,7,(4 / 1) - (9 / 3),1,Immediate
+358,6056962634a5230dacdb63fc,8,(12 / 2) + (12 / 6),8,Immediate
+358,6056962634a5230dacdb63fc,9,(6 / 3) + (9 / 3),5,Immediate
+357,60a2dd0e1d378ad4d982dae3,1,(2 / 1) + (6 / 2),11,Immediate
+357,60a2dd0e1d378ad4d982dae3,2,(20 / 5) + (28 / 7),45,Immediate
+356,614f297777d0d8f5e2a5b354,1,(2 / 1) + (6 / 2),5,Immediate
+356,614f297777d0d8f5e2a5b354,2,(20 / 5) + (28 / 7),8,Immediate
+356,614f297777d0d8f5e2a5b354,3,(8 / 2) - (6 / 3),7,Immediate
+356,614f297777d0d8f5e2a5b354,4,(30/10) + (60/20),6,Immediate
+356,614f297777d0d8f5e2a5b354,5,(16/4) + (8/2),8,Immediate
+356,614f297777d0d8f5e2a5b354,6,(12 / 4) + (4 / 4),4,Immediate
+356,614f297777d0d8f5e2a5b354,7,(4 / 1) - (9 / 3),7,Immediate
+356,614f297777d0d8f5e2a5b354,8,(12 / 2) + (12 / 6),8,Immediate
+356,614f297777d0d8f5e2a5b354,9,(6 / 3) + (9 / 3),5,Immediate
+355,63b9ff9f64549294f0abe3c1,1,(2 / 1) + (6 / 2),5,Immediate
+355,63b9ff9f64549294f0abe3c1,2,(20 / 5) + (28 / 7),8,Immediate
+355,63b9ff9f64549294f0abe3c1,3,(8 / 2) - (6 / 3),2,Immediate
+355,63b9ff9f64549294f0abe3c1,4,(30/10) + (60/20),6,Immediate
+355,63b9ff9f64549294f0abe3c1,5,(16/4) + (8/2),8,Immediate
+355,63b9ff9f64549294f0abe3c1,6,(12 / 4) + (4 / 4),4,Immediate
+355,63b9ff9f64549294f0abe3c1,7,(4 / 1) - (9 / 3),1,Immediate
+355,63b9ff9f64549294f0abe3c1,8,(12 / 2) + (12 / 6),8,Immediate
+355,63b9ff9f64549294f0abe3c1,9,(6 / 3) + (9 / 3),5,Immediate
+355,63b9ff9f64549294f0abe3c1,10,(4 / 4) + (4 / 2),4,Immediate
+354,5bd8fabf544d4f000141d94d,1,(2 / 1) + (6 / 2),6,Immediate
+354,5bd8fabf544d4f000141d94d,2,(20 / 5) + (28 / 7),16,Immediate
+354,5bd8fabf544d4f000141d94d,3,(8 / 2) - (6 / 3),12,Immediate
+354,5bd8fabf544d4f000141d94d,4,(30/10) + (60/20),9,Immediate
+353,6418bb561cef445487504b0b,1,(2 / 1) + (6 / 2),5,Immediate
+353,6418bb561cef445487504b0b,2,(20 / 5) + (28 / 7),8,Immediate
+353,6418bb561cef445487504b0b,3,(8 / 2) - (6 / 3),1,Immediate
+353,6418bb561cef445487504b0b,4,(30/10) + (60/20),6,Immediate
+352,5efd12bb12f04114e442283c,1,(2 / 1) + (6 / 2),5,Immediate
+352,5efd12bb12f04114e442283c,2,(20 / 5) + (28 / 7),8,Immediate
+352,5efd12bb12f04114e442283c,3,(8 / 2) - (6 / 3),1,Immediate
+352,5efd12bb12f04114e442283c,4,(30/10) + (60/20),6,Immediate
+352,5efd12bb12f04114e442283c,5,(16/4) + (8/2),8,Immediate
+352,5efd12bb12f04114e442283c,6,(12 / 4) + (4 / 4),4,Immediate
+352,5efd12bb12f04114e442283c,7,(4 / 1) - (9 / 3),1,Immediate
+352,5efd12bb12f04114e442283c,8,(12 / 2) + (12 / 6),8,Immediate
+351,63fba9e68d9ff349947fece5,1,(2 / 1) + (6 / 2),10,Immediate
+351,63fba9e68d9ff349947fece5,2,(20 / 5) + (28 / 7),8,Immediate
+351,63fba9e68d9ff349947fece5,3,(8 / 2) - (6 / 3),1,Immediate
+351,63fba9e68d9ff349947fece5,4,(30/10) + (60/20),6,Immediate
+351,63fba9e68d9ff349947fece5,5,(16/4) + (8/2),8,Immediate
+351,63fba9e68d9ff349947fece5,6,(12 / 4) + (4 / 4),4,Immediate
+351,63fba9e68d9ff349947fece5,7,(4 / 1) - (9 / 3),1,Immediate
+350,5c3630c83ce2c8000111b504,1,(2 / 1) + (6 / 2),14,Immediate
+350,5c3630c83ce2c8000111b504,2,(20 / 5) + (28 / 7),8,Immediate
+350,5c3630c83ce2c8000111b504,3,(8 / 2) - (6 / 3),3,Immediate
+350,5c3630c83ce2c8000111b504,4,(30/10) + (60/20),6,Immediate
+350,5c3630c83ce2c8000111b504,5,(16/4) + (8/2),8,Immediate
+350,5c3630c83ce2c8000111b504,6,(12 / 4) + (4 / 4),4,Immediate
+350,5c3630c83ce2c8000111b504,7,(4 / 1) - (9 / 3),7,Immediate
+350,5c3630c83ce2c8000111b504,8,(12 / 2) + (12 / 6),8,Immediate
+350,5c3630c83ce2c8000111b504,9,(6 / 3) + (9 / 3),6,Immediate
+350,5c3630c83ce2c8000111b504,10,(4 / 4) + (4 / 2),3,Immediate
+350,5c3630c83ce2c8000111b504,11,(6 / 1) - (5 / 1),1,Immediate
+350,5c3630c83ce2c8000111b504,12,(8 / 2) - (2 / 2),3,Immediate
+350,5c3630c83ce2c8000111b504,13,(12 / 3) - (6 / 3),2,Immediate
+350,5c3630c83ce2c8000111b504,14,(16 / 4) - (8 / 4),2,Immediate
+350,5c3630c83ce2c8000111b504,15,(100/20) + (14/2),12,Immediate
+349,5ef11fdda0736031899eb5dc,1,(2 / 1) + (6 / 2),4,Immediate
+349,5ef11fdda0736031899eb5dc,2,(20 / 5) + (28 / 7),8,Immediate
+349,5ef11fdda0736031899eb5dc,3,(8 / 2) - (6 / 3),4,Immediate
+349,5ef11fdda0736031899eb5dc,4,(30/10) + (60/20),6,Immediate
+349,5ef11fdda0736031899eb5dc,5,(16/4) + (8/2),8,Immediate
+349,5ef11fdda0736031899eb5dc,6,(12 / 4) + (4 / 4),4,Immediate
+349,5ef11fdda0736031899eb5dc,7,(4 / 1) - (9 / 3),1,Immediate
+349,5ef11fdda0736031899eb5dc,8,(12 / 2) + (12 / 6),8,Immediate
+349,5ef11fdda0736031899eb5dc,9,(6 / 3) + (9 / 3),6,Immediate
+349,5ef11fdda0736031899eb5dc,10,(4 / 4) + (4 / 2),3,Immediate
+349,5ef11fdda0736031899eb5dc,11,(6 / 1) - (5 / 1),1,Immediate
+349,5ef11fdda0736031899eb5dc,12,(8 / 2) - (2 / 2),3,Immediate
+348,5ca60cd95a6f9a0015b2d034,1,(2 / 1) + (6 / 2),7,Immediate
+348,5ca60cd95a6f9a0015b2d034,2,(20 / 5) + (28 / 7),65,Immediate
+348,5ca60cd95a6f9a0015b2d034,3,(8 / 2) - (6 / 3),3,Immediate
+348,5ca60cd95a6f9a0015b2d034,4,(30/10) + (60/20),120,Immediate
+348,5ca60cd95a6f9a0015b2d034,5,(16/4) + (8/2),30,Immediate
+346,60fe1580147adc7ebeb315e6,1,(2 / 1) + (6 / 2),5,Immediate
+346,60fe1580147adc7ebeb315e6,2,(20 / 5) + (28 / 7),8,Immediate
+346,60fe1580147adc7ebeb315e6,3,(8 / 2) - (6 / 3),2,Immediate
+346,60fe1580147adc7ebeb315e6,4,(30/10) + (60/20),6,Immediate
+346,60fe1580147adc7ebeb315e6,5,(16/4) + (8/2),8,Immediate
+346,60fe1580147adc7ebeb315e6,6,(12 / 4) + (4 / 4),4,Immediate
+346,60fe1580147adc7ebeb315e6,7,(4 / 1) - (9 / 3),1,Immediate
+346,60fe1580147adc7ebeb315e6,8,(12 / 2) + (12 / 6),8,Immediate
+346,60fe1580147adc7ebeb315e6,9,(6 / 3) + (9 / 3),5,Immediate
+346,60fe1580147adc7ebeb315e6,10,(4 / 4) + (4 / 2),3,Immediate
+346,60fe1580147adc7ebeb315e6,11,(6 / 1) - (5 / 1),1,Immediate
+346,60fe1580147adc7ebeb315e6,12,(8 / 2) - (2 / 2),3,Immediate
+346,60fe1580147adc7ebeb315e6,13,(12 / 3) - (6 / 3),2,Immediate
+346,60fe1580147adc7ebeb315e6,14,(16 / 4) - (8 / 4),2,Immediate
+346,60fe1580147adc7ebeb315e6,15,(100/20) + (14/2),12,Immediate
+345,606734f4935218ab9f94703c,1,(2 / 1) + (6 / 2),5,Immediate
+345,606734f4935218ab9f94703c,2,(20 / 5) + (28 / 7),8,Immediate
+345,606734f4935218ab9f94703c,3,(8 / 2) - (6 / 3),2,Immediate
+345,606734f4935218ab9f94703c,4,(30/10) + (60/20),6,Immediate
+345,606734f4935218ab9f94703c,5,(16/4) + (8/2),8,Immediate
+345,606734f4935218ab9f94703c,6,(12 / 4) + (4 / 4),4,Immediate
+345,606734f4935218ab9f94703c,7,(4 / 1) - (9 / 3),1,Immediate
+345,606734f4935218ab9f94703c,8,(12 / 2) + (12 / 6),8,Immediate
+345,606734f4935218ab9f94703c,9,(6 / 3) + (9 / 3),5,Immediate
