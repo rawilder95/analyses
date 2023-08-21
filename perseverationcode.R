@@ -34,7 +34,7 @@ ggsave('figures/perseverationsbargraph.png', device= 'png', dpi= 300)
 # Check to see if Delayed listnum 2 times are actually from listnum 1
 # If that's the case than it should be negative
 fluency_noerror= dat[perseveration==0]
-# No need to write this to temp folder because this is going to be the main file moving forward
+# stays here because this is the main file
 fwrite(fluency_noerror, 'fluency_noerror.csv')
 # Check that the issue with rows shifting hasn't happened again
 # print(dat[, unique(condition), prolific_id])

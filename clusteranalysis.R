@@ -3,11 +3,9 @@ library(data.table)
 library(ggplot2)
 library(ez)
 library(cowplot)
-
 ### Things to try ###
 # -Subset of the methods (e.g. simdrop, dynamic etc.)
 # - Using terminal python code, documentation in paper
-
 # For cluster switches 
 # How many clusters in this list
 # Average size of the clusters
@@ -22,50 +20,144 @@ dat= fread('fluency_noerror.csv')
 # arrange a new data table that just preallocates prolific_id and items to textfile
 tooutput_all= dat[, items, by= .(prolific_id, listnum, age, condition)]
 # you need to upload each col identifier separately, since the software can only take subj id and words for columns
-# use the file_idx variable to evaluate whether you need to write a new textfile
-file_idx= list.files()
+# List all of the file names in the folder called "cluster_analysis"
+file_idx= list.files("cluster_analysis")
+# preallocate file names to check whether creating .txt files is necessary.   
 check_idx= c("clusteranalysis_delayoldlist1.txt", "clusteranalysis_immediateoldlist1.txt", "clusteranalysis_delayoldlist2.txt", "clusteranalysis_immediateoldlist2.txt")
-# If there are not any instances where check_idx matches file_idx, run this next section of code
-if(!any(file_idx %in% check_idx)){
-}
-
-#Immediate Condition
+### Function Name Format: condition_age_l# -> [delayed or immediate]_[old or young]_[list 1 or 2]
 # immediate-young-list1
-immediateyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
-immediateyoungl1= subset(immediateyoungl1, select= c(prolific_id, items))
-#Uncomment to write textfile
-# write.table(immediateyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
+immediate_young_l1= function(r){
+  if (r==1){
+  #Immediate Condition
+  # immediate-young-list1
+  immediateyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
+  immediateyoungl1= subset(immediateyoungl1, select= c(prolific_id, items))
+  #write out to cluster_analysis
+  write.table(immediateyoungl1, file = "cluster_analysis/clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
+  print('hi')
+  } else{
+      print('already in directory')
+    }
+  }
 # immediate-young-list2
+immediate_young_l2= function(r){
+  if (r==1){
 immediateyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
 immediateyoungl2= subset(immediateyoungl2, select= c(prolific_id, items))
-write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)
-
+write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)}
+}
 # This section prepares a data table for a .txt file to be passed through the cluster analysis tool
 # The tool returns a table with switch values (beginning of a cluster, continuation of a cluster, and cluster switches)
 # immediate-old-list1
+immediate_old_l1= function(r){
+  if (r==1){
 immediateoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 immediateoldl1= subset(immediateoldl1, select= c(prolific_id, items))
-# write.table(immediateoldl1, file = "clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
+write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
+  }
+}
 # immediate-old-list2
-immediateoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
-immediateoldl2= subset(immediateoldl2, select= c(prolific_id, items))
-# write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
-# Delayed Condition
-# delayed-young-list1
-delayedyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
-delayedyoungl1= subset(delayedyoungl1, select= c(prolific_id, items))
-# write.table(delayedyoungl1, file = "clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
-# delayed-young-list2
-delayedyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
-delayedyoungl2= subset(delayedyoungl2, select= c(prolific_id, items))
-# write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)
+immediate_old_l2= function(r){
+  if (r==1){
+    immediateoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
+    immediateoldl2= subset(immediateoldl2, select= c(prolific_id, items))
+    write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
+    }
+}
+
+# delay-young-l2
+delayed_young_l1= function(r){
+  if (r==1){
+    # Delayed Condition
+    # delayed-young-list1
+    delayedyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Delayed",]
+    delayedyoungl1= subset(delayedyoungl1, select= c(prolific_id, items))
+    write.table(delayedyoungl1, file = "cluster_analysis/clusteranalysis_delayedyounglist1.txt", sep = "\t", row.names = FALSE)
+  }
+}
+# delay-young-l2
+delayed_young_l2= function(r){
+  if (r==1){
+    # Delayed Condition
+    # delayed-young-list2
+    delayedyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Delayed",]
+    delayedyoungl2= subset(delayedyoungl2, select= c(prolific_id, items))
+    write.table(delayedyoungl1, file = "cluster_analysis/clusteranalysis_delayedyounglist1.txt", sep = "\t", row.names = FALSE)
+  }
+}
 # delayed-old-list1
-delayedoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
-delayedoldl1= subset(delayedoldl1, select= c(prolific_id, items))
-# write.table(immediateoldl1, file = "clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
+delayed_old_l1= function(r){
+  if (r==1){
+    delayedoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Delayed",]
+    delayedoldl1= subset(delayedoldl1, select= c(prolific_id, items))
+    write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
+  }
+}
 # delayed-old-list2
-delayedoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
-delayedoldl2= subset(delayedoldl2, select= c(prolific_id, items))
+delayed_old_l2= function(r){
+  if (r==1){
+    delayedoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Delayed",]
+    delayedoldl2= subset(delayedoldl1, select= c(prolific_id, items))
+    write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
+    # delayed-old-list2
+  }
+}
+# Look for any instances where check_idx matches file_idx
+# If the files do not exist yet, create them and write them into the folder cluster_analysis
+if(!any(file_idx %in% check_idx)){
+  r= 1
+} else{
+  r= 0 #set r to 0 if you already have the .txt files in the dir
+}
+# Run all the functions to create a .txt file for each condition. 
+# If the files 
+immediate_young_l1(r)
+immediate_young_l2(r)
+immediate_old_l1(r)
+immediate_old_l2(r)
+delayed_young_l1(r)
+delayed_young_l2(r)
+delayed_old_l1(r)
+delayed_old_l2(r)
+
+### PYTHON FORAGER NOTES ###
+# 1. data : The --data flag requires you to specify the path to the fluency list file that you would like to execute foraging methods on
+# 
+# 2. model: The --model flag requires you to pass one of the following arguments, to run corresponding model(s) you would like to execute.
+# a. static
+# b. dynamic
+# c. pstatic
+# d. pdynamic
+# e. all
+# 
+# 3. switch: The --switch flag requires you to pass one of the following arguments to utilize corresponding switch method(s) in the model selected
+# a. troyer
+# b. simdrop
+# c. multimodal
+# d. delta
+# e. all
+
+# a.  Sample execution with single model and all switches:
+  ```
+python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model dynamic --switch all
+```
+
+b. Sample execution with all models and single switch:
+  ```
+python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model all --switch simdrop
+```
+
+c. Running all models and switches
+```
+python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model all --switch all
+```
+
+
+
+
+
+
+
 # Uncomment if you need to use the SF cluster analysis tool
 # write.table(immediateoldl2, file = "clusteranalysis_delayoldlist2.txt", sep = "\t", row.names = FALSE)
 # Read in cluster csv's 
