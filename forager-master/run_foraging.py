@@ -1,4 +1,5 @@
 import argparse
+import pandas
 from scipy.optimize import fmin
 from forager.foraging import forage
 from forager.switch import switch_delta, switch_multimodal, switch_simdrop, switch_troyer

@@ -27,18 +27,14 @@ check_idx= c("clusteranalysis_delayoldlist1.txt", "clusteranalysis_immediateoldl
 ### Function Name Format: condition_age_l# -> [delayed or immediate]_[old or young]_[list 1 or 2]
 # immediate-young-list1
 immediate_young_l1= function(r){
-  if (r==1){
   #Immediate Condition
   # immediate-young-list1
   immediateyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
   immediateyoungl1= subset(immediateyoungl1, select= c(prolific_id, items))
   #write out to cluster_analysis
   write.table(immediateyoungl1, file = "cluster_analysis/clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
-  print('hi')
-  } else{
-      print('already in directory')
-    }
-  }
+  print('run')
+}
 # immediate-young-list2
 immediate_young_l2= function(r){
   if (r==1){
@@ -50,11 +46,9 @@ write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", 
 # The tool returns a table with switch values (beginning of a cluster, continuation of a cluster, and cluster switches)
 # immediate-old-list1
 immediate_old_l1= function(r){
-  if (r==1){
 immediateoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 immediateoldl1= subset(immediateoldl1, select= c(prolific_id, items))
 write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
-  }
 }
 # immediate-old-list2
 immediate_old_l2= function(r){
@@ -64,93 +58,55 @@ immediate_old_l2= function(r){
     write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
     }
 }
-
 # delay-young-l2
 delayed_young_l1= function(r){
-  if (r==1){
+
     # Delayed Condition
     # delayed-young-list1
     delayedyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Delayed",]
     delayedyoungl1= subset(delayedyoungl1, select= c(prolific_id, items))
     write.table(delayedyoungl1, file = "cluster_analysis/clusteranalysis_delayedyounglist1.txt", sep = "\t", row.names = FALSE)
-  }
 }
+delayed_young_l1(1)
 # delay-young-l2
 delayed_young_l2= function(r){
-  if (r==1){
     # Delayed Condition
     # delayed-young-list2
     delayedyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Delayed",]
     delayedyoungl2= subset(delayedyoungl2, select= c(prolific_id, items))
-    write.table(delayedyoungl1, file = "cluster_analysis/clusteranalysis_delayedyounglist1.txt", sep = "\t", row.names = FALSE)
-  }
+    write.table(delayedyoungl2, file = "cluster_analysis/delayed_youngl2.txt", sep = "\t", row.names = FALSE)
 }
 # delayed-old-list1
 delayed_old_l1= function(r){
-  if (r==1){
     delayedoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Delayed",]
     delayedoldl1= subset(delayedoldl1, select= c(prolific_id, items))
-    write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
-  }
+    write.table(delayedoldl1, file = "cluster_analysis/delayed_oldl1.txt", sep = "\t", row.names = FALSE)
 }
 # delayed-old-list2
 delayed_old_l2= function(r){
-  if (r==1){
     delayedoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Delayed",]
-    delayedoldl2= subset(delayedoldl1, select= c(prolific_id, items))
-    write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_delayoldlist1.txt", sep = "\t", row.names = FALSE)
-    # delayed-old-list2
-  }
+    delayedoldl2= subset(delayedoldl2, select= c(prolific_id, items))
+    write.table(delayedoldl2, file = "cluster_analysis/delayed_oldl2.txt", sep = "\t", row.names = FALSE)
 }
 # Look for any instances where check_idx matches file_idx
 # If the files do not exist yet, create them and write them into the folder cluster_analysis
-if(!any(file_idx %in% check_idx)){
+if(!all(file_idx %in% check_idx)){
   r= 1
 } else{
   r= 0 #set r to 0 if you already have the .txt files in the dir
 }
 # Run all the functions to create a .txt file for each condition. 
 # If the files 
-immediate_young_l1(r)
-immediate_young_l2(r)
-immediate_old_l1(r)
-immediate_old_l2(r)
-delayed_young_l1(r)
-delayed_young_l2(r)
-delayed_old_l1(r)
-delayed_old_l2(r)
+r= 1
+immediate_young_l1(1)
+immediate_young_l2(1)
+immediate_old_l1(1)
+immediate_old_l2(1)
+delayed_young_l1(1)
+delayed_young_l2(1)
+delayed_old_l1(1)
+delayed_old_l2(1)
 
-### PYTHON FORAGER NOTES ###
-# 1. data : The --data flag requires you to specify the path to the fluency list file that you would like to execute foraging methods on
-# 
-# 2. model: The --model flag requires you to pass one of the following arguments, to run corresponding model(s) you would like to execute.
-# a. static
-# b. dynamic
-# c. pstatic
-# d. pdynamic
-# e. all
-# 
-# 3. switch: The --switch flag requires you to pass one of the following arguments to utilize corresponding switch method(s) in the model selected
-# a. troyer
-# b. simdrop
-# c. multimodal
-# d. delta
-# e. all
-
-# a.  Sample execution with single model and all switches:
-  ```
-python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model dynamic --switch all
-```
-
-b. Sample execution with all models and single switch:
-  ```
-python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model all --switch simdrop
-```
-
-c. Running all models and switches
-```
-python run_foraging.py --data data/fluency_lists/data-psyrev.txt --model all --switch all
-```
 
 
 
@@ -190,13 +146,13 @@ i1= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateol
 i1[, result:= "switch"]
 nll= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
 model_results= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
-immediateold1= rbind(i1, nll, model_results, fill= TRUE)
-immediateold1[, listnum:= 1]
-immediateold1[, age:= as.factor("Old")]
-immediateold1[, condition:= as.factor("Immediate")]
-immediateold1[, model:= "dynamic"]
-immediateold1[, method:= "simdrop"]
+immediateoldl1= rbind(i1, nll, model_results, fill= TRUE)
+immediateoldl1[, listnum:= 1]
+immediateoldl1[, age:= as.factor("Old")]
+immediateoldl1[, condition:= as.factor("Immediate")]
+immediateoldl1[, model:= "dynamic"]
+immediateoldl1[, method:= "simdrop"]
 ### OLD LIST 1 ####
 # Bind immediate and delayed old 1
-oldl1= rbind(immediateold1, delayold1)
+oldl1= rbind(immediateoldl1, delayold1)
 
