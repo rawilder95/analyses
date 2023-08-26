@@ -10,7 +10,6 @@ dat= fread('fluency_noerror.csv')
 ### Response Length ###
 # Preallocate data table for response length anova
 # factor along id, condition, age, and trial number
-
 rl_anova= dat[, .N, by= .(prolific_id, condition, age, listnum)]
 # To avoid warnings, set these columns to be factors
 rl_anova[, prolific_id:= as.factor(prolific_id)]
@@ -18,6 +17,14 @@ rl_anova[, condition:= as.factor(condition)]
 rl_anova[, age:= as.factor(age)]
 rl_anova[, listnum:= as.factor(listnum)]
 rl_anova_results =ezANOVA(rl_anova, between=c("age","condition"), dv=N, within= listnum, wid=prolific_id)
+# Just to look at average size of the repetition cluster compared across all 
+# Code identical col for repetition clustering but instead of semantic software, calculation will be is item in repeated chain 1 = yes; 0= no.
+# Semantic clusters can have a size of 1
+
+# cluster switches 
+# R N N N R R R N N R N
+# 1 0 0 0 1 1 1 0 0 1 0
+
 # Error unbalanced
 # How to check for the known error here (unbalanced with one or more cells missing data)
 rl_anova[, length(unique(listnum)),by= .(prolific_id, condition, age)][!V1==2]

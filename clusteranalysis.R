@@ -23,7 +23,7 @@ tooutput_all= dat[, items, by= .(prolific_id, listnum, age, condition)]
 # List all of the file names in the folder called "cluster_analysis"
 file_idx= list.files("cluster_analysis")
 # preallocate file names to check whether creating .txt files is necessary.   
-check_idx= c("clusteranalysis_delayoldlist1.txt", "clusteranalysis_immediateoldlist1.txt", "clusteranalysis_delayoldlist2.txt", "clusteranalysis_immediateoldlist2.txt")
+check_idx= c("delayoldlist1.txt", "immediateoldlist1.txt", "delayoldlist2.txt", "immediateoldlist2.txt")
 ### Function Name Format: condition_age_l# -> [delayed or immediate]_[old or young]_[list 1 or 2]
 # immediate-young-list1
 immediate_young_l1= function(r){
@@ -32,7 +32,7 @@ immediate_young_l1= function(r){
   immediateyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Immediate",]
   immediateyoungl1= subset(immediateyoungl1, select= c(prolific_id, items))
   #write out to cluster_analysis
-  write.table(immediateyoungl1, file = "cluster_analysis/clusteranalysis_immediateyounglist1.txt", sep = "\t", row.names = FALSE)
+  write.table(immediateyoungl1, file = "cluster_analysis/immediateyounglist1.txt", sep = "\t", row.names = FALSE)
   print('run')
 }
 # immediate-young-list2
@@ -40,7 +40,7 @@ immediate_young_l2= function(r){
   if (r==1){
 immediateyoungl2= tooutput_all[age== "Young" & listnum==2 & condition== "Immediate",]
 immediateyoungl2= subset(immediateyoungl2, select= c(prolific_id, items))
-write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", sep = "\t", row.names = FALSE)}
+write.table(immediateyoungl2, file = "immediateyounglist2.txt", sep = "\t", row.names = FALSE)}
 }
 # This section prepares a data table for a .txt file to be passed through the cluster analysis tool
 # The tool returns a table with switch values (beginning of a cluster, continuation of a cluster, and cluster switches)
@@ -48,14 +48,14 @@ write.table(immediateyoungl2, file = "clusteranalysis_immediateyounglist2.txt", 
 immediate_old_l1= function(r){
 immediateoldl1= tooutput_all[age== "Old" & listnum==1 & condition== "Immediate",]
 immediateoldl1= subset(immediateoldl1, select= c(prolific_id, items))
-write.table(immediateoldl1, file = "cluster_analysis/clusteranalysis_immediateoldlist1.txt", sep = "\t", row.names = FALSE)
+write.table(immediateoldl1, file = "cluster_analysis/immediateoldlist1.txt", sep = "\t", row.names = FALSE)
 }
 # immediate-old-list2
 immediate_old_l2= function(r){
   if (r==1){
     immediateoldl2= tooutput_all[age== "Old" & listnum==2 & condition== "Immediate",]
     immediateoldl2= subset(immediateoldl2, select= c(prolific_id, items))
-    write.table(immediateoldl2, file = "clusteranalysis_immediateoldlist2.txt", sep = "\t", row.names = FALSE)
+    write.table(immediateoldl2, file = "immediateoldlist2.txt", sep = "\t", row.names = FALSE)
     }
 }
 # delay-young-l2
@@ -65,7 +65,7 @@ delayed_young_l1= function(r){
     # delayed-young-list1
     delayedyoungl1= tooutput_all[age== "Young" & listnum==1 & condition== "Delayed",]
     delayedyoungl1= subset(delayedyoungl1, select= c(prolific_id, items))
-    write.table(delayedyoungl1, file = "cluster_analysis/clusteranalysis_delayedyounglist1.txt", sep = "\t", row.names = FALSE)
+    write.table(delayedyoungl1, file = "cluster_analysis/delayedyounglist1.txt", sep = "\t", row.names = FALSE)
 }
 delayed_young_l1(1)
 # delay-young-l2
@@ -90,14 +90,8 @@ delayed_old_l2= function(r){
 }
 # Look for any instances where check_idx matches file_idx
 # If the files do not exist yet, create them and write them into the folder cluster_analysis
-if(!all(file_idx %in% check_idx)){
-  r= 1
-} else{
-  r= 0 #set r to 0 if you already have the .txt files in the dir
-}
 # Run all the functions to create a .txt file for each condition. 
-# If the files 
-r= 1
+# If the files do not exist
 immediate_young_l1(1)
 immediate_young_l2(1)
 immediate_old_l1(1)
@@ -115,22 +109,27 @@ delayed_old_l2(1)
 
 
 # Uncomment if you need to use the SF cluster analysis tool
-# write.table(immediateoldl2, file = "clusteranalysis_delayoldlist2.txt", sep = "\t", row.names = FALSE)
+# write.table(immediateoldl2, file = "delayoldlist2.txt", sep = "\t", row.names = FALSE)
 # Read in cluster csv's 
-### Delayed Condition ###
+### Cluster switches ###
+# change the working directory to "cluster_analysis", where all of the relevant data files will be 
+setwd("cluster_analysis")
+## Delayed Condition##
 # Delayed-Old-List 1
-# Cluster switches
-d1= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+
+d1= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+
+
 d1[, result:= "switch"]
 # Model fit
-nll= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_nll_results.csv"
+nll= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_nll_results.csv"
 )
 # Set up col identifier for which part of the cluster results
 nll[, result:= "model_fit"]
 # Make data table to store all values in by factor 
 delayold1= rbind(d1, nll, fill= TRUE)
 # Model results
-model_results= fread("clusteranalysis_delayoldlist1_results/clusteranalysis_delayoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+model_results= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_model_results.csv")
 # Add to main delay old data table
 delayold1= rbind(delayold1, model_results, fill= TRUE)
 # Add listnum as a value because you're going to combine data tables by trial
@@ -142,10 +141,10 @@ delayold1[, method:= "simdrop"]
 delayold1[, model:= "dynamic"]
 ## Repeat for each set of csv files 
 ### Immediate-Old-List 1 ###
-i1= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+i1= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
 i1[, result:= "switch"]
-nll= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
-model_results= fread("clusteranalysis_immediateoldlist1_results/clusteranalysis_immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+nll= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
+model_results= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
 immediateoldl1= rbind(i1, nll, model_results, fill= TRUE)
 immediateoldl1[, listnum:= 1]
 immediateoldl1[, age:= as.factor("Old")]

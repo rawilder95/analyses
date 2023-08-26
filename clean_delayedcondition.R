@@ -21,7 +21,7 @@ demo_data= data.table()
 parser <- newJSONParser()
 parser$addData(json_string)
 my_data <- parser$getObject()
-while (!is.null(my_data$prolific_id)){
+while(!is.null(my_data$prolific_id)){
   numrows= length(my_data$items)
   if(is.null(my_data$items)){
     demo_data <- rbind(demo_data, as.data.table(my_data), fill= TRUE)
