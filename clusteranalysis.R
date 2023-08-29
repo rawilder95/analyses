@@ -179,7 +179,19 @@ for(i in dat[1, prolific_id]){
       }
     if(this_trial$switch_val>)
     }
-  }
+}
+
+# Error where merging messes up the order of observation and organization of rows from both DT's
+# fix is to set order relative to listnum
+this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by= listnum]
+
+# Check this subject 
+# listnum out of order
+# spotcheck: prolific_id= 5484655ffdf99b07b28f22cc; age= "OLD", all 0's for switch value... which seems weird.
+# order by listnum
+
+
+
 
 
 
