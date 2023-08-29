@@ -109,43 +109,59 @@ setwd("cluster_analysis")
 ##Old Group##
 # Immediate-Old-List 1
 immediateoldl1=fread("immediateoldlist1_model_none_switch_simdrop_switch_results.csv")
+immediateoldl1[, listnum:=1]
+immediateoldl1[, itemnum:= 1:nrow(immediateoldl1)]
+immediateoldl1[, age:= "Old"]
 # Immediate-Old-List 2
 immediateoldl2=fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
+immediateoldl2[, listnum:= 2]
+immediateoldl2[, itemnum:= 1:nrow(immediateoldl2)]
+immediateoldl2[, age:= "Old"]
 ##Young Group##
 # Immediate-Young-List 1
 immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
+immediateyoungl1[, listnum:=1]
+immediateyoungl1[, itemnum:= 1:nrow(immediateyoungl1)]
+immediateyoungl1[, age:= "Young"]
+immediateyoungl1[, condition:= "Delayed"]
 # Immediate-Young-List 2
 immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
+immediateyoungl2[, listnum:=2]
+immediateyoungl2[, itemnum:= 1:nrow(immediateyoungl2)]
+immediateyoungl2[, age:= "Young"]
+immediateyoungl2[, condition:= "Delayed"]
 ## Delayed Condition##
 ##Old Group ##
 # Delayed-Old-List 1
 delayoldl1=fread("delayed_oldl1_model_none_switch_simdrop_switch_results.csv")
+delayoldl1[, listnum:=1]
+delayoldl1[, itemnum:= 1:nrow(delayoldl1)]
+delayoldl1[, age:= "Old"]
+delayoldl1[, condition:= "Delayed"]
 # Delayed-Old-List 2
 delayoldl2=fread("delayed_oldl2_model_none_switch_simdrop_switch_results.csv")
+delayoldl2[, listnum:=2]
+delayoldl2[, itemnum:= 1:nrow(delayoldl2)]
+delayoldl2[, age:= "Old"]
+delayoldl2[, condition:= "Delayed"]
 ##Young Group ##
 # Delayed-Young-List 1
 delayyoungl1=fread("delayedyounglist1_model_none_switch_simdrop_switch_results.csv")
+delayyoungl1[, listnum:=1]
+delayyoungl1[, itemnum:= 1:nrow(delayyoungl1)]
+delayyoungl1[, age:= "Young"]
+delayyoungl1[, condition:= "Delayed"]
 # Delayed-Young-List 2
 delayyoungl2=fread("delayed_youngl2_model_none_switch_simdrop_switch_results.csv")
-##Immediate Condition##
-## Old Group ##
-# Immediate-Old-List 1
-immediateoldl1= fread("immediateoldlist1_model_none_switch_simdrop_switch_results.csv")
-# Immediate-Old-List 2
-immediateoldl2= fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
-##Young Group
-# Immediate-Young-List 1
-immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
-# Immediate-Young-List 2
-immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
+delayyoungl2[, listnum:=2]
+delayyoungl2[, itemnum:= 1:nrow(delayyoungl2)]
+delayyoungl2[, age:= "Young"]
+delayyoungl2[, condition:= "Delayed"]
 # change directories back to the main analyses dir
 setwd("~/Downloads/jatos_mac_java/analyses")
 # merge with main data table
 dat= fread("fluency_noerror.csv")
 # preallocate cols for dat 
-dat[, switch_value:= 0]
-dat[, switch_method:= "simdrop"]
-dat
 # R bind all of the data tables 
 cluster_vals= rbind(delayoldl1, delayoldl2, delayyoungl1, delayyoungl2, immediateoldl1, immediateoldl2, immediateyoungl1, immediateyoungl2)
 # remove V1 cols from cluster vals 
@@ -158,36 +174,15 @@ cluster_vals[, switch_val:= Switch_Value]
 cluster_vals[, switch_method:= Switch_Method]
 # remove original col headers
 cluster_vals= subset(cluster_vals, select= -c(Subject, Fluency_Item, Switch_Value, Switch_Method))
-# PAPERTRAIL @Jeff, this is the solution for the merge issue.  If both data.tables have unique columns merge will return an error and suggest allow.cartesian and the solution I put below.  You want by = .EACHi because that (cluster .csv data table) is the data table will fewer observations.
-dat= merge(dat, cluster_vals, by= .EACHI)
-dat[,switch_val]
-# create a temp data table that parses the switch value by prolific_id and listnum
-temp_dt= dat[, switch_val, by= .(prolific_id, listnum)]
-# For loop through each participant (start with 1 for now)
-
-for(i in dat[1, prolific_id]){
-  # counter resets by subject
-  counter= 0
-  this_subj= dat[prolific_id==i,]
-  # second for loop to go through each list
-  for(j in 1:nrow(this_subj)){
-    this_trial= this_subj[j]
-    if(this_trial$switch_val==0){
-      counter= counter+1
-      }else{
-        counter= counter+0
-      }
-    if(this_trial$switch_val>)
-    }
-}
+# Find number of cluster switches
+cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
 
 # Error where merging messes up the order of observation and organization of rows from both DT's
 # fix is to set order relative to listnum
 this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by= listnum]
-
 # Check this subject 
 # listnum out of order
-# spotcheck: prolific_id= 5484655ffdf99b07b28f22cc; age= "OLD", all 0's for switch value... which seems weird.
+# spotcheck: prolific_id= "5484655ffdf99b07b28f22cc"; age= "OLD", all 0's for switch value... which seems weird.
 # order by listnum
 
 
@@ -231,4 +226,49 @@ this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by
 # # Bind immediate and delayed old 1
 # oldl1= rbind(immediateoldl1, delayold1)
 # 
-
+# Additional code but not sure if I need later
+# ##Immediate Condition##
+# ## Old Group ##
+# # Immediate-Old-List 1
+# immediateoldl1= fread("immediateoldlist1_model_none_switch_simdrop_switch_results.csv")
+# immediateoldl1[, listnum:= 1]
+# immediateoldl1[, itemnum:= 1:nrow(immediateoldl1)]
+# # Immediate-Old-List 2
+# immediateoldl2= fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
+# immediateoldl2[, listnum:= 2]
+# immediateoldl2[, itemnum:= 1:nrow(immediateoldl2)]
+# ##Young Group
+# # # Immediate-Young-List 1
+# # immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
+# # immediateyoungl1[, listnum:= 1]
+# # immediateyoungl1[, itemnum:= 1:nrow(immediateyoungl1)]
+# # # Immediate-Young-List 2
+# # immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
+# # immediateyoungl2[, listnum:= 2]
+# # immediateyoungl2[, itemnum:= 1:nrow(immediateyoungl2)]
+# 
+# # for(i in dat[1, prolific_id]){
+# #   # counter resets by subject
+# #   counter= 0
+# #   this_subj= dat[prolific_id==i,]
+# #   # second for loop to go through each list
+# #   for(j in 1:nrow(this_subj)){
+# #     this_trial= this_subj[j]
+# #     if(this_trial$switch_val==0){
+# #       counter= counter+1
+# #       }else{
+# #         counter= counter+0
+# #       }
+# #     if(this_trial$switch_val>0){
+# #     }
+# }
+# # # PAPERTRAIL @Jeff, this is the solution for the merge issue.  If both data.tables have unique columns merge will return an error and suggest allow.cartesian and the solution I put below.  You want by = .EACHi because that (cluster .csv data table) is the data table will fewer observations.
+# # setkey(dat, prolific_id, listnum, itemnum, items)
+# # setkey(cluster_vals, prolific_id, listnum, itemnum, items)
+# # # We don't even necessarily need to merge
+# # # k= merge(dat, cluster_vals, key_by= ("prolific_id"))
+# # 
+# # dat[,switch_val]
+# # # create a temp data table that parses the switch value by prolific_id and listnum
+# # temp_dt= dat[, switch_val, by= .(prolific_id, listnum)]
+# # For loop through each participant (start with 1 for now)
