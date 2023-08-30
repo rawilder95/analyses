@@ -200,17 +200,21 @@ cluster_anova= merge(cluster_vals, avg_cluster_size, by= c("prolific_id", "listn
 cluster_size_anova= cluster_anova[, mean(avg_cluster), by= .(listnum, age, condition)]
 cluster_switch_anova= cluster_anova[, mean(ns), by= .(listnum, age, condition)]
 # Plot the rate of cluster switches
-ggplot(data= cluster_switch_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Rate of Cluster Switches", y= "Average # Switches", x= "Age", fill= "Condition")
+ggplot(data= cluster_switch_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Rate of Semantic Cluster Switches", y= "Average # Switches", x= "Age", fill= "Condition")
 ggsave("figures/avg_cluster_switch_bar.png", device= "png", dpi= 300)
 
 # Plot the average cluster size
-ggplot(data= cluster_size_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")
-
-
-
-
-
-
+ggplot(data= cluster_size_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Average Semantic Cluster Sizes", y= "Average Cluster Size", x= "Age", fill= "Condition")
+ggsave("figures/avg_cluster_size_bar.png", device= "png", dpi= 300)
+# set vars to factor
+cluster_anova[, prolific_id:= as.factor(prolific_id)]
+cluster_anova[, age:= as.factor(age)]
+cluster_anova[, condition:= as.factor(condition)]
+cluster_anova[, listnum:= as.factor(listnum)]
+# ANOVA cluster switches
+ezANOVA(cluster_anova, between=c("age","condition"), dv=ns, wid=prolific_id)
+# ANOVA cluster size
+ezANOVA(cluster_anova, between=c("age","condition"), dv=avg_cluster, wid=prolific_id)
 
 n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
 # Find average cluster size
