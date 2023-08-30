@@ -162,6 +162,9 @@ delayyoungl2[, condition:= "Delayed"]
 # change directories back to the main analyses dir
 setwd("~/Downloads/jatos_mac_java/analyses")
 # merge with main data table
+
+
+
 dat= fread("fluency_noerror.csv")
 # preallocate cols for dat 
 # R bind all of the data tables 
@@ -177,6 +180,38 @@ cluster_vals[, switch_method:= Switch_Method]
 # remove original col headers
 cluster_vals= subset(cluster_vals, select= -c(Subject, Fluency_Item, Switch_Value, Switch_Method))
 # Find number of cluster switches
+# get the response length first (numerator for cluster sizes)
+resp_len= cluster_vals[,  .N, by= .(prolific_id, listnum)]
+# Weird work around but to prevent this from just copying over the original table and introduce the issues of NaNs and coerced integers (hopefully)
+resp_len[, cluster_num:= N]
+resp_len= subset(resp_len, select= -c(N))
+# get the number of switches per trial
+n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum)]
+n_switches[, ns:= N]
+n_switches= subset(n_switches, select= -c(N))
+# get average cluster size
+avg_cluster_size= merge(resp_len, n_switches)
+avg_cluster_size[, avg_cluster:= cluster_num/ns]
+# cluster_vals[, n_switches:= as.double(n_switches)]
+# cluster_vals[, n_switches:= !(is.na(n_switches)), by= .(prolific_id, listnum)]
+# cluster_vals[, avg_cluster_size:=resp_len/n_switches, by= .(prolific_id, listnum)]
+# set data table for cluster size/switches ANOVA 
+cluster_anova= merge(cluster_vals, avg_cluster_size, by= c("prolific_id", "listnum"))
+cluster_size_anova= cluster_anova[, mean(avg_cluster), by= .(listnum, age, condition)]
+cluster_switch_anova= cluster_anova[, mean(ns), by= .(listnum, age, condition)]
+# Plot the rate of cluster switches
+ggplot(data= cluster_switch_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Rate of Cluster Switches", y= "Average # Switches", x= "Age", fill= "Condition")
+ggsave("figures/avg_cluster_switch_bar.png", device= "png", dpi= 300)
+
+# Plot the average cluster size
+ggplot(data= cluster_size_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")
+
+
+
+
+
+
+
 n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
 # Find average cluster size
 cluster_vals[, n_switches:= as.numeric(0)]
@@ -186,6 +221,12 @@ cluster_vals[, cluster_size:= as.numeric(.N), by = .(prolific_id, listnum, condi
 # cluster_vals[switch_val==1, cluster_size:= mean(cluster_size/n_switches), by= .(prolific_id, age, condition, listnum)]
 cluster_vals[, cluster_size:=as.numeric(cluster_size/n_switches), by= .(prolific_id, listnum, age, condition)]
 cluster_vals[, cluster_size:= mean(cluster_size), by= .(listnum, age, condition)]
+
+
+
+
+
+
 # So I've tried a lot of different things here, from setting the values to numeric to breaking the dt calculations into separate parts.  I'm lost as to why it's trying to coerce all values to being integer; 
 
 # Back tracking on this for now... not sure if I'm going to approach it this way.
