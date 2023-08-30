@@ -112,24 +112,26 @@ immediateoldl1=fread("immediateoldlist1_model_none_switch_simdrop_switch_results
 immediateoldl1[, listnum:=1]
 immediateoldl1[, itemnum:= 1:nrow(immediateoldl1)]
 immediateoldl1[, age:= "Old"]
+immediateoldl1[, condition:= "Immediate"]
 # Immediate-Old-List 2
 immediateoldl2=fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
 immediateoldl2[, listnum:= 2]
 immediateoldl2[, itemnum:= 1:nrow(immediateoldl2)]
 immediateoldl2[, age:= "Old"]
+immediateoldl2[, condition:= "Immediate"]
 ##Young Group##
 # Immediate-Young-List 1
 immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
 immediateyoungl1[, listnum:=1]
 immediateyoungl1[, itemnum:= 1:nrow(immediateyoungl1)]
 immediateyoungl1[, age:= "Young"]
-immediateyoungl1[, condition:= "Delayed"]
+immediateyoungl1[, condition:= "Immediate"]
 # Immediate-Young-List 2
 immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
 immediateyoungl2[, listnum:=2]
 immediateyoungl2[, itemnum:= 1:nrow(immediateyoungl2)]
 immediateyoungl2[, age:= "Young"]
-immediateyoungl2[, condition:= "Delayed"]
+immediateyoungl2[, condition:= "Immediate"]
 ## Delayed Condition##
 ##Old Group ##
 # Delayed-Old-List 1
@@ -174,8 +176,35 @@ cluster_vals[, switch_val:= Switch_Value]
 cluster_vals[, switch_method:= Switch_Method]
 # remove original col headers
 cluster_vals= subset(cluster_vals, select= -c(Subject, Fluency_Item, Switch_Value, Switch_Method))
+
 # Find number of cluster switches
-cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
+n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
+# Find average cluster size
+cluster_vals[switch_val==1, n_switches:=.N, by= .(prolific_id, listnum, age, condition)]
+cluster_vals[, cluster_size:=.N, by = .(prolific_id, listnum, condition, age)]
+# cluster_vals[switch_val==1, cluster_size:= mean(cluster_size/n_switches), by= .(prolific_id, age, condition, listnum)]
+cluster_vals[, cluster_size:=as.numeric(mean(cluster_size/n_switches)), by= .(listnum, age, condition)]
+
+
+
+# get numerator
+# cluster_vals[, cluster_size:= ]
+
+
+# Preset between vars as factors for ANOVA
+n_switches[, listnum:= as.factor(listnum)]
+n_switches[, prolific_id:= as.factor(prolific_id)]
+n_switches[, condition:= as.factor(condition)]
+n_switches[, age:= as.factor(age)]
+cluster_size[, listnum:= as.factor(listnum)]
+cluster_size[, prolific_id:= as.factor(prolific_id)]
+cluster_size[, condition:= as.factor(condition)]
+cluster_size[, age:= as.factor(age)]
+# ANOVAs
+ezANOVA(cluster_size, between=c("age","condition"), dv=V1, within= listnum, wid=prolific_id)
+ezANOVA(n_switches, between=c("age","condition"), dv=N, within= listnum, wid=prolific_id)
+
+
 
 # Error where merging messes up the order of observation and organization of rows from both DT's
 # fix is to set order relative to listnum
