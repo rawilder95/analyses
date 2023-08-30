@@ -176,30 +176,28 @@ cluster_vals[, switch_val:= Switch_Value]
 cluster_vals[, switch_method:= Switch_Method]
 # remove original col headers
 cluster_vals= subset(cluster_vals, select= -c(Subject, Fluency_Item, Switch_Value, Switch_Method))
-
 # Find number of cluster switches
 n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
 # Find average cluster size
-cluster_vals[switch_val==1, n_switches:=.N, by= .(prolific_id, listnum, age, condition)]
-cluster_vals[, cluster_size:=.N, by = .(prolific_id, listnum, condition, age)]
+cluster_vals[, n_switches:= as.numeric(0)]
+cluster_vals[, n_switches:= .N, by= .(prolific_id, listnum, age, condition)]
+cluster_vals[, n_switches:= as.numeric(mean(n_switches)), by= .(listnum, age, condition)]
+cluster_vals[, cluster_size:= as.numeric(.N), by = .(prolific_id, listnum, condition, age)]
 # cluster_vals[switch_val==1, cluster_size:= mean(cluster_size/n_switches), by= .(prolific_id, age, condition, listnum)]
-cluster_vals[, cluster_size:=as.numeric(mean(cluster_size/n_switches)), by= .(listnum, age, condition)]
+cluster_vals[, cluster_size:=as.numeric(cluster_size/n_switches), by= .(prolific_id, listnum, age, condition)]
+cluster_vals[, cluster_size:= mean(cluster_size), by= .(listnum, age, condition)]
+# So I've tried a lot of different things here, from setting the values to numeric to breaking the dt calculations into separate parts.  I'm lost as to why it's trying to coerce all values to being integer; 
 
-
-
-# get numerator
-# cluster_vals[, cluster_size:= ]
-
-
+# Back tracking on this for now... not sure if I'm going to approach it this way.
 # Preset between vars as factors for ANOVA
-n_switches[, listnum:= as.factor(listnum)]
-n_switches[, prolific_id:= as.factor(prolific_id)]
-n_switches[, condition:= as.factor(condition)]
-n_switches[, age:= as.factor(age)]
-cluster_size[, listnum:= as.factor(listnum)]
-cluster_size[, prolific_id:= as.factor(prolific_id)]
-cluster_size[, condition:= as.factor(condition)]
-cluster_size[, age:= as.factor(age)]
+# n_switches[, listnum:= as.factor(listnum)]
+# n_switches[, prolific_id:= as.factor(prolific_id)]
+# n_switches[, condition:= as.factor(condition)]
+# n_switches[, age:= as.factor(age)]
+# cluster_size[, listnum:= as.factor(listnum)]
+# cluster_size[, prolific_id:= as.factor(prolific_id)]
+# cluster_size[, condition:= as.factor(condition)]
+# cluster_size[, age:= as.factor(age)]
 # ANOVAs
 ezANOVA(cluster_size, between=c("age","condition"), dv=V1, within= listnum, wid=prolific_id)
 ezANOVA(n_switches, between=c("age","condition"), dv=N, within= listnum, wid=prolific_id)
