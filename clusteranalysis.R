@@ -216,46 +216,6 @@ ezANOVA(cluster_anova, between=c("age","condition"), dv=ns, wid=prolific_id)
 # ANOVA cluster size
 ezANOVA(cluster_anova, between=c("age","condition"), dv=avg_cluster, wid=prolific_id)
 
-n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
-# Find average cluster size
-cluster_vals[, n_switches:= as.numeric(0)]
-cluster_vals[, n_switches:= .N, by= .(prolific_id, listnum, age, condition)]
-cluster_vals[, n_switches:= as.numeric(mean(n_switches)), by= .(listnum, age, condition)]
-cluster_vals[, cluster_size:= as.numeric(.N), by = .(prolific_id, listnum, condition, age)]
-# cluster_vals[switch_val==1, cluster_size:= mean(cluster_size/n_switches), by= .(prolific_id, age, condition, listnum)]
-cluster_vals[, cluster_size:=as.numeric(cluster_size/n_switches), by= .(prolific_id, listnum, age, condition)]
-cluster_vals[, cluster_size:= mean(cluster_size), by= .(listnum, age, condition)]
-
-
-
-
-
-
-# So I've tried a lot of different things here, from setting the values to numeric to breaking the dt calculations into separate parts.  I'm lost as to why it's trying to coerce all values to being integer; 
-
-# Back tracking on this for now... not sure if I'm going to approach it this way.
-# Preset between vars as factors for ANOVA
-# n_switches[, listnum:= as.factor(listnum)]
-# n_switches[, prolific_id:= as.factor(prolific_id)]
-# n_switches[, condition:= as.factor(condition)]
-# n_switches[, age:= as.factor(age)]
-# cluster_size[, listnum:= as.factor(listnum)]
-# cluster_size[, prolific_id:= as.factor(prolific_id)]
-# cluster_size[, condition:= as.factor(condition)]
-# cluster_size[, age:= as.factor(age)]
-# ANOVAs
-ezANOVA(cluster_size, between=c("age","condition"), dv=V1, within= listnum, wid=prolific_id)
-ezANOVA(n_switches, between=c("age","condition"), dv=N, within= listnum, wid=prolific_id)
-
-
-
-# Error where merging messes up the order of observation and organization of rows from both DT's
-# fix is to set order relative to listnum
-this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by= listnum]
-# Check this subject 
-# listnum out of order
-# spotcheck: prolific_id= "5484655ffdf99b07b28f22cc"; age= "OLD", all 0's for switch value... which seems weird.
-# order by listnum
 
 
 
@@ -263,84 +223,139 @@ this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by
 
 
 
-# d1[, result:= "switch"]
-# # Model fit
-# nll= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_nll_results.csv"
-# )
-# # Set up col identifier for which part of the cluster results
-# nll[, result:= "model_fit"]
-# # Make data table to store all values in by factor 
-# delayold1= rbind(d1, nll, fill= TRUE)
-# # Model results
-# model_results= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_model_results.csv")
-# # Add to main delay old data table
-# delayold1= rbind(delayold1, model_results, fill= TRUE)
-# # Add listnum as a value because you're going to combine data tables by trial
-# delayold1[, listnum:= 1]
-# # Save yourself some time later and start adding back in the factors for the ANOVA
-# delayold1[, age:= as.factor("Old")]
-# delayold1[, condition:= as.factor("Immediate")]
-# delayold1[, method:= "simdrop"]
-# delayold1[, model:= "dynamic"]
-# ## Repeat for each set of csv files 
-# ### Immediate-Old-List 1 ###
-# i1= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
-# i1[, result:= "switch"]
-# nll= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
-# model_results= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
-# immediateoldl1= rbind(i1, nll, model_results, fill= TRUE)
-# immediateoldl1[, listnum:= 1]
-# immediateoldl1[, age:= as.factor("Old")]
-# immediateoldl1[, condition:= as.factor("Immediate")]
-# immediateoldl1[, model:= "dynamic"]
-# immediateoldl1[, method:= "simdrop"]
-# ### OLD LIST 1 ####
-# # Bind immediate and delayed old 1
-# oldl1= rbind(immediateoldl1, delayold1)
+
+
+
+
+
+
+
+# # Code that I don't think I need but will hold on to for now
+# n_switches= cluster_vals[switch_val==1, .N, by= .(prolific_id, listnum, age, condition)]
+# # Find average cluster size
+# cluster_vals[, n_switches:= as.numeric(0)]
+# cluster_vals[, n_switches:= .N, by= .(prolific_id, listnum, age, condition)]
+# cluster_vals[, n_switches:= as.numeric(mean(n_switches)), by= .(listnum, age, condition)]
+# cluster_vals[, cluster_size:= as.numeric(.N), by = .(prolific_id, listnum, condition, age)]
+# # cluster_vals[switch_val==1, cluster_size:= mean(cluster_size/n_switches), by= .(prolific_id, age, condition, listnum)]
+# cluster_vals[, cluster_size:=as.numeric(cluster_size/n_switches), by= .(prolific_id, listnum, age, condition)]
+# cluster_vals[, cluster_size:= mean(cluster_size), by= .(listnum, age, condition)]
 # 
-# Additional code but not sure if I need later
-# ##Immediate Condition##
-# ## Old Group ##
-# # Immediate-Old-List 1
-# immediateoldl1= fread("immediateoldlist1_model_none_switch_simdrop_switch_results.csv")
-# immediateoldl1[, listnum:= 1]
-# immediateoldl1[, itemnum:= 1:nrow(immediateoldl1)]
-# # Immediate-Old-List 2
-# immediateoldl2= fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
-# immediateoldl2[, listnum:= 2]
-# immediateoldl2[, itemnum:= 1:nrow(immediateoldl2)]
-# ##Young Group
-# # # Immediate-Young-List 1
-# # immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
-# # immediateyoungl1[, listnum:= 1]
-# # immediateyoungl1[, itemnum:= 1:nrow(immediateyoungl1)]
-# # # Immediate-Young-List 2
-# # immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
-# # immediateyoungl2[, listnum:= 2]
-# # immediateyoungl2[, itemnum:= 1:nrow(immediateyoungl2)]
 # 
-# # for(i in dat[1, prolific_id]){
-# #   # counter resets by subject
-# #   counter= 0
-# #   this_subj= dat[prolific_id==i,]
-# #   # second for loop to go through each list
-# #   for(j in 1:nrow(this_subj)){
-# #     this_trial= this_subj[j]
-# #     if(this_trial$switch_val==0){
-# #       counter= counter+1
-# #       }else{
-# #         counter= counter+0
-# #       }
-# #     if(this_trial$switch_val>0){
-# #     }
-# }
-# # # PAPERTRAIL @Jeff, this is the solution for the merge issue.  If both data.tables have unique columns merge will return an error and suggest allow.cartesian and the solution I put below.  You want by = .EACHi because that (cluster .csv data table) is the data table will fewer observations.
-# # setkey(dat, prolific_id, listnum, itemnum, items)
-# # setkey(cluster_vals, prolific_id, listnum, itemnum, items)
-# # # We don't even necessarily need to merge
-# # # k= merge(dat, cluster_vals, key_by= ("prolific_id"))
+# 
+# 
+# 
+# 
+# # So I've tried a lot of different things here, from setting the values to numeric to breaking the dt calculations into separate parts.  I'm lost as to why it's trying to coerce all values to being integer; 
+# 
+# # Back tracking on this for now... not sure if I'm going to approach it this way.
+# # Preset between vars as factors for ANOVA
+# # n_switches[, listnum:= as.factor(listnum)]
+# # n_switches[, prolific_id:= as.factor(prolific_id)]
+# # n_switches[, condition:= as.factor(condition)]
+# # n_switches[, age:= as.factor(age)]
+# # cluster_size[, listnum:= as.factor(listnum)]
+# # cluster_size[, prolific_id:= as.factor(prolific_id)]
+# # cluster_size[, condition:= as.factor(condition)]
+# # cluster_size[, age:= as.factor(age)]
+# # ANOVAs
+# ezANOVA(cluster_size, between=c("age","condition"), dv=V1, within= listnum, wid=prolific_id)
+# ezANOVA(n_switches, between=c("age","condition"), dv=N, within= listnum, wid=prolific_id)
+# 
+# 
+# 
+# # Error where merging messes up the order of observation and organization of rows from both DT's
+# # fix is to set order relative to listnum
+# this_subj[, .(prolific_id, items, age, condition, switch_val, switch_method), by= listnum]
+# # Check this subject 
+# # listnum out of order
+# # spotcheck: prolific_id= "5484655ffdf99b07b28f22cc"; age= "OLD", all 0's for switch value... which seems weird.
+# # order by listnum
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# # d1[, result:= "switch"]
+# # # Model fit
+# # nll= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_nll_results.csv"
+# # )
+# # # Set up col identifier for which part of the cluster results
+# # nll[, result:= "model_fit"]
+# # # Make data table to store all values in by factor 
+# # delayold1= rbind(d1, nll, fill= TRUE)
+# # # Model results
+# # model_results= fread("delayoldlist1_results/delayoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+# # # Add to main delay old data table
+# # delayold1= rbind(delayold1, model_results, fill= TRUE)
+# # # Add listnum as a value because you're going to combine data tables by trial
+# # delayold1[, listnum:= 1]
+# # # Save yourself some time later and start adding back in the factors for the ANOVA
+# # delayold1[, age:= as.factor("Old")]
+# # delayold1[, condition:= as.factor("Immediate")]
+# # delayold1[, method:= "simdrop"]
+# # delayold1[, model:= "dynamic"]
+# # ## Repeat for each set of csv files 
+# # ### Immediate-Old-List 1 ###
+# # i1= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_switch_results.csv")
+# # i1[, result:= "switch"]
+# # nll= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_nll_results.csv")
+# # model_results= fread("immediateoldlist1_results/immediateoldlist1_model_dynamic_switch_simdrop_model_results.csv")
+# # immediateoldl1= rbind(i1, nll, model_results, fill= TRUE)
+# # immediateoldl1[, listnum:= 1]
+# # immediateoldl1[, age:= as.factor("Old")]
+# # immediateoldl1[, condition:= as.factor("Immediate")]
+# # immediateoldl1[, model:= "dynamic"]
+# # immediateoldl1[, method:= "simdrop"]
+# # ### OLD LIST 1 ####
+# # # Bind immediate and delayed old 1
+# # oldl1= rbind(immediateoldl1, delayold1)
 # # 
-# # dat[,switch_val]
-# # # create a temp data table that parses the switch value by prolific_id and listnum
-# # temp_dt= dat[, switch_val, by= .(prolific_id, listnum)]
-# # For loop through each participant (start with 1 for now)
+# # Additional code but not sure if I need later
+# # ##Immediate Condition##
+# # ## Old Group ##
+# # # Immediate-Old-List 1
+# # immediateoldl1= fread("immediateoldlist1_model_none_switch_simdrop_switch_results.csv")
+# # immediateoldl1[, listnum:= 1]
+# # immediateoldl1[, itemnum:= 1:nrow(immediateoldl1)]
+# # # Immediate-Old-List 2
+# # immediateoldl2= fread("immediateoldlist2_model_none_switch_simdrop_switch_results.csv")
+# # immediateoldl2[, listnum:= 2]
+# # immediateoldl2[, itemnum:= 1:nrow(immediateoldl2)]
+# # ##Young Group
+# # # # Immediate-Young-List 1
+# # # immediateyoungl1=fread("immediateyounglist1_model_none_switch_simdrop_switch_results.csv")
+# # # immediateyoungl1[, listnum:= 1]
+# # # immediateyoungl1[, itemnum:= 1:nrow(immediateyoungl1)]
+# # # # Immediate-Young-List 2
+# # # immediateyoungl2=fread("immediateyounglist2_model_none_switch_simdrop_switch_results.csv")
+# # # immediateyoungl2[, listnum:= 2]
+# # # immediateyoungl2[, itemnum:= 1:nrow(immediateyoungl2)]
+# # 
+# # # for(i in dat[1, prolific_id]){
+# # #   # counter resets by subject
+# # #   counter= 0
+# # #   this_subj= dat[prolific_id==i,]
+# # #   # second for loop to go through each list
+# # #   for(j in 1:nrow(this_subj)){
+# # #     this_trial= this_subj[j]
+# # #     if(this_trial$switch_val==0){
+# # #       counter= counter+1
+# # #       }else{
+# # #         counter= counter+0
+# # #       }
+# # #     if(this_trial$switch_val>0){
+# # #     }
+# # }
+# # # # PAPERTRAIL @Jeff, this is the solution for the merge issue.  If both data.tables have unique columns merge will return an error and suggest allow.cartesian and the solution I put below.  You want by = .EACHi because that (cluster .csv data table) is the data table will fewer observations.
+# # # setkey(dat, prolific_id, listnum, itemnum, items)
+# # # setkey(cluster_vals, prolific_id, listnum, itemnum, items)
+# # # # We don't even necessarily need to merge
+# # # # k= merge(dat, cluster_vals, key_by= ("prolific_id"))
+# # # 
+# # # dat[,switch_val]
+# # # # create a temp data table that parses the switch value by prolific_id and listnum
+# # # temp_dt= dat[, switch_val, by= .(prolific_id, listnum)]
+# # # For loop through each participant (start with 1 for now)
