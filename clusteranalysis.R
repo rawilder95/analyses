@@ -197,8 +197,8 @@ avg_cluster_size[, avg_cluster:= cluster_num/ns]
 # cluster_vals[, avg_cluster_size:=resp_len/n_switches, by= .(prolific_id, listnum)]
 # set data table for cluster size/switches ANOVA 
 cluster_anova= merge(cluster_vals, avg_cluster_size, by= c("prolific_id", "listnum"))
-cluster_size_anova= cluster_anova[, mean(avg_cluster), by= .(listnum, age, condition)]
-cluster_switch_anova= cluster_anova[, mean(ns), by= .(listnum, age, condition)]
+cluster_size_anova= cluster_anova[, mean(avg_cluster), by= .(prolific_id,listnum, age, condition)]
+cluster_switch_anova= cluster_anova[, mean(ns), by= .(prolific_id, listnum, age, condition)]
 # Plot the rate of cluster switches
 ggplot(data= cluster_switch_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Rate of Semantic Cluster Switches", y= "Average # Switches", x= "Age", fill= "Condition")
 ggsave("figures/avg_cluster_switch_bar.png", device= "png", dpi= 300)
@@ -207,16 +207,14 @@ ggsave("figures/avg_cluster_switch_bar.png", device= "png", dpi= 300)
 ggplot(data= cluster_size_anova, aes(x= age, y= V1, fill= condition))+ geom_bar(stat= "identity", position= "dodge")+ theme_classic()+ labs(title= "Average Semantic Cluster Sizes", y= "Average Cluster Size", x= "Age", fill= "Condition")
 ggsave("figures/avg_cluster_size_bar.png", device= "png", dpi= 300)
 # set vars to factor
-cluster_anova[, prolific_id:= as.factor(prolific_id)]
-cluster_anova[, age:= as.factor(age)]
-cluster_anova[, condition:= as.factor(condition)]
-cluster_anova[, listnum:= as.factor(listnum)]
+# cluster_anova[, prolific_id:= as.factor(prolific_id)]
+# cluster_anova[, age:= as.factor(age)]
+# cluster_anova[, condition:= as.factor(condition)]
+# cluster_anova[, listnum:= as.factor(listnum)]
 # ANOVA cluster switches
-ezANOVA(cluster_anova, between=c("age","condition"), dv=ns, wid=prolific_id)
+ezANOVA(cluster_switch_anova, between=c("age","condition"), dv=ns, wid=prolific_id)
 # ANOVA cluster size
 ezANOVA(cluster_anova, between=c("age","condition"), dv=avg_cluster, wid=prolific_id)
-
-
 
 
 
