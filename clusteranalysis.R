@@ -212,12 +212,12 @@ ggsave("figures/avg_cluster_size_bar.png", device= "png", dpi= 300)
 # cluster_anova[, condition:= as.factor(condition)]
 # cluster_anova[, listnum:= as.factor(listnum)]
 # ANOVA cluster switches
-ezANOVA(cluster_switch_anova, between=c("age","condition"), dv=ns, wid=prolific_id)
+ezANOVA(cluster_anova, between=c("age","condition"), dv=ns, within= listnum, wid=prolific_id)
 # ANOVA cluster size
-ezANOVA(cluster_anova, between=c("age","condition"), dv=avg_cluster, wid=prolific_id)
+ezANOVA(cluster_anova, between=c("age","condition"), dv=avg_cluster, within= listnum, wid=prolific_id)
 
 
-
+25307-1544-228-53
 
 
 

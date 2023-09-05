@@ -62,7 +62,7 @@ ggsave('figures/responselengthbargraph.png', device= 'png', dpi= 300)
 ### Repetitions ###
 # Use indexing method for perseverations but don't collapse across listnum (trial number).  Perseverations should all be masked out (i.e. check by nrow(dat[perseveration== 1])>0).
 # Index counts for all items by participant.  Include listnum here to make it indexable
-dat[, word_counts:=.N, by= .(prolific_id,items)]
+dat[, word_counts:=.N, by= .(prolific_id,items, listnum)]
 dat[, repeated:=0]
 
 # Only count trial 2 for repetitions
