@@ -4,6 +4,12 @@ library(ggplot2)
 library(ez)
 library(cowplot)
 ### Things to try ###
+# Just to look at average size of the repetition cluster compared across all 
+# Code identical col for repetition clustering but instead of semantic software, calculation will be is item in repeated chain 1 = yes; 0= no.
+# Semantic clusters can have a size of 1
+# cluster switches 
+# R N N N R R R N N R N
+# 1 0 0 0 1 1 1 0 0 1 0
 # -Subset of the methods (e.g. simdrop, dynamic etc.)
 # - Using terminal python code, documentation in paper
 # For cluster switches 
