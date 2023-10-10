@@ -1,0 +1,29 @@
+# Initial data pre-processing
+
+    * preprocess/json_to_csv.r
+        - Take JSON output from JATOS and convert to CSV for further analysis
+        - Combines immediate and delayed conditions into one
+        - I: data/results_immediate.csv, data/results_delayed.csv
+        - O: data/results.csv
+
+    * spelling_intrusions_perseverations.r
+        - Correct known spelling errors from misc/snafu_spelling.csv
+        - Use misc/snafu_animals.csv to get list of known animals
+        - Remove "intrusions" (includes uncorrectable spelling errors and multi-items like 'liontiger')
+        - Adds a column to mark perseverations
+        - I: data/results.csv
+        - O: data/results_clean.csv (with perseverations), data/results_noperseveration.csv (without perseverations)
+
+# Analyses
+
+    * perseveration_analysis.r
+        - Are there differences in the number of perseverations across listnum, condition, and age (2x2x2)?
+
+    * num_responses_analysis.r
+        - Are there differences in the proportion of repetitions across condition, and age (2x2)?
+
+    * rt_analysis.r
+        - Are there differences in the mean response time (or log mean RT) across listnum, condition, and age (2x2x2)?
+
+    * repetition_analysis.r
+

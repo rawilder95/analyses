@@ -1,0 +1,3 @@
+* results_delayed.json, results_immediate.json
+    - Raw data from JATOS
+    - In Delayed data, condition was mistakenly marked as "Immediate". This has been manually fixed.
