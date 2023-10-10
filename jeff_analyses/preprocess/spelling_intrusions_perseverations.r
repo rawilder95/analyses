@@ -35,6 +35,7 @@ dat[,N := NULL]
 dat[,firstitemposition := NULL]
 
 # write data with and without perseverations
+dat <- dat[order(id,listnum,itemnum)]
 fwrite(dat, "../data/results_clean.csv", row.names=F, quote=F)
 fwrite(dat[perseveration==0], "../data/results_noperseveration.csv", row.names=F, quote=F)
 

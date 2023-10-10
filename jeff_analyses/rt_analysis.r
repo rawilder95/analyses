@@ -21,7 +21,7 @@ ezANOVA(wid=id, data=rtdat, between=c("age_group","condition"), within=listnum, 
 
 # plot
 a <- bbar(item_level[age_group == "young",num_responses, by=.(condition, listnum)]) + ylim(0,30) + ggtitle("YOUNG")
-b <- bbar(item_level[age_group == "old",num_responses, by=.(condition, listnum)]) + ylim(0,30) +ggtitle("OLD")
+b <- bbar(item_level[age_group == "old",num_responses, by=.(condition, listnum)]) + ylim(0,30) + ggtitle("OLD")
 grid.arrange(a, b, nrow=1)
 
 bbar(item_level[,num_responses, by=.(condition, listnum)])

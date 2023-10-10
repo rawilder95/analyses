@@ -52,11 +52,11 @@ for (idx in unique(list2[,id])) {
 
 anovadat <- unique(list2[,.(id, mean_new_cluster_size, mean_repeated_cluster_size, num_repeated_cluster_switches, age_group, condition)])
 
-anovadat[,mean(num_repeated_cluster_switches), by=.(age_group, condition)]
-ezANOVA(anovadat, wid=id, between=c("age_group","condition"), dv=num_repeated_cluster_switches)
+#anovadat[,mean(num_repeated_cluster_switches), by=.(age_group, condition)]
+#ezANOVA(anovadat, wid=id, between=c("age_group","condition"), dv=num_repeated_cluster_switches)
 
-anovadat[!is.na(mean_repeated_cluster_size),mean(num_repeated_cluster_switches), by=.(age_group, condition)]
+anovadat[!is.na(mean_repeated_cluster_size),mean(mean_repeated_cluster_size), by=.(age_group, condition)]
 ezANOVA(anovadat[!is.na(mean_repeated_cluster_size)], wid=id, between=c("age_group","condition"), dv=mean_repeated_cluster_size)
 
-anovadat[!is.na(mean_new_cluster_size),mean(num_repeated_cluster_switches), by=.(age_group, condition)]
+anovadat[!is.na(mean_new_cluster_size),mean(mean_new_cluster_size), by=.(age_group, condition)]
 ezANOVA(anovadat[!is.na(mean_new_cluster_size)], wid=id, between=c("age_group","condition"), dv=mean_new_cluster_size)
