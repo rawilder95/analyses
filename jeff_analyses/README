@@ -14,16 +14,55 @@
         - I: data/results.csv
         - O: data/results_clean.csv (with perseverations), data/results_noperseveration.csv (without perseverations)
 
+    * clustering.py
+        - Generates avg cluster size and num cluster switches metrics for each list
+        - I: data/results_noperseverations.csv
+        - O: data/clustering.csv
+
+# Misc. functions
+
+    * misc/basicplot.r
+        - Plot figures with error bars
+
+    * utils.r
+        - Functions for various tasks:
+            - temporal_clustering_score()
+            - lag()
+            - lag_crp()
+            - repeated_clustering_sizes()
+
 # Analyses
 
-    * perseveration_analysis.r
-        - Are there differences in the number of perseverations across listnum, condition, and age (2x2x2)?
-
     * num_responses_analysis.r
-        - Are there differences in the proportion of repetitions across condition, and age (2x2)?
+        - Are there differences in the number of responses across listnum, condition, and age?
+        - Significant:
+            - Age (YA > OA)
+            - Condition * Listnum (Immediate: L1 > L2; Delay: L1 < L2)
+
+    * perseveration_analysis.r
+        - Are there differences in the number of perseverations across listnum, condition, and age?
+        - Significant:
+            - Listnum (L2 > L1)
 
     * rt_analysis.r
-        - Are there differences in the mean response time (or log mean RT) across listnum, condition, and age (2x2x2)?
+        - Are there differences in the mean response time (or log mean RT) across listnum, condition, and age?
+        - Significant:
+            - Age (OA > YA)
 
     * repetition_analysis.r
+        - Are there differences in the proportion of repetitions across condition, and age?
+        - No
+
+    * repetition_cluster_analysis.r
+        - Are repetitions clustered together / does this differ by condition, and age?
+        - Significant:
+            - Condition (Immediate > Delay)
+
+    * clusters_analysis.r
+        - Does semantic cluster size vary by condition and age?
+        - "Marginally" Significant (p = .054)
+            - Listnum (L2 > L1)
+
+    * old_analyses/temporal_clustering_analysis.r
+        - Nothing interesting
 

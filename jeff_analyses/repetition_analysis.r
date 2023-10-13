@@ -18,7 +18,7 @@ repeats <- item_level_repeats[listnum==2, .(num_responses = .N, num_repeats = su
 repeats[,proportion_repeated := num_repeats / num_responses]
 
 # data
-repeats[,mean(proportion_repeated), by=.(age_group, condition)]
+repeats[,.(proportion_repeated = mean(proportion_repeated)), by=.(age_group, condition)]
 
 # inferential
 ezANOVA(wid=id, data=repeats, dv=proportion_repeated, between=c("age_group","condition"))

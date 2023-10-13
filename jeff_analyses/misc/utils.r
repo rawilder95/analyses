@@ -35,7 +35,6 @@ lag_crp <- function(encoding_list, recall_list) {
     possible_lags <- c()
     for (i in 2:length(recall_list)) {
         new_lag <- lag(encoding_list, recall_list[i-1], recall_list[i])
-        if (!is.na(new_lag)) { cat(new_lag,"\n") }
         if (!is.na(new_lag)) {  # only if a lag can be computed (i.e., both items have serial positions)
             lags <- c(lags, new_lag)
             possible_new_transitions <- encoding_list[!(encoding_list %in% recall_list[1:i-1])]
@@ -57,49 +56,40 @@ lag_crp <- function(encoding_list, recall_list) {
     return(list_crp)
 }
 
-library(data.table)
-library(ez)
-library(gridExtra)
-source("misc/basicplot.r")
+repeated_clustering_sizes <- function(fluency_list) {
 
-dat <- fread("data/results_noperseveration.csv")
-dat[, perseveration := NULL]
-dat[, listnum := factor(listnum)]
+    new_cluster_sizes <- c()        # sizes for new-item clusters
+    repeated_cluster_sizes <- c()   # sizes for repeated-item clusters
+    previous_repeatYN <- fluency_list[1]     # is the first item a repeat?
+    cluster_size <- 1
+    
+    for (i in 2:length(fluency_list)) {
+        repeatYN <- fluency_list[i]
+        if (repeatYN == previous_repeatYN) {
+            cluster_size <- cluster_size + 1
+        } else {
+            if (previous_repeatYN == 0) {
+                new_cluster_sizes <- c(new_cluster_sizes, cluster_size)
+            } else {
+                repeated_cluster_sizes <- c(repeated_cluster_sizes, cluster_size)
+            }
+            cluster_size <- 1 # reset cluster size on switch
 
-# find temporal clustering score for each participant
-summary_dat <- dat[,.N, by=.(id, listnum, age_group, condition)]
-for (idx in unique(summary_dat[,id])) {
-    recall_list <- dat[id == idx & listnum == 2, item]
-    encoding_list <- dat[id == idx & listnum == 1, item]
-    tcs_i <- temporal_clustering_score(encoding_list, recall_list)
-    summary_dat[id==idx, tcs := tcs_i]
+        }
+        previous_repeatYN <- repeatYN # keep track of whether previous item was new or old
+    }
+
+    # edge case to add last cluster size when fluency list ends. redundant code...
+    if (previous_repeatYN == 0) {
+        new_cluster_sizes <- c(new_cluster_sizes, cluster_size)
+    } else {
+        repeated_cluster_sizes <- c(repeated_cluster_sizes, cluster_size)
+    }
+    
+    num_cluster_switches <- sum(length(new_cluster_sizes), length(repeated_cluster_sizes))-1 
+    returnvals <- c(mean(new_cluster_sizes), mean(repeated_cluster_sizes), num_cluster_switches)
+    return(returnvals) # some values may be NA if participant never repeats items (or only repeats items)
 }
 
-# get data for plotting lag-crp
-lagcrp_data <- data.table(lag=0, crp=NA)
-for (idx in unique(dat[, id])) {
-    cat(idx,"\n")
-    recall_list <- dat[id == idx & listnum == 2, item]
-    encoding_list <- dat[id == idx & listnum == 1, item]
-    new_lagcrp <- lag_crp(encoding_list, recall_list)
-    lagcrp_data <- rbind(lagcrp_data, new_lagcrp)
-}
-crp <- summarySE(lagcrp_data, measurevar="crp", groupvars="lag")
-
-# data
-summary_dat[,listnum := factor(listnum)]
-summary_dat <- summary_dat[!is.na(tcs)] # need to remove people who dont have a temporal clustering score
-summary_dat <- summary_dat[listnum == 2] # only list 2
-summary_dat[,mean(tcs,na.rm=T),by=.(condition, age_group)]
-
-# inferential
-ezANOVA(dat=summary_dat, wid=id, dv=tcs, between=c("age_group","condition"))
-
-# plot
-bbar(summary_dat[,tcs,by=.(age_group,condition)])
-
-ggplot(crp[lag >= -4 & lag <= 4], aes(x=lag, y=crp)) +
-    geom_errorbar(width=.1, aes(ymin=crp-se, ymax=crp+se)) +
-    geom_point() + ylim(0,.5) + scale_x_continuous(limits=c(-10,10), breaks=-10:10) + theme_classic((base_size = 20)) + ylim(0.0,0.3) + xlab("Lag") + ylab ("Conditional Response Probability") 
 
 

@@ -1,0 +1,195 @@
+---
+title: Repeated Fluency
+output: pdf_document
+---
+
+```{r global_options, include=FALSE}
+    # this markdown contains code copied and pasted from the analysis files; not good practice or very practical
+    # compile with rmarkdown::render('summary.Rmd')
+    library(knitr)
+    knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE, dpi=300)
+    library(data.table)
+    library(ez)
+    library(gridExtra)
+    source("misc/basicplot.r")
+    source("misc/utils.r")
+```
+
+# DV: Number of response
+
+```{r}
+    dat <- fread("data/results_noperseveration.csv")
+    dat[, perseveration := NULL]
+    dat[, listnum := factor(listnum)]
+
+    item_level <- dat[,.(num_responses = .N), by=.(id, condition, age_group, listnum)]
+
+
+    # data
+    kable(item_level[,.(num_responses = mean(num_responses)),by=.(age_group, condition, listnum)])
+
+    # inferential
+    ezANOVA(wid=id, data=item_level, dv=num_responses, between=c("age_group","condition"), within=listnum)
+
+    # plot
+    a <- bbar(item_level[age_group == "young",num_responses, by=.(condition, listnum)]) + ylim(0,30) + ggtitle("YOUNG")
+    b <- bbar(item_level[age_group == "old",num_responses, by=.(condition, listnum)]) + ylim(0,30) +ggtitle("OLD")
+    grid.arrange(a, b, nrow=1)
+
+    bbar(item_level[,num_responses, by=.(condition, listnum)])
+
+
+```
+
+# DV: Number of perseverations
+
+```{r}
+    dat <- fread("data/results_clean.csv")
+    dat[, listnum := factor(listnum)]
+
+    perseverations <- dat[perseveration==1,.(num_perseverations=.N),by=.(id,listnum)]
+    perseverations <- merge(unique(dat[,.(id, age_group, condition, listnum)]), perseverations, all.x=T)
+    perseverations[is.na(num_perseverations),num_perseverations := 0]
+
+
+
+
+    # data
+    kable(perseverations[,.(num_perseverations = mean(num_perseverations)),by=.(age_group, condition, listnum)])
+
+    # inferential
+    ezANOVA(wid=id, data=perseverations, dv=num_perseverations, between=c("age_group","condition"), within=listnum)
+
+    # plot
+    a <- bbar(perseverations[age_group == "young",num_perseverations, by=.(condition, listnum)]) + ggtitle("YOUNG") + ylim(0,1) + theme_classic()
+    b <- bbar(perseverations[age_group == "old",num_perseverations, by=.(condition, listnum)]) + ggtitle("OLD") + ylim(0,1) + theme_classic()
+    grid.arrange(a, b, nrow=1)
+
+    # only listnum is significant
+
+```
+
+# DV: Proportion of repetitions
+
+```{r}
+
+    dat <- fread("data/results_noperseveration.csv")
+    dat[, perseveration := NULL]
+    dat[, listnum := factor(listnum)]
+
+    # code repeats only in list 2
+    item_level_repeats <- dat[,.(repeated = .N), by=.(id, item)][repeated==2]
+    item_level_repeats <- merge(dat, item_level_repeats, all.x=T)
+    item_level_repeats[listnum==1, repeated := NA]
+    item_level_repeats[listnum==2 & is.na(repeated), repeated := 0]
+    item_level_repeats[listnum==2 & repeated==2, repeated := 1]
+
+    repeats <- item_level_repeats[listnum==2, .(num_responses = .N, num_repeats = sum(repeated)), by=.(id, age_group, condition)]
+    repeats[,proportion_repeated := num_repeats / num_responses]
+
+    # data
+    kable(repeats[,.(proportion_repeated = mean(proportion_repeated)), by=.(age_group, condition)])
+
+    # inferential
+    ezANOVA(wid=id, data=repeats, dv=proportion_repeated, between=c("age_group","condition"))
+
+    # plot
+    bbar(repeats[, proportion_repeated, by=.(age_group, condition)])
+
+    # no significant results
+
+```
+
+# DV: RT and log(RT) (in that order)
+
+```{r}
+
+    dat <- fread("data/results_noperseveration.csv")
+    dat[, perseveration := NULL]
+    dat[, listnum := factor(listnum)]
+
+    rtdat <- dat[, .(meanrt = mean(rt), meanlogrt=mean(log(rt))), by=.(age_group, listnum, condition, id)]
+
+    # only age_group significant, whether rt or log(rt)
+
+    # data (both rt and log rt)
+    kable(rtdat[,.(meanRT = mean(meanrt)), by=.(condition, age_group, listnum)])
+    kable(rtdat[,.(meanLogRT = mean(meanlogrt)), by=.(condition, age_group, listnum)])
+
+    # inferential
+    ezANOVA(wid=id, data=rtdat, between=c("age_group","condition"), within=listnum, dv=meanrt)
+    ezANOVA(wid=id, data=rtdat, between=c("age_group","condition"), within=listnum, dv=meanlogrt)
+
+    # plot
+    a <- bbar(rtdat[age_group == "young", meanrt, by=.(condition, listnum)]) + ylim(0,6000) + ggtitle("YOUNG")
+    b <- bbar(rtdat[age_group == "old", meanrt, by=.(condition, listnum)]) + ylim(0,6000) + ggtitle("OLD")
+    grid.arrange(a, b, nrow=1)
+
+    # age_group significant
+
+```
+
+# DV: Repetition cluster size, New item cluster size (in that order)
+
+```{r}
+    library(data.table)
+    library(ez)
+    library(ggplot2)
+    source('repetition_analysis.r')
+
+    item_level_repeats <- item_level_repeats[order(id,listnum,itemnum)] 
+    list2 <- item_level_repeats[listnum==2]
+
+    for (idx in unique(list2[,id])) {
+        fluency_list <- list2[id == idx, repeated]
+        returnvals <- repeated_clustering_sizes(fluency_list)
+        list2[id == idx, mean_new_cluster_size := returnvals[1]]
+        list2[id == idx, mean_repeated_cluster_size := returnvals[2]]
+        list2[id == idx, num_repeated_cluster_switches := returnvals[3]]
+    }
+
+    anovadat <- unique(list2[,.(id, mean_new_cluster_size, mean_repeated_cluster_size, num_repeated_cluster_switches, age_group, condition)])
+
+    # data
+
+    anovadat[!is.na(mean_repeated_cluster_size),.(mean_repeated_cluster_size = mean(mean_repeated_cluster_size)), by=.(age_group, condition)]
+    anovadat[!is.na(mean_new_cluster_size),.(mean_new_cluster_size = mean(mean_new_cluster_size)), by=.(age_group, condition)]
+
+    # inferenetial
+
+    ezANOVA(anovadat[!is.na(mean_repeated_cluster_size)], wid=id, between=c("age_group","condition"), dv=mean_repeated_cluster_size)
+    ezANOVA(anovadat[!is.na(mean_new_cluster_size)], wid=id, between=c("age_group","condition"), dv=mean_new_cluster_size)
+
+    # plots
+
+    bbar(anovadat[!is.na(mean_repeated_cluster_size),mean_repeated_cluster_size, by=.(age_group, condition)])
+    bbar(anovadat[!is.na(mean_repeated_cluster_size),mean_new_cluster_size, by=.(age_group, condition)])
+```
+
+# DV: Semantic cluster size
+
+```{r}
+    dat <- fread("data/results_noperseveration.csv")
+    dat[, perseveration := NULL]
+    dat[, listnum := factor(listnum)]
+    summary_dat <- dat[,.(num_responses = .N), by=.(id, condition, age_group, listnum)]
+
+    # merge with clustering data
+    clusters <- fread("data/clustering.csv")
+    clusters[,listnum := factor(listnum)]
+    setkey(clusters, id, listnum)
+    setkey(summary_dat, id, listnum)
+    summary_dat <- merge(summary_dat, clusters)
+
+    # data
+    summary_dat[, .(num_cluster_switches=mean(num_cluster_switches), avg_cluster_size=mean(avg_cluster_size)), by=.(condition, age_group, listnum)]
+
+    # inferential
+    ezANOVA(data=summary_dat, wid=id, between=c("age_group","condition"), within=listnum, dv=avg_cluster_size)
+
+    # plot
+    a <- bbar(summary_dat[age_group == "young", avg_cluster_size, by=.(condition, listnum)]) + ggtitle("YOUNG")
+    b <- bbar(summary_dat[age_group == "old", avg_cluster_size, by=.(condition, listnum)]) + ggtitle("OLD")
+    grid.arrange(a, b, nrow=1)
+```
